@@ -132,12 +132,25 @@
 
   .brand svg { display: block; flex-shrink: 0; }
 
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
   .brand-name {
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
     font-size: 19px;
     letter-spacing: -0.01em;
     color: var(--text);
+  }
+
+  .brand-tagline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.01em;
+    color: var(--text-muted);
   }
 
   .topbar-cta {
@@ -615,7 +628,10 @@
         <circle cx="60" cy="60" r="21" fill="none" stroke="#2ECC71" stroke-width="6"/>
         <path d="M51 60 L58 67 L71 51" stroke="#2ECC71" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </svg>
-      <span class="brand-name">SevenShield</span>
+      <span class="brand-text">
+        <span class="brand-name">SevenShield</span>
+        <span class="brand-tagline">Ihre Daten. Ihr Ordner. SevenShield — sicher.</span>
+      </span>
     </a>
     <a class="topbar-cta" href="mailto:t.drescher@sevenshield.de?subject=SevenShield%20-%20Interesse">Kontakt aufnehmen</a>
   </div>
