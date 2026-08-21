@@ -412,6 +412,40 @@
 
   /* ---------- Audience ---------- */
 
+  /* ---------- Exchange ---------- */
+
+  .exchange {
+    padding: 88px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .exchange-tip {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 26px;
+    max-width: 56ch;
+  }
+
+  .exchange-tip .mono-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .exchange-tip p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  /* ---------- Audience ---------- */
+
   .audience {
     padding: 88px 0;
   }
@@ -706,6 +740,19 @@
         <span class="mono-label">Datenschutz</span>
         <h3>Keine Cloud-Pflicht</h3>
         <p>Ihre Dateien bleiben lokal auf Ihrem Rechner. SevenShield sendet nichts an Server, sammelt keine Nutzungsdaten.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="exchange">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Auch für den sicheren Versand</h2>
+        <p>Ein gesperrter Ordner lässt sich wie jeder andere übertragen — per E-Mail, USB-Stick oder Cloud-Speicher. Wer die Dateien erhält und SevenShield installiert hat, entsperrt sie mit dem passenden Passwort. So werden Unterlagen sicher ausgetauscht, nicht nur lokal abgelegt.</p>
+      </div>
+      <div class="exchange-tip">
+        <span class="mono-label">Wichtig beim Versand</span>
+        <p>Passwort über einen anderen Kanal weitergeben als die Datei selbst — zum Beispiel telefonisch statt in derselben E-Mail. Sonst verliert die Verschlüsselung ihren Zweck.</p>
       </div>
     </div>
   </section>
