@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sevenshield.de/sitemap.xml
