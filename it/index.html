@@ -229,6 +229,50 @@
     color: var(--accent);
   }
 
+  /* ---------- Sprachumschalter ---------- */
+
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+  }
+
+  .lang-switch a,
+  .lang-switch span {
+    padding: 5px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: color .15s ease, background .15s ease;
+  }
+
+  .lang-switch a:hover {
+    color: var(--accent);
+    background: var(--surface);
+  }
+
+  .lang-switch span.active {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .lang-switch .divider {
+    color: var(--line);
+    padding: 0;
+  }
+
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  @media (max-width: 640px) {
+    .lang-switch { font-size: 11px; }
+  }
+
   /* ---------- Hero ---------- */
 
   .hero {
@@ -726,7 +770,18 @@
         <span class="brand-tagline">I tuoi dati. Le tue cartelle. SevenShield. La tua sicurezza.</span>
       </span>
     </a>
-    <a class="topbar-cta" href="mailto:t.drescher@sevenshield.de?subject=SevenShield%20-%20Interesse">Contattaci</a>
+    <div class="topbar-right">
+      <nav class="lang-switch" aria-label="Sprache wechseln">
+      <a href="https://sevenshield.de/">DE</a>
+      <span class="divider">/</span>
+      <a href="https://sevenshield.de/en/">EN</a>
+      <span class="divider">/</span>
+      <a href="https://sevenshield.de/fr/">FR</a>
+      <span class="divider">/</span>
+      <span class="active">IT</span>
+      </nav>
+      <a class="topbar-cta" href="mailto:t.drescher@sevenshield.de?subject=SevenShield%20-%20Interesse">Contattaci</a>
+    </div>
   </div>
 </header>
 
@@ -857,7 +912,7 @@
           <h3>Guida rapida da scaricare</h3>
           <p>Spiegato in pochi passaggi: bloccare e sbloccare cartelle e conservare in sicurezza la chiave di ripristino.</p>
         </div>
-        <a class="btn-primary" href="/SevenShield_Kurzanleitung.pdf" download>Guida rapida (PDF, tedesco)</a>
+        <a class="btn-primary" href="/SevenShield_QuickGuide_it.pdf" download>Guida rapida (PDF)</a>
       </div>
     </div>
   </section>
@@ -881,7 +936,7 @@
     <span class="footer-copy">© 2026 SevenShield</span>
     <nav class="footer-links">
       <a href="mailto:t.drescher@sevenshield.de">Contatti</a>
-      <a href="/SevenShield_Kurzanleitung.pdf" download>Guida rapida</a>
+      <a href="/SevenShield_QuickGuide_it.pdf" download>Guida rapida</a>
       <a href="#impressum">Note legali</a>
       <a href="#datenschutz">Privacy</a>
       <a href="#nutzungsbedingungen">Termini di utilizzo</a>
