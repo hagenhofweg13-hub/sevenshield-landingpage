@@ -761,9 +761,26 @@
   <div class="wrap">
     <a class="brand" href="#top">
       <svg width="30" height="30" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-        <path d="M60 8 L102 24 V56 C102 86 84 104 60 114 C36 104 18 86 18 56 V24 Z" fill="none" stroke="#2ECC71" stroke-width="6"/>
-        <circle cx="60" cy="60" r="21" fill="none" stroke="#2ECC71" stroke-width="6"/>
-        <path d="M51 60 L58 67 L71 51" stroke="#2ECC71" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <defs>
+          <linearGradient id="brandShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#16A34A"/>
+            <stop offset="100%" stop-color="#2ECC71"/>
+          </linearGradient>
+        </defs>
+        <g transform="translate(13,10) scale(0.28)">
+          <g transform="translate(0.000000,357.000000) scale(0.100000,-0.100000)" fill="url(#brandShieldGrad)" stroke="none">
+            <path d="M727 3013 c-16 -101 -36 -365 -39 -508 l-3 -160 123 0 122 0 0 61 c0
+33 3 129 7 212 l6 152 844 0 c463 0 843 -3 843 -6 0 -4 -78 -119 -173 -258
+-96 -138 -241 -350 -324 -471 -82 -121 -262 -384 -400 -585 -137 -201 -253
+-371 -257 -377 -7 -13 28 -49 192 -192 l82 -73 0 129 0 129 46 65 c25 35 179
+259 342 496 163 238 341 497 395 575 l97 141 0 -249 c0 -137 -5 -288 -10 -335
+-21 -187 -100 -379 -228 -559 -113 -159 -408 -440 -603 -576 l-39 -27 -37 29
+c-285 213 -552 506 -666 729 -94 185 -110 257 -116 535 l-6 225 -122 3 -123 3
+0 -200 c0 -214 11 -304 56 -445 114 -358 437 -743 907 -1079 l108 -77 62 42
+c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
+-1076 3 -1076 2 -6 -37z"/>
+          </g>
+        </g>
       </svg>
       <span class="brand-text">
         <span class="brand-name">SevenShield</span>
