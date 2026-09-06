@@ -929,7 +929,7 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
           <h3>Guida rapida da scaricare</h3>
           <p>Spiegato in pochi passaggi: bloccare e sbloccare cartelle e conservare in sicurezza la chiave di ripristino.</p>
         </div>
-        <a class="btn-primary" href="/SevenShield_QuickGuide_it.pdf" download>Guida rapida (PDF)</a>
+        <a class="btn-primary" href="/SevenShield_QuickGuide_it.pdf" download="SevenShield_QuickGuide_it.pdf" data-force-download>Guida rapida (PDF)</a>
       </div>
     </div>
   </section>
@@ -953,7 +953,7 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
     <span class="footer-copy">© 2026 SevenShield</span>
     <nav class="footer-links">
       <a href="mailto:t.drescher@sevenshield.de">Contatti</a>
-      <a href="/SevenShield_QuickGuide_it.pdf" download>Guida rapida</a>
+      <a href="/SevenShield_QuickGuide_it.pdf" download="SevenShield_QuickGuide_it.pdf" data-force-download>Guida rapida</a>
       <a href="#impressum">Note legali</a>
       <a href="#datenschutz">Privacy</a>
       <a href="#nutzungsbedingungen">Termini di utilizzo</a>
@@ -1032,7 +1032,7 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
     <p>Der Nutzer ist allein dafür verantwortlich, sein Passwort sowie den beim Sperren eines Ordners einmalig angezeigten Wiederherstellungsschlüssel sicher aufzubewahren. Gehen beide verloren, sind die verschlüsselten Daten unwiederbringlich verloren; der Anbieter kann in diesem Fall nicht helfen (siehe Ziffer 4).</p>
 
     <p><strong>6. Geld-zurück-Garantie</strong></p>
-    <p>Der Anbieter gewährt auf den Kauf der Software eine freiwillige Geld-zurück-Garantie von 7 Tagen ab Kaufdatum. Zur Inanspruchnahme sendet der Nutzer das vom Anbieter bereitgestellte <a href="/Rueckgabeformular_SevenShield.pdf" download>modulo di reso</a> (auch in elektronischer Form) an die im Impressum genannte Kontaktadresse. Die Rückerstattung des Kaufpreises erfolgt nach Eingang des ausgefüllten Formulars. Mit der Rückerstattung erlischt das Nutzungsrecht an der Software; der Nutzer verpflichtet sich, die Software sowie alle Kopien unverzüglich von allen Geräten zu löschen. Diese Garantie gilt einheitlich für alle Käufer. Gesetzliche Widerrufsrechte von Verbrauchern bleiben hiervon unberührt.</p>
+    <p>Der Anbieter gewährt auf den Kauf der Software eine freiwillige Geld-zurück-Garantie von 7 Tagen ab Kaufdatum. Zur Inanspruchnahme sendet der Nutzer das vom Anbieter bereitgestellte <a href="/Rueckgabeformular_SevenShield.pdf" download="Rueckgabeformular_SevenShield.pdf" data-force-download>modulo di reso</a> (auch in elektronischer Form) an die im Impressum genannte Kontaktadresse. Die Rückerstattung des Kaufpreises erfolgt nach Eingang des ausgefüllten Formulars. Mit der Rückerstattung erlischt das Nutzungsrecht an der Software; der Nutzer verpflichtet sich, die Software sowie alle Kopien unverzüglich von allen Geräten zu löschen. Diese Garantie gilt einheitlich für alle Käufer. Gesetzliche Widerrufsrechte von Verbrauchern bleiben hiervon unberührt.</p>
 
     <p><strong>7. Gewährleistung und Haftung</strong></p>
     <p>Die Software wird nach bestem Wissen und Gewissen, jedoch ohne Gewährleistung für ständige Verfügbarkeit, Fehlerfreiheit oder Eignung für einen bestimmten Zweck bereitgestellt. Der Anbieter haftet nicht für Datenverlust, entgangenen Gewinn oder sonstige mittelbare Schäden, die aus der Nutzung der Software entstehen, soweit gesetzlich zulässig. Für Vorsatz und grobe Fahrlässigkeit sowie bei Verletzung von Leben, Körper oder Gesundheit bleibt die Haftung des Anbieters unberührt.</p>
@@ -1073,6 +1073,49 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
     }
 
     setInterval(toggle, 3200);
+  })();
+</script>
+
+<script>
+  // Erzwingt den Download bei Links mit [data-force-download], statt die
+  // PDF im Browser zu öffnen. Nötig, weil Safari (macOS und iOS) das
+  // HTML-Attribut "download" häufig ignoriert und die Datei stattdessen
+  // im eingebauten PDF-Viewer anzeigt. Andere Browser (Chrome, Firefox,
+  // Edge) respektieren "download" bei gleichem Ursprung zwar zuverlässig,
+  // laufen hier aber einfach über denselben Weg mit.
+  (function () {
+    function forceDownload(link) {
+      var url = link.getAttribute('href');
+      var filename = link.getAttribute('download') || url.split('/').pop();
+
+      fetch(url)
+        .then(function (response) {
+          if (!response.ok) throw new Error('Download fehlgeschlagen');
+          return response.blob();
+        })
+        .then(function (blob) {
+          var blobUrl = URL.createObjectURL(blob);
+          var tempLink = document.createElement('a');
+          tempLink.href = blobUrl;
+          tempLink.download = filename;
+          document.body.appendChild(tempLink);
+          tempLink.click();
+          document.body.removeChild(tempLink);
+          setTimeout(function () { URL.revokeObjectURL(blobUrl); }, 1000);
+        })
+        .catch(function () {
+          // Fallback, falls fetch aus irgendeinem Grund fehlschlägt
+          // (z. B. Offline-Fall): normal navigieren statt gar nichts zu tun.
+          window.location.href = url;
+        });
+    }
+
+    document.querySelectorAll('[data-force-download]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        forceDownload(link);
+      });
+    });
   })();
 </script>
 
