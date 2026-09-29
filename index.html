@@ -320,6 +320,17 @@
     .cta-short { display: inline; }
   }
 
+  @media (max-width: 380px) {
+    .brand { gap: 8px; }
+    .brand-name { font-size: 17px !important; }
+    .topbar-cta { padding: 7px 10px; }
+  }
+
+  /* Sehr schmale Geraete: Kontakt bleibt ueber die Fusszeile erreichbar. */
+  @media (max-width: 345px) {
+    .topbar-cta { display: none; }
+  }
+
   /* ---------- Hero ---------- */
 
   .hero {
