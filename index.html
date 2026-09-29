@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SevenShield: Ordnerverschlüsselung, die sich wie Windows anfühlt</title>
-<meta name="description" content="SevenShield verschlüsselt Ordner mit AES-256-GCM und Argon2id. Rechtsklick, Passwort, fertig. Für Kanzleien, Praxen, Ingenieur- und Laborbetriebe. Kern quelloffen. Aktuell in Entwicklung.">
+<meta name="description" content="SevenShield verschlüsselt Ordner mit AES-256-GCM und Argon2id. Rechtsklick, Passwort, fertig. Für Kanzleien, Praxen, Ingenieur- und Laborbetriebe. Dazu kostenlos: SevenErase zum sicheren Löschen von Dateien.">
 
 <!-- Sagt Google eindeutig, welche Adresse die offizielle ist. Wichtig,
      falls die Seite jemals über mehrere Adressen erreichbar ist
@@ -57,6 +57,37 @@
   "offers": {
     "@type": "Offer",
     "price": "59.00",
+    "priceCurrency": "EUR"
+  }
+}
+</script>
+
+<!-- Strukturierte Daten fuer das kostenlose Zusatzprogramm SevenErase.
+     Sagt Google, dass es sich um eine kostenlose Windows-Software zum
+     sicheren Loeschen handelt, und verweist auf den Download. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SevenErase",
+  "alternateName": "SevenErase: Dateien sicher löschen",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "SecurityApplication",
+  "applicationSubCategory": "Sicheres Löschen, Datenvernichtung",
+  "description": "Kostenloses Windows-Programm zum sicheren und unwiederherstellbaren Löschen von Dateien und Ordnern. Überschreibt Daten vor dem Löschen und bereinigt freien Speicherplatz. Ohne Installation, ohne Datenübertragung.",
+  "url": "https://sevenshield.de/#sevenerase",
+  "downloadUrl": "https://github.com/hagenhofweg13-hub/sevenshield-landingpage/releases/latest/download/SevenErase.exe",
+  "softwareVersion": "1.0.0",
+  "fileSize": "195MB",
+  "isAccessibleForFree": true,
+  "inLanguage": "de",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Thomas Drescher"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
     "priceCurrency": "EUR"
   }
 }
@@ -1111,8 +1142,8 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
       <div class="erase-card">
         <div>
           <span class="free-badge">Kostenlos</span>
-          <h2>SevenErase: Dateien endgültig löschen</h2>
-          <p class="erase-lede">Wer im Papierkorb löscht, löscht nur den Verweis. Die Daten bleiben auf der Festplatte und lassen sich mit frei verfügbaren Werkzeugen wiederherstellen. SevenErase überschreibt Dateien, Ordner und freien Speicherplatz, bevor sie entfernt werden.</p>
+          <h2>SevenErase: Dateien sicher und endgültig löschen</h2>
+          <p class="erase-lede">Wer im Papierkorb löscht, löscht nur den Verweis. Die Daten bleiben auf der Festplatte und lassen sich mit frei verfügbaren Werkzeugen wiederherstellen. SevenErase überschreibt Dateien, Ordner und freien Speicherplatz, bevor sie entfernt werden. So sind gelöschte Daten unwiederherstellbar, etwa vor dem Verkauf oder der Weitergabe eines PCs.</p>
 
           <ul class="erase-list">
             <li><span><strong>Dateien und Ordner</strong> vor dem Löschen mit Zufallsdaten überschreiben</span></li>
@@ -1235,7 +1266,7 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
 
     <p><strong>5. Hosting (GitHub Pages)</strong></p>
     <p>Diese Website wird über GitHub Pages gehostet, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (eine Tochtergesellschaft der Microsoft Corporation). Beim Aufruf dieser Seite verarbeitet GitHub automatisch technische Zugriffsdaten (u. a. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, Browsertyp) in Server-Logfiles. Dies ist technisch notwendig, um die Website stabil und sicher auszuliefern; Rechtsgrundlage ist unser berechtigtes Interesse an einer funktionsfähigen Website (Art. 6 Abs. 1 lit. f DSGVO).</p>
-    <p>Da GitHub, Inc. in den USA ansässig ist, findet dabei eine Datenübermittlung in ein Drittland statt. GitHub stützt sich hierfür auf die EU-Standardvertragsklauseln (SCCs) sowie – soweit zertifiziert – das EU-U.S. Data Privacy Framework als geeignete Garantien im Sinne von Art. 46 DSGVO. Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+    <p>Da GitHub, Inc. in den USA ansässig ist, findet dabei eine Datenübermittlung in ein Drittland statt. GitHub stützt sich hierfür auf die EU-Standardvertragsklauseln (SCCs) sowie, soweit zertifiziert, das EU-U.S. Data Privacy Framework als geeignete Garantien im Sinne von Art. 46 DSGVO. Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
 
     <p><strong>6. Download von SevenErase</strong></p>
     <p>Der Download des kostenlosen Programms SevenErase erfolgt über GitHub Releases, ebenfalls ein Dienst der GitHub, Inc. Beim Klick auf den Download-Button verarbeitet GitHub dieselben technischen Zugriffsdaten wie unter Ziffer 5 beschrieben; die dortigen Angaben zu Rechtsgrundlage und Drittlandübermittlung gelten entsprechend. Diese Website selbst erhebt beim Download keine Daten.</p>
