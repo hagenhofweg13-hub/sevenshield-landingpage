@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SevenShield : le chiffrement de dossiers aussi simple que Windows</title>
-<meta name="description" content="SevenShield chiffre vos dossiers avec AES-256-GCM et Argon2id. Clic droit, mot de passe, terminé. Pour cabinets d'avocats, cabinets médicaux, bureaux d'ingénierie et laboratoires. Cœur open source. Actuellement en développement.">
+<meta name="description" content="SevenShield chiffre vos dossiers avec AES-256-GCM et Argon2id. Clic droit, mot de passe, terminé. Pour cabinets d'avocats, cabinets médicaux, bureaux d'ingénierie et laboratoires. En plus, gratuit : SevenErase pour supprimer des fichiers en toute sécurité.">
 
 <!-- Sagt Google eindeutig, welche Adresse die offizielle ist. Wichtig,
      falls die Seite jemals über mehrere Adressen erreichbar ist
@@ -57,6 +57,34 @@
   "offers": {
     "@type": "Offer",
     "price": "59.00",
+    "priceCurrency": "EUR"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SevenErase",
+  "alternateName": "SevenErase : supprimer des fichiers en toute sécurité",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "SecurityApplication",
+  "applicationSubCategory": "Suppression sécurisée, destruction de données",
+  "description": "Programme Windows gratuit pour supprimer des fichiers et dossiers de façon sûre et définitive. Écrase les données avant la suppression et nettoie l’espace libre. Sans installation, sans transfert de données.",
+  "url": "https://sevenshield.de/fr/#sevenerase",
+  "downloadUrl": "https://github.com/hagenhofweg13-hub/sevenshield-landingpage/releases/latest/download/SevenErase.exe",
+  "softwareVersion": "1.0.0",
+  "fileSize": "195MB",
+  "isAccessibleForFree": true,
+  "inLanguage": "fr",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Thomas Drescher"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
     "priceCurrency": "EUR"
   }
 }
@@ -189,7 +217,12 @@
     text-decoration: none;
   }
 
-  .brand svg { display: block; flex-shrink: 0; }
+  .brand svg {
+    display: block;
+    flex-shrink: 0;
+    width: 36px;
+    height: 44px;
+  }
 
   .brand-text {
     display: flex;
@@ -200,7 +233,7 @@
   .brand-name {
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
-    font-size: 19px;
+    font-size: 21px;
     letter-spacing: -0.01em;
     color: var(--text);
   }
@@ -269,8 +302,19 @@
     gap: 22px;
   }
 
+  .cta-short { display: none; }
+
   @media (max-width: 640px) {
-    .lang-switch { font-size: 11px; }
+    .topbar { padding-top: 20px; }
+    .topbar .wrap { padding: 0 16px; gap: 10px; }
+    .brand-tagline { display: none; }
+    .topbar-right { gap: 8px; }
+    .lang-switch { font-size: 11px; gap: 0; }
+    .lang-switch a, .lang-switch span { padding: 5px 5px; }
+    .lang-switch .divider { display: none; }
+    .topbar-cta { padding: 7px 12px; font-size: 12px; }
+    .cta-long { display: none; }
+    .cta-short { display: inline; }
   }
 
   /* ---------- Hero ---------- */
@@ -661,6 +705,169 @@
 
   .status-card .btn-primary { flex-shrink: 0; }
 
+  /* ---------- SevenErase (kostenloses Zusatzprogramm) ---------- */
+
+  .erase {
+    padding: 88px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .erase-card {
+    background: var(--void);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 48px;
+    align-items: start;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .erase-card::before {
+    content: "";
+    position: absolute;
+    inset: auto auto -45% -15%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(46,204,113,0.10), transparent 70%);
+    pointer-events: none;
+  }
+
+  .erase-card > * { position: relative; z-index: 1; }
+
+  .free-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(46,204,113,0.35);
+    background: rgba(46,204,113,0.08);
+    padding: 4px 11px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+
+  .erase h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(26px, 3vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    margin: 0 0 14px;
+  }
+
+  .erase-lede {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin: 0 0 26px;
+    max-width: 52ch;
+  }
+
+  .erase-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .erase-list li {
+    display: flex;
+    gap: 11px;
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .erase-list li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .erase-list strong { color: var(--text); font-weight: 500; }
+
+  .erase-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .erase-note {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin: 18px 0 0;
+    max-width: 52ch;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-faint);
+  }
+
+  .erase-note svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .erase-side {
+    display: grid;
+    gap: 14px;
+  }
+
+  .erase-spec {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+  }
+
+  .erase-spec .mono-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .erase-spec dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 16px;
+    font-size: 13.5px;
+  }
+
+  .erase-spec dt { color: var(--text-faint); }
+  .erase-spec dd { margin: 0; color: var(--text-muted); }
+
+  .erase-spec p {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  .erase-bridge {
+    font-size: 13.5px;
+    color: var(--text-faint);
+  }
+
+  .erase-bridge a { color: var(--accent); text-decoration: none; }
+  .erase-bridge a:hover { text-decoration: underline; }
+
   /* ---------- Footer ---------- */
 
   footer {
@@ -678,6 +885,8 @@
 
   .footer-links {
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 8px;
   }
 
   .footer-links a:not(:last-child) {
@@ -699,12 +908,12 @@
 
   /* ---------- Impressum placeholder ---------- */
 
-  #impressum, #datenschutz, #nutzungsbedingungen {
+  #impressum, #datenschutz, #nutzungsbedingungen, #nutzungsbedingungen-sevenerase {
     display: none;
     padding: 60px 0 96px;
   }
 
-  #impressum:target, #datenschutz:target, #nutzungsbedingungen:target { display: block; }
+  #impressum:target, #datenschutz:target, #nutzungsbedingungen:target, #nutzungsbedingungen-sevenerase:target { display: block; }
 
   .legal-placeholder {
     background: var(--surface);
@@ -737,6 +946,7 @@
     .hero .wrap { grid-template-columns: 1fr; }
     .trust .wrap { grid-template-columns: 1fr; gap: 28px; }
     .audience-grid { grid-template-columns: repeat(2, 1fr); }
+    .erase-card { grid-template-columns: 1fr; gap: 32px; }
     .status-card {
       grid-template-columns: 1fr;
       text-align: left;
@@ -748,6 +958,9 @@
     .audience-grid { grid-template-columns: 1fr; }
     .hero { padding: 56px 0 64px; }
     .status-card { padding: 28px 24px; }
+    .erase-card { padding: 28px 22px; }
+    .brand svg { width: 30px; height: 37px; }
+    .brand-name { font-size: 19px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -760,7 +973,7 @@
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="#top">
-      <svg width="30" height="30" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <svg width="36" height="44" viewBox="30.5 23.1 64.7 79.4" fill="none" aria-hidden="true">
         <defs>
           <linearGradient id="brandShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#16A34A"/>
@@ -797,7 +1010,7 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
       <span class="divider">/</span>
       <a href="https://sevenshield.de/it/">IT</a>
       </nav>
-      <a class="topbar-cta" href="mailto:t.drescher@sevenshield.de?subject=SevenShield%20-%20Interet">Nous contacter</a>
+      <a class="topbar-cta" href="mailto:t.drescher@sevenshield.de?subject=SevenShield%20-%20Interet"><span class="cta-long">Nous contacter</span><span class="cta-short">Contact</span></a>
     </div>
   </div>
 </header>
@@ -921,6 +1134,54 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
     </div>
   </section>
 
+  <section class="erase" id="sevenerase">
+    <div class="wrap">
+      <div class="erase-card">
+        <div>
+          <span class="free-badge">Gratuit</span>
+          <h2>SevenErase : supprimer des fichiers de façon sûre et définitive</h2>
+          <p class="erase-lede">Vider la corbeille ne supprime que la référence. Les données restent sur le disque et peuvent être récupérées avec des outils librement disponibles. SevenErase écrase les fichiers, les dossiers et l’espace libre avant de les supprimer. Les données effacées deviennent ainsi irrécupérables, par exemple avant de vendre ou de céder un PC.</p>
+
+          <ul class="erase-list">
+            <li><span><strong>Fichiers et dossiers</strong> écrasés par des données aléatoires avant la suppression</span></li>
+            <li><span><strong>Nettoyage de l’espace libre</strong>, pour faire disparaître aussi les restes déjà supprimés</span></li>
+            <li><span><strong>Sans installation</strong>, sans inscription, sans transfert de données</span></li>
+          </ul>
+
+          <div class="erase-actions">
+            <a class="btn-primary" href="https://github.com/hagenhofweg13-hub/sevenshield-landingpage/releases/latest/download/SevenErase.exe">Télécharger SevenErase</a>
+            <a class="hint" href="#nutzungsbedingungen-sevenerase">Conditions d’utilisation (allemand)</a>
+          </div>
+
+          <!-- Hinweis zur SmartScreen-Warnung. Nach dem Signieren mit dem
+               Code-Signing-Zertifikat kann dieser Block entfallen. -->
+          <p class="erase-note">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="#8B9198" stroke-width="1.3"/><path d="M8 7v4.2M8 4.8v.1" stroke="#8B9198" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Au premier démarrage, Windows peut afficher un avertissement de sécurité, car SevenErase est encore récent. Cliquez sur « Informations complémentaires » puis sur « Exécuter quand même ».</span>
+          </p>
+        </div>
+
+        <div class="erase-side">
+          <div class="erase-spec">
+            <span class="mono-label">Caractéristiques</span>
+            <dl>
+              <dt>Système</dt><dd>Windows 10 / 11, 64 bits</dd>
+              <dt>Taille</dt><dd>env. 195 Mo, un seul fichier .exe</dd>
+              <dt>Prérequis</dt><dd>aucun, .NET est inclus</dd>
+              <dt>Langue</dt><dd>interface en allemand</dd>
+              <dt>Prix</dt><dd>gratuit, sans publicité</dd>
+            </dl>
+          </div>
+          <div class="erase-spec">
+            <span class="mono-label">Remarque sur les SSD</span>
+            <p>Sur les SSD et les clés USB, le contrôleur de stockage répartit lui-même les écritures. Certaines anciennes copies ne peuvent donc pas toujours être atteintes. Pour une sécurité totale, stockez les données sensibles chiffrées dès le départ.</p>
+          </div>
+          <p class="erase-bridge">C’est exactement le rôle de <a href="#top">SevenShield</a> : ce qui n’a jamais été stocké en clair n’a pas besoin d’être effacé minutieusement plus tard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="status">
     <div class="wrap">
       <div class="status-card">
@@ -953,6 +1214,7 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
     <span class="footer-copy">© 2026 SevenShield</span>
     <nav class="footer-links">
       <a href="mailto:t.drescher@sevenshield.de">Contact</a>
+      <a href="#sevenerase">SevenErase</a>
       <a href="/SevenShield_QuickGuide_fr.pdf" download="SevenShield_QuickGuide_fr.pdf" data-force-download>Guide rapide</a>
       <a href="#impressum">Mentions légales</a>
       <a href="#datenschutz">Confidentialité</a>
@@ -1000,9 +1262,12 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
 
     <p><strong>5. Hosting (GitHub Pages)</strong></p>
     <p>Diese Website wird über GitHub Pages gehostet, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (eine Tochtergesellschaft der Microsoft Corporation). Beim Aufruf dieser Seite verarbeitet GitHub automatisch technische Zugriffsdaten (u. a. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, Browsertyp) in Server-Logfiles. Dies ist technisch notwendig, um die Website stabil und sicher auszuliefern; Rechtsgrundlage ist unser berechtigtes Interesse an einer funktionsfähigen Website (Art. 6 Abs. 1 lit. f DSGVO).</p>
-    <p>Da GitHub, Inc. in den USA ansässig ist, findet dabei eine Datenübermittlung in ein Drittland statt. GitHub stützt sich hierfür auf die EU-Standardvertragsklauseln (SCCs) sowie – soweit zertifiziert – das EU-U.S. Data Privacy Framework als geeignete Garantien im Sinne von Art. 46 DSGVO. Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+    <p>Da GitHub, Inc. in den USA ansässig ist, findet dabei eine Datenübermittlung in ein Drittland statt. GitHub stützt sich hierfür auf die EU-Standardvertragsklauseln (SCCs) sowie, soweit zertifiziert, das EU-U.S. Data Privacy Framework als geeignete Garantien im Sinne von Art. 46 DSGVO. Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
 
-    <p><strong>6. Ihre Rechte</strong></p>
+    <p><strong>6. Download von SevenErase</strong></p>
+    <p>Der Download des kostenlosen Programms SevenErase erfolgt über GitHub Releases, ebenfalls ein Dienst der GitHub, Inc. Beim Klick auf den Download-Button verarbeitet GitHub dieselben technischen Zugriffsdaten wie unter Ziffer 5 beschrieben; die dortigen Angaben zu Rechtsgrundlage und Drittlandübermittlung gelten entsprechend. Diese Website selbst erhebt beim Download keine Daten.</p>
+
+    <p><strong>7. Ihre Rechte</strong></p>
     <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten sowie ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde. Bei Fragen wenden Sie sich an die im <a href="#impressum">Impressum</a> genannte Kontaktadresse.</p>
   </div>
 </section>
@@ -1019,8 +1284,8 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
     <p><strong>1. Zweck und Funktionsweise</strong></p>
     <p>Die Software dient der lokalen Verschlüsselung von Ordnern auf dem Computer des Nutzers. Die Verschlüsselung erfolgt ausschließlich lokal; die Software überträgt keine Passwörter, Wiederherstellungsschlüssel oder Dateiinhalte an den Anbieter oder an Dritte.</p>
 
-    <p><strong>2. Hinweis zur Markenanmeldung</strong></p>
-    <p>Der Name „SevenShield" befindet sich zum Zeitpunkt des Erwerbs im Markenanmeldeverfahren beim Deutschen Patent- und Markenamt und ist noch nicht endgültig eingetragen. Sollte sich aus diesem Verfahren die Notwendigkeit einer Umbenennung der Software ergeben (z. B. durch einen erfolgreichen Widerspruch Dritter), wird der Anbieter den Nutzer hierüber informieren und ihm kostenlos eine inhaltlich unveränderte, lediglich umbenannte Version der Software zur Verfügung stellen. Ein Anspruch auf Rückerstattung, Schadensersatz oder sonstige Entschädigung aufgrund einer solchen Umbenennung besteht nicht.</p>
+    <p><strong>2. Hinweis zur Marke</strong></p>
+    <p>Der Name „SevenShield" ist beim Deutschen Patent- und Markenamt als Wortmarke eingetragen (Registernummer 302026245228). Bis zum Ablauf der Widerspruchsfrist am 18.01.2027 können Dritte Widerspruch gegen die Eintragung erheben. Sollte sich daraus die Notwendigkeit einer Umbenennung der Software ergeben (z. B. durch einen erfolgreichen Widerspruch Dritter), wird der Anbieter den Nutzer hierüber informieren und ihm kostenlos eine inhaltlich unveränderte, lediglich umbenannte Version der Software zur Verfügung stellen. Ein Anspruch auf Rückerstattung, Schadensersatz oder sonstige Entschädigung aufgrund einer solchen Umbenennung besteht nicht.</p>
 
     <p><strong>3. Berechtigte Nutzung</strong></p>
     <p>Der Nutzer darf die Software ausschließlich zur Verschlüsselung von Daten verwenden, die ihm gehören oder zu deren Verschlüsselung er ausdrücklich berechtigt ist (z. B. im Rahmen seiner beruflichen Tätigkeit mit entsprechender Befugnis). Insbesondere ist es untersagt, die Software zu verwenden, um Daten Dritter ohne deren Zustimmung zu verschlüsseln, den Zugriff berechtigter Personen auf ihre eigenen Daten zu blockieren, oder die Software im Zusammenhang mit Erpressung, Nötigung oder sonstigen rechtswidrigen Handlungen einzusetzen. Verstöße gegen diese Bestimmung können straf- und zivilrechtliche Folgen für den Nutzer haben. Der Anbieter behält sich vor, bei Kenntnis eines Missbrauchs die zuständigen Strafverfolgungsbehörden zu informieren und im Rahmen der technischen Möglichkeiten mit diesen zu kooperieren.</p>
@@ -1038,6 +1303,33 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
     <p>Die Software wird nach bestem Wissen und Gewissen, jedoch ohne Gewährleistung für ständige Verfügbarkeit, Fehlerfreiheit oder Eignung für einen bestimmten Zweck bereitgestellt. Der Anbieter haftet nicht für Datenverlust, entgangenen Gewinn oder sonstige mittelbare Schäden, die aus der Nutzung der Software entstehen, soweit gesetzlich zulässig. Für Vorsatz und grobe Fahrlässigkeit sowie bei Verletzung von Leben, Körper oder Gesundheit bleibt die Haftung des Anbieters unberührt.</p>
 
     <p><strong>8. Schlussbestimmungen</strong></p>
+    <p>Sollte eine Bestimmung dieser Nutzungsbedingungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Es gilt deutsches Recht.</p>
+  </div>
+</section>
+
+<section id="nutzungsbedingungen-sevenerase" class="wrap">
+  <div class="legal-placeholder">
+    <h2>Conditions d'utilisation</h2>
+    <p>für die kostenlose Software „SevenErase"</p>
+
+    <p><em>Les conditions d’utilisation suivantes de SevenErase sont rédigées en allemand et constituent la version juridiquement contraignante.</em></p>
+
+    <p><strong>1. Zweck</strong></p>
+    <p>SevenErase überschreibt Dateien, Ordner und freien Speicherplatz auf dem Computer des Nutzers, um gelöschte Daten gegen Wiederherstellung zu schützen. Die Software arbeitet ausschließlich lokal und überträgt keine Daten an den Anbieter oder an Dritte.</p>
+
+    <p><strong>2. Unentgeltliche Überlassung</strong></p>
+    <p>SevenErase wird unentgeltlich zur Verfügung gestellt. Es besteht kein Anspruch auf Weiterentwicklung, Support oder Verfügbarkeit des Downloads.</p>
+
+    <p><strong>3. Endgültige Löschung</strong></p>
+    <p>Mit SevenErase gelöschte Daten sind bestimmungsgemäß nicht wiederherstellbar, auch nicht durch den Anbieter. Der Nutzer ist allein dafür verantwortlich, vor dem Löschen die richtige Auswahl zu treffen und benötigte Daten zu sichern. Der Nutzer darf nur Daten löschen, über die er verfügungsberechtigt ist; gesetzliche Aufbewahrungspflichten sind vom Nutzer selbst zu beachten.</p>
+
+    <p><strong>4. Technische Grenzen</strong></p>
+    <p>Bei SSDs, USB-Sticks, Speicherkarten und Systemen mit Schattenkopien, Backups oder Cloud-Synchronisation kann nicht garantiert werden, dass sämtliche Kopien einer Datei erreicht werden. SevenErase ersetzt keine zertifizierte Datenträgervernichtung.</p>
+
+    <p><strong>5. Haftung</strong></p>
+    <p>Der Anbieter haftet, da die Software unentgeltlich überlassen wird, nur für Vorsatz und grobe Fahrlässigkeit sowie bei arglistig verschwiegenen Mängeln. Die Haftung bei Verletzung von Leben, Körper oder Gesundheit bleibt unberührt.</p>
+
+    <p><strong>6. Schlussbestimmungen</strong></p>
     <p>Sollte eine Bestimmung dieser Nutzungsbedingungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Es gilt deutsches Recht.</p>
   </div>
 </section>
