@@ -721,10 +721,24 @@
 
   /* ---------- SevenErase (kostenloses Zusatzprogramm) ---------- */
 
+  /* Eigene Farbwelt passend zum Programm SevenErase (Orange #E67E22
+     auf warmem Dunkelgrau). Die Variablen gelten nur innerhalb dieses
+     Abschnitts, der Rest der Seite bleibt SevenShield-Grün. */
   .erase {
+    --accent: #E67E22;
+    --accent-hover: #F0923A;
+    --accent-rgb: 230, 126, 34;
+    --surface: #2F2A26;
+    --line: #3A342F;
     padding: 88px 0;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid #2E3338;
   }
+
+  .erase .btn-primary { background: var(--accent); color: #1A1D1F; }
+  .erase .btn-primary:hover { background: var(--accent-hover); }
+  .erase :focus-visible { outline-color: var(--accent); }
+  .erase .hint { color: var(--text-faint); }
+  .erase .hint:hover { color: var(--accent); }
 
   .erase-card {
     background: var(--void);
@@ -745,7 +759,7 @@
     inset: auto auto -45% -15%;
     width: 320px;
     height: 320px;
-    background: radial-gradient(circle, rgba(46,204,113,0.10), transparent 70%);
+    background: radial-gradient(circle, rgba(var(--accent-rgb),0.12), transparent 70%);
     pointer-events: none;
   }
 
@@ -758,8 +772,8 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--accent);
-    border: 1px solid rgba(46,204,113,0.35);
-    background: rgba(46,204,113,0.08);
+    border: 1px solid rgba(var(--accent-rgb),0.35);
+    background: rgba(var(--accent-rgb),0.08);
     padding: 4px 11px;
     border-radius: 999px;
     margin-bottom: 18px;
@@ -879,8 +893,73 @@
     color: var(--text-faint);
   }
 
-  .erase-bridge a { color: var(--accent); text-decoration: none; }
+  .erase-bridge a { color: #2ECC71; text-decoration: none; }
   .erase-bridge a:hover { text-decoration: underline; }
+
+  /* SevenErase-Kurzanleitung */
+
+  .erase-guide {
+    margin-top: 28px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 32px 40px 34px;
+  }
+
+  .erase-guide h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 0 22px;
+  }
+
+  .erase-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    counter-reset: step;
+  }
+
+  .erase-steps li {
+    counter-increment: step;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  .erase-steps li::before {
+    content: counter(step, decimal-leading-zero);
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .erase-steps strong {
+    display: block;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .erase-extras {
+    margin: 26px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  .erase-extras p { margin: 0; }
+  .erase-extras strong { color: var(--text); font-weight: 500; }
 
   /* ---------- Footer ---------- */
 
@@ -961,6 +1040,8 @@
     .trust .wrap { grid-template-columns: 1fr; gap: 28px; }
     .audience-grid { grid-template-columns: repeat(2, 1fr); }
     .erase-card { grid-template-columns: 1fr; gap: 32px; }
+    .erase-steps { grid-template-columns: repeat(2, 1fr); }
+    .erase-extras { grid-template-columns: 1fr; }
     .status-card {
       grid-template-columns: 1fr;
       text-align: left;
@@ -973,6 +1054,8 @@
     .hero { padding: 56px 0 64px; }
     .status-card { padding: 28px 24px; }
     .erase-card { padding: 28px 22px; }
+    .erase-guide { padding: 26px 22px; }
+    .erase-steps { grid-template-columns: 1fr; }
     .brand svg { width: 30px; height: 37px; }
     .brand-name { font-size: 19px; }
   }
@@ -1148,6 +1231,31 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
     </div>
   </section>
 
+  <section class="status">
+    <div class="wrap">
+      <div class="status-card">
+        <div class="status-dot" aria-hidden="true"><span></span></div>
+        <div class="status-text">
+          <h3>SevenShield-Kurzanleitung</h3>
+          <p>In wenigen Schritten erklärt: Ordner mit SevenShield sperren, entsperren und den Wiederherstellungsschlüssel sicher aufbewahren.</p>
+        </div>
+        <a class="btn-primary" href="/SevenShield_Kurzanleitung.pdf" download="SevenShield_Kurzanleitung.pdf" data-force-download>Kurzanleitung (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="status">
+    <div class="wrap">
+      <div class="status-card">
+        <div class="status-dot" aria-hidden="true"><span></span></div>
+        <div class="status-text">
+          <h3>Aktuell in aktiver Entwicklung</h3>
+          <p>Der Verschlüsselungskern steht und ist getestet. Es gibt noch kein festes Veröffentlichungsdatum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="erase" id="sevenerase">
     <div class="wrap">
       <div class="erase-card">
@@ -1197,29 +1305,19 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
           <p class="erase-bridge">Genau dafür gibt es <a href="#top">SevenShield</a>: Was nie im Klartext gespeichert wurde, muss später auch nicht gründlich gelöscht werden.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="status">
-    <div class="wrap">
-      <div class="status-card">
-        <div class="status-dot" aria-hidden="true"><span></span></div>
-        <div class="status-text">
-          <h3>Kurzanleitung zum Download</h3>
-          <p>In wenigen Schritten erklärt: Ordner sperren, entsperren und den Wiederherstellungsschlüssel sicher aufbewahren.</p>
-        </div>
-        <a class="btn-primary" href="/SevenShield_Kurzanleitung.pdf" download="SevenShield_Kurzanleitung.pdf" data-force-download>Kurzanleitung (PDF)</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="status">
-    <div class="wrap">
-      <div class="status-card">
-        <div class="status-dot" aria-hidden="true"><span></span></div>
-        <div class="status-text">
-          <h3>Aktuell in aktiver Entwicklung</h3>
-          <p>Der Verschlüsselungskern steht und ist getestet. Es gibt noch kein festes Veröffentlichungsdatum.</p>
+      <div class="erase-guide" id="sevenerase-anleitung">
+        <h3>SevenErase-Kurzanleitung</h3>
+        <ol class="erase-steps">
+          <li><strong>Starten</strong>SevenErase.exe per Doppelklick öffnen. Eine Installation ist nicht nötig.</li>
+          <li><strong>Auswählen</strong>Dateien oder Ordner in die Liste ziehen oder über die Schaltflächen rechts daneben hinzufügen.</li>
+          <li><strong>Einstellen</strong>Ein Durchgang reicht bei heutigen Festplatten. Optional „Danach Freiraum wipen“ anhaken.</li>
+          <li><strong>Löschen</strong>Auf „Sicher löschen“ klicken. Der Fortschritt erscheint im Protokoll unten.</li>
+        </ol>
+        <div class="erase-extras">
+          <p><strong>Reiter „Freiraum wipen“:</strong> überschreibt den freien Speicherplatz eines Laufwerks, damit auch früher normal gelöschte Dateien nicht mehr wiederherstellbar sind.</p>
+          <p><strong>Papierkorb leeren + Freiraum wipen:</strong> erledigt beides in einem Schritt, zum Beispiel vor der Weitergabe eines PCs.</p>
+          <p><strong>Explorer-Rechtsklick:</strong> Mit dem Schalter unten links erscheint „Sicher löschen“ direkt im Kontextmenü des Windows-Explorers.</p>
         </div>
       </div>
     </div>
@@ -1233,7 +1331,7 @@ c34 23 115 82 180 131 485 368 764 737 848 1122 24 107 36 422 41 1035 l3 395
     <nav class="footer-links">
       <a href="mailto:t.drescher@sevenshield.de">Kontakt</a>
       <a href="#sevenerase">SevenErase</a>
-      <a href="/SevenShield_Kurzanleitung.pdf" download="SevenShield_Kurzanleitung.pdf" data-force-download>Kurzanleitung</a>
+      <a href="/SevenShield_Kurzanleitung.pdf" download="SevenShield_Kurzanleitung.pdf" data-force-download>Kurzanleitung SevenShield</a>
       <a href="#impressum">Impressum</a>
       <a href="#datenschutz">Datenschutz</a>
       <a href="#nutzungsbedingungen">Nutzungsbedingungen</a>
