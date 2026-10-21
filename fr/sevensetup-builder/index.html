@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Créer une Setup.exe sans script : SevenSetup Builder pour Windows</title>
+<meta name="description" content="Transformez un dossier de programme terminé en une seule Setup.exe avec mises à jour, désinstallation, logo et couleur. 14 jours d’essai, puis 99 € une seule fois. Pour Windows 10 et 11.">
+<link rel="canonical" href="https://sevenshield.de/fr/sevensetup-builder/">
+<link rel="alternate" hreflang="de" href="https://sevenshield.de/sevensetup-builder/">
+<link rel="alternate" hreflang="en" href="https://sevenshield.de/en/sevensetup-builder/">
+<link rel="alternate" hreflang="fr" href="https://sevenshield.de/fr/sevensetup-builder/">
+<link rel="alternate" hreflang="it" href="https://sevenshield.de/it/sevensetup-builder/">
+<link rel="alternate" hreflang="x-default" href="https://sevenshield.de/sevensetup-builder/">
+<!-- ENTWURF: noindex, bis der Download online ist. Dann diese Zeile durch
+     index, follow ersetzen, den Download-Link pruefen und die Seite in
+     sitemap.xml eintragen. -->
+<meta name="robots" content="noindex, nofollow">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sevenshield.de/fr/sevensetup-builder/">
+<meta property="og:title" content="Créer une Setup.exe sans script : SevenSetup Builder pour Windows">
+<meta property="og:description" content="Transformez un dossier de programme terminé en une seule Setup.exe avec mises à jour, désinstallation, logo et couleur. 14 jours d’essai, puis 99 € une seule fois. Pour Windows 10 et 11.">
+<meta property="og:image" content="https://sevenshield.de/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Créer une Setup.exe sans script : SevenSetup Builder pour Windows">
+<meta name="twitter:description" content="Transformez un dossier de programme terminé en une seule Setup.exe avec mises à jour, désinstallation, logo et couleur. 14 jours d’essai, puis 99 € une seule fois. Pour Windows 10 et 11.">
+<meta name="twitter:image" content="https://sevenshield.de/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SevenSetup Builder",
+  "alternateName": "SevenSetup Builder: Créer une Setup.exe sans script ",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "DeveloperApplication",
+  "applicationSubCategory": "Générateur d’installateurs, distribution de logiciels",
+  "description": "Programme Windows qui transforme un dossier de programme terminé en une seule Setup.exe, sans script et sans recompiler. Le setup installe, met à jour et désinstalle et fonctionne sans .NET installé. 14 jours d’essai, puis 99 € une seule fois.",
+  "url": "https://sevenshield.de/fr/sevensetup-builder/",
+  "inLanguage": "fr",
+  "isAccessibleForFree": false,
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Thomas Drescher"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "99",
+    "priceCurrency": "EUR"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu’est-ce que le SevenSetup Builder ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un programme Windows qui transforme un dossier de programme terminé en une seule Setup.exe. Le setup installe pour l’utilisateur connecté ou pour tous, crée des raccourcis, prend en charge les mises à jour et peut être supprimé via « Applications installées »."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mes clients ont-ils besoin de .NET ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. La Setup.exe créée est autonome et fonctionne sans .NET installé. Le Builder lui-même nécessite le runtime .NET 8 Desktop sur votre ordinateur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dois-je écrire des scripts ou recompiler mon programme ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Vous choisissez votre dossier de programme terminé et remplissez un court formulaire. Votre programme n’est pas modifié, le Builder place simplement vos fichiers dans le setup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment fonctionnent les mises à jour ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Créez le nouveau setup avec le même nom et une version supérieure. À l’exécution, il détecte l’installation existante, conserve le dossier et le type d’installation, ferme le programme en cours après confirmation et remplace les fichiers. Les fichiers de la version précédente qui n’existent plus sont supprimés."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte le SevenSetup Builder et combien de temps puis-je l’essayer ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vous pouvez l’essayer 14 jours à partir du premier démarrage avec toutes les fonctions. Ensuite, il coûte 99 € une seule fois (en tant que petite entreprise selon le § 19 UStG, sans TVA facturée) et est valable pour un ordinateur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment obtenir une licence ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cliquez sur « Commander une licence » dans le programme ou écrivez à support@sevenshield.de en indiquant l’identifiant de votre ordinateur. Vous recevez la facture et un fichier de licence (.lic) par e-mail et chargez le fichier dans le programme. Une licence SevenShield ou SevenErase ne s’applique pas au Builder."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que se passe-t-il à la fin de l’essai ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le démarrage, le chargement et l’enregistrement des informations restent possibles. Seul « Créer le setup » est bloqué jusqu’à l’installation d’un fichier de licence. Les setups déjà créés ne sont pas concernés."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je exécuter le setup sans interface ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, avec Setup.exe /silent. Il existe aussi les options /allusers, /dir=, /autostart, /nodesktop et /force. La valeur de retour est 0 en cas de succès."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Y a-t-il des limites ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Seul le 64 bits (win-x64) est pris en charge, le setup a un design sombre et la Setup.exe créée n’est pas signée, c’est pourquoi Windows peut afficher un avertissement au premier démarrage."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="icon" type="image/x-icon" href="/sevensetup_favicon.ico?v=1">
+<link rel="icon" type="image/png" sizes="16x16" href="/sevensetup_icon_16.png?v=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/sevensetup_icon_32.png?v=1">
+<link rel="icon" type="image/png" sizes="48x48" href="/sevensetup_icon_48.png?v=1">
+<link rel="icon" type="image/png" sizes="192x192" href="/sevensetup_icon_192.png?v=1">
+<link rel="apple-touch-icon" sizes="180x180" href="/sevensetup_apple-touch-icon.png?v=1">
+<style>
+  @font-face {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/manrope-600.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/manrope-700.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('/fonts/manrope-800.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/ibm-plex-sans-400.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/ibm-plex-sans-500.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/ibm-plex-sans-600.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/ibm-plex-mono-400.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/ibm-plex-mono-500.woff2') format('woff2');
+  }
+
+  :root {
+    --ink: #1A1D1F;
+    --void: #101214;
+    --surface: #21252A;
+    --surface-2: #262B31;
+    --line: #2E3338;
+    --accent: #2ECC71;
+    --accent-deep: #16A34A;
+    --text: #EDEFF1;
+    --text-muted: #8B9198;
+    --text-faint: #5B6167;
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  a { color: inherit; }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Top bar ---------- */
+
+  .topbar {
+    padding: 28px 0 0;
+  }
+
+  .topbar .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .brand svg {
+    display: block;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .brand-name {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 21px;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+
+  .brand-tagline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.01em;
+    color: var(--text-muted);
+  }
+
+  .topbar-cta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 9px 18px;
+    transition: border-color .15s ease, color .15s ease;
+    white-space: nowrap;
+  }
+
+  .topbar-cta:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ---------- Sprachumschalter ---------- */
+
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+  }
+
+  .lang-switch a,
+  .lang-switch span {
+    padding: 5px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: color .15s ease, background .15s ease;
+  }
+
+  .lang-switch a:hover {
+    color: var(--accent);
+    background: var(--surface);
+  }
+
+  .lang-switch span.active {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .lang-switch .divider {
+    color: var(--line);
+    padding: 0;
+  }
+
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .cta-short { display: none; }
+
+  @media (max-width: 640px) {
+    .topbar { padding-top: 20px; }
+    .topbar .wrap { padding: 0 16px; gap: 10px; }
+    .brand-tagline { display: none; }
+    .topbar-right { gap: 8px; }
+    .lang-switch { font-size: 11px; gap: 0; }
+    .lang-switch a, .lang-switch span { padding: 5px 5px; }
+    .lang-switch .divider { display: none; }
+    .topbar-cta { padding: 7px 12px; font-size: 12px; }
+    .cta-long { display: none; }
+    .cta-short { display: inline; }
+  }
+
+  @media (max-width: 380px) {
+    .brand { gap: 8px; }
+    .brand-name { font-size: 17px !important; }
+    .topbar-cta { padding: 7px 10px; }
+  }
+
+  /* Sehr schmale Geraete: Kontakt bleibt ueber die Fusszeile erreichbar. */
+  @media (max-width: 345px) {
+    .topbar-cta { display: none; }
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: 84px 0 96px;
+  }
+
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 22px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.15);
+  }
+
+  h1 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: clamp(34px, 4.6vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+  }
+
+  h1 .accent { color: var(--accent); }
+
+  .lede {
+    font-size: 17.5px;
+    color: var(--text-muted);
+    max-width: 46ch;
+    margin: 0 0 34px;
+  }
+
+  .hero-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 38px;
+  }
+
+  .fact {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 6px 11px;
+  }
+
+  .fact strong { color: var(--text); font-weight: 500; }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--accent);
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 14px 26px;
+    border-radius: 8px;
+    transition: background .15s ease, transform .15s ease;
+  }
+
+  .btn-primary:hover { background: #3EDB80; transform: translateY(-1px); }
+
+  .hint {
+    font-size: 13.5px;
+    color: var(--text-faint);
+  }
+
+  /* ---------- Signature: encryption visual ---------- */
+
+  .encrypt-panel {
+    background: var(--void);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 22px 18px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .encrypt-panel::before {
+    content: "";
+    position: absolute;
+    inset: -40% -20% auto auto;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, rgba(46,204,113,0.14), transparent 70%);
+    pointer-events: none;
+  }
+
+  .encrypt-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .encrypt-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    letter-spacing: 0.04em;
+  }
+
+  .encrypt-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    border: 1px solid rgba(46,204,113,0.35);
+    background: rgba(46,204,113,0.08);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+
+  .file-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    border-radius: 8px;
+    background: var(--surface);
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .file-row:last-child { margin-bottom: 0; }
+
+  .file-icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    opacity: 0.55;
+  }
+
+  .file-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex: 1;
+    transition: color .4s ease;
+  }
+
+  .file-row.is-locked .file-name {
+    color: var(--accent);
+  }
+
+  .lock-glyph {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity .3s ease, transform .3s ease;
+  }
+
+  .file-row.is-locked .lock-glyph {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .encrypt-footnote {
+    margin-top: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--text-faint);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---------- Trust strip ---------- */
+
+  .trust {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 44px 0;
+  }
+
+  .trust .wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+  }
+
+  .trust-item .mono-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .trust-item h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .trust-item p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  /* ---------- Audience ---------- */
+
+  /* ---------- Exchange ---------- */
+
+  .exchange {
+    padding: 88px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .exchange-tip {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 26px;
+    max-width: 56ch;
+  }
+
+  .exchange-tip .mono-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .exchange-tip p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  /* ---------- Audience ---------- */
+
+  .audience {
+    padding: 88px 0;
+  }
+
+  .section-head {
+    max-width: 56ch;
+    margin-bottom: 44px;
+  }
+
+  .section-head h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(26px, 3vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    margin: 0 0 14px;
+  }
+
+  .section-head p {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .audience-cell {
+    background: var(--surface);
+    padding: 26px 22px;
+  }
+
+  .audience-cell .mono-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .audience-cell h4 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15.5px;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+
+  .audience-cell p {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  /* ---------- Status ---------- */
+
+  .status {
+    padding: 0 0 96px;
+  }
+
+  .status-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 40px 40px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .status-dot {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(46,204,113,0.1);
+    border: 1px solid rgba(46,204,113,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .status-dot span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 5px rgba(46,204,113,0.18);
+  }
+
+  .status-text h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+
+  .status-text p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .status-card .btn-primary { flex-shrink: 0; }
+
+  /* ---------- SevenErase (kostenloses Zusatzprogramm) ---------- */
+
+  /* Eigene Farbwelt passend zum Programm SevenSetup Builder (Violett #9B7BFF
+     auf warmem Dunkelgrau). Die Variablen gelten nur innerhalb dieses
+     Abschnitts, der Rest der Seite bleibt SevenShield-Grün. */
+  .erase {
+    --accent: #9B7BFF;
+    --accent-hover: #B096FF;
+    --accent-rgb: 155, 123, 255;
+    --surface: #29272F;
+    --line: #38353F;
+    padding: 88px 0;
+    border-top: 1px solid #2E3338;
+  }
+
+  .erase .btn-primary { background: var(--accent); color: #1A1D1F; }
+  .erase .btn-primary:hover { background: var(--accent-hover); }
+  .erase :focus-visible { outline-color: var(--accent); }
+  .erase .hint { color: var(--text-faint); }
+  .erase .hint:hover { color: var(--accent); }
+
+  .erase-card {
+    background: var(--void);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 48px;
+    align-items: start;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .erase-card::before {
+    content: "";
+    position: absolute;
+    inset: auto auto -45% -15%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(var(--accent-rgb),0.12), transparent 70%);
+    pointer-events: none;
+  }
+
+  .erase-card > * { position: relative; z-index: 1; }
+
+  .free-badge {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(var(--accent-rgb),0.35);
+    background: rgba(var(--accent-rgb),0.08);
+    padding: 4px 11px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+
+  .erase h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(26px, 3vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    margin: 0 0 14px;
+  }
+
+  .erase-lede {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin: 0 0 26px;
+    max-width: 52ch;
+  }
+
+  .erase-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .erase-list li {
+    display: flex;
+    gap: 11px;
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .erase-list li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .erase-list strong { color: var(--text); font-weight: 500; }
+
+  .erase-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .erase-note {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin: 18px 0 0;
+    max-width: 52ch;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-faint);
+  }
+
+  .erase-note svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .erase-side {
+    display: grid;
+    gap: 14px;
+  }
+
+  .erase-spec {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+  }
+
+  .erase-spec .mono-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .erase-spec dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 16px;
+    font-size: 13.5px;
+  }
+
+  .erase-spec dt { color: var(--text-faint); }
+  .erase-spec dd { margin: 0; color: var(--text-muted); }
+
+  .erase-spec p {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  .erase-bridge {
+    font-size: 13.5px;
+    color: var(--text-faint);
+  }
+
+  .erase-bridge a { color: #2ECC71; text-decoration: none; }
+  .erase-bridge a:hover { text-decoration: underline; }
+
+  /* SevenErase-Kurzanleitung */
+
+  .erase-guide {
+    margin-top: 28px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 32px 40px 34px;
+  }
+
+  .erase-guide h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 0 22px;
+  }
+
+  .erase-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    counter-reset: step;
+  }
+
+  .erase-steps li {
+    counter-increment: step;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  .erase-steps li::before {
+    content: counter(step, decimal-leading-zero);
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .erase-steps strong {
+    display: block;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .erase-extras {
+    margin: 26px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  .erase-extras p { margin: 0; }
+  .erase-extras strong { color: var(--text); font-weight: 500; }
+
+  /* ---------- FAQ ---------- */
+
+  .faq {
+    padding: 0 0 96px;
+  }
+
+  .faq .section-head h2 { line-height: 1.2; }
+
+  .faq-list {
+    display: grid;
+    gap: 10px;
+    max-width: 820px;
+  }
+
+  .faq details {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+  }
+
+  .faq summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .faq summary::-webkit-details-marker { display: none; }
+
+  .faq summary::after {
+    content: "+";
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .faq details[open] summary::after { content: "\2212"; }
+
+  .faq details p {
+    margin: 12px 0 0;
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .erase h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(30px, 3.6vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+    margin: 0 0 16px;
+  }
+
+  /* Die ganze Unterseite nutzt die Farben des SevenSetup Builders. */
+  .erase-page {
+    --accent: #9B7BFF;
+    --accent-rgb: 155, 123, 255;
+  }
+
+  .erase-page .erase { border-top: 0; padding-top: 56px; }
+
+  .shield-cta {
+    padding: 0 0 96px;
+  }
+
+  .shield-cta .status-card { --accent: #2ECC71; }
+  .shield-cta .btn-primary { background: #2ECC71; }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 30px 0 44px;
+  }
+
+  footer .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .footer-links a:not(:last-child) {
+    margin-right: 22px;
+  }
+
+  .footer-links a {
+    font-size: 13.5px;
+    color: var(--text-faint);
+    text-decoration: none;
+  }
+
+  .footer-links a:hover { color: var(--text-muted); }
+
+  .footer-copy {
+    font-size: 13px;
+    color: var(--text-faint);
+  }
+
+  /* ---------- Impressum placeholder ---------- */
+
+  #impressum, #datenschutz, #nutzungsbedingungen, #nutzungsbedingungen-sevenerase {
+    display: none;
+    padding: 60px 0 96px;
+  }
+
+  #impressum:target, #datenschutz:target, #nutzungsbedingungen:target, #nutzungsbedingungen-sevenerase:target { display: block; }
+
+  .legal-placeholder {
+    background: var(--surface);
+    border: 1px dashed rgba(46,204,113,0.4);
+    border-radius: 12px;
+    padding: 28px 30px;
+  }
+
+  .legal-placeholder h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    margin: 0 0 12px;
+  }
+
+  .legal-placeholder p {
+    color: var(--text-muted);
+    font-size: 14.5px;
+    margin: 0 0 10px;
+  }
+
+  .legal-placeholder .todo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--accent);
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 860px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .trust .wrap { grid-template-columns: 1fr; gap: 28px; }
+    .audience-grid { grid-template-columns: repeat(2, 1fr); }
+    .erase-card { grid-template-columns: 1fr; gap: 32px; }
+    .erase-steps { grid-template-columns: repeat(2, 1fr); }
+    .erase-extras { grid-template-columns: 1fr; }
+    .status-card {
+      grid-template-columns: 1fr;
+      text-align: left;
+      justify-items: start;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .audience-grid { grid-template-columns: 1fr; }
+    .hero { padding: 56px 0 64px; }
+    .status-card { padding: 28px 24px; }
+    .erase-card { padding: 28px 22px; }
+    .erase-guide { padding: 26px 22px; }
+    .erase-steps { grid-template-columns: 1fr; }
+    .brand svg { width: 32px; height: 32px; }
+    .brand-name { font-size: 19px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/fr/">
+      <svg width="40" height="40" viewBox="0 0 99.6 100.0" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="brandShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#16A34A"/>
+            <stop offset="100%" stop-color="#2ECC71"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#brandShieldGrad)" fill-rule="evenodd" d="M34.2 23.8 32.9 25.9 32.2 27.9 31.9 30.1 32.1 32.7 32.8 35.2 33.7 37.1 34.9 38.8 36.9 40.6 39.1 41.8 40.9 42.4 43.0 42.8 45.2 42.8 47.1 42.5 49.2 41.8 51.3 40.5 52.6 39.4 54.5 40.9 56.6 42.0 59.0 42.7 61.1 42.8 61.1 35.6 60.3 35.5 59.4 35.2 58.1 34.5 57.3 33.8 56.7 32.8 56.4 31.8 56.2 30.8 56.3 26.1 61.1 26.0 61.1 18.8 56.4 18.8 56.2 18.6 56.2 12.4 49.0 12.3 49.0 18.6 48.9 18.8 46.3 18.8 46.3 26.1 49.0 26.1 49.0 30.7 48.8 32.1 48.3 33.1 47.9 33.8 46.6 34.9 45.9 35.2 44.8 35.5 43.4 35.5 41.9 35.1 41.1 34.5 40.1 33.4 39.5 32.4 39.2 31.3 39.2 30.2 39.4 29.4 40.2 27.9 41.1 27.0 41.7 26.6 42.8 26.2 44.1 26.0 44.1 18.8 42.4 18.8 40.6 19.2 39.2 19.7 38.0 20.3 36.1 21.7 34.9 22.9ZM0.1 0.0 0.0 6.8 0.4 16.9 0.9 26.3 8.2 25.9 7.6 15.4 7.4 8.6 7.4 7.3 92.1 7.3 92.1 11.9 41.1 72.2 36.6 77.2 48.8 84.2 48.6 74.7 91.5 24.0 91.6 24.2 91.2 30.2 90.6 37.1 89.8 42.9 88.9 48.1 87.7 53.5 86.7 56.9 85.2 61.1 83.2 65.2 80.7 69.3 78.1 72.6 75.1 75.7 71.4 78.9 68.3 81.2 62.8 84.7 56.9 87.9 49.1 91.8 43.4 88.8 38.9 86.3 35.1 84.0 31.9 81.9 29.1 79.8 25.4 76.6 22.7 73.9 20.7 71.6 19.0 69.4 16.6 65.4 14.6 61.2 12.7 55.8 11.5 51.1 10.4 45.2 9.5 38.6 9.0 32.6 8.8 32.5 1.7 33.1 2.2 38.9 2.8 43.6 3.6 49.1 4.6 53.6 5.8 58.1 7.2 62.6 8.6 65.9 10.3 69.2 11.9 71.9 14.4 75.4 16.9 78.5 19.9 81.6 22.8 84.1 26.4 86.9 30.4 89.7 35.2 92.6 41.5 96.1 49.1 99.9 61.1 94.0 65.3 91.7 68.7 89.7 72.5 87.2 76.1 84.5 78.9 82.2 81.6 79.6 84.1 76.8 86.4 73.9 88.4 70.9 90.0 68.1 91.8 64.3 93.2 60.4 94.5 56.3 95.6 52.1 96.6 46.6 97.4 41.6 98.0 36.2 98.5 30.4 98.9 23.2 99.5 7.9 99.5 0.0Z"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">SevenShield</span>
+        <span class="brand-tagline">Vos données. Vos dossiers. SevenShield. Votre sécurité.</span>
+      </span>
+    </a>
+    <div class="topbar-right">
+      <nav class="lang-switch" aria-label="Sprache wechseln">
+      <a href="https://sevenshield.de/sevensetup-builder/">DE</a>
+      <span class="divider">/</span>
+      <a href="https://sevenshield.de/en/sevensetup-builder/">EN</a>
+      <span class="divider">/</span>
+      <span class="active">FR</span>
+      <span class="divider">/</span>
+      <a href="https://sevenshield.de/it/sevensetup-builder/">IT</a>
+      </nav>
+      <a class="topbar-cta" href="mailto:t.drescher@sevenshield.de?subject=SevenShield%20-%20Interet"><span class="cta-long">Nous contacter</span><span class="cta-short">Contact</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top" class="erase-page">
+
+  <section class="erase" id="sevensetup-builder">
+    <div class="wrap">
+      <div class="erase-card">
+        <div>
+          <span class="free-badge">14 jours d’essai</span>
+          <h1>Transformer votre dossier de programme en Setup.exe : SevenSetup Builder</h1>
+          <p class="erase-lede">Quiconque distribue un logiciel a besoin d’un setup qui installe, met à jour et supprime proprement. Le SevenSetup Builder le crée à partir de votre dossier de programme terminé, sans script et sans recompiler. Le setup fonctionne aussi sur des ordinateurs sans .NET installé.</p>
+
+          <ul class="erase-list">
+            <li><span><strong>Une seule Setup.exe</strong> à partir de votre dossier de programme, en quelques étapes et sans langage de script</span></li>
+            <li><span><strong>Informations préremplies :</strong> nom, version et éditeur sont repris de votre exe et peuvent être modifiés</span></li>
+            <li><span><strong>Votre propre apparence :</strong> logo, texte de licence et couleur d’accentuation, pour que le setup s’accorde à votre programme</span></li>
+            <li><span><strong>Installation</strong> pour l’utilisateur connecté ou pour tous les utilisateurs, au choix avec raccourci sur le bureau et démarrage automatique</span></li>
+            <li><span><strong>Mises à jour et désinstallation :</strong> le même nom avec une version supérieure met à jour, la désinstallation se fait via « Applications installées »</span></li>
+            <li><span><strong>Installation silencieuse</strong> en ligne de commande pour le déploiement en entreprise</span></li>
+          </ul>
+
+          <div class="erase-actions">
+            <!-- ENTWURF: Download-Datei als Asset an ein GitHub Release haengen
+                 (nicht ins Pages-Repository, Dateien ueber 100 MB lehnt GitHub ab).
+                 Der Builder besteht aus SevenSetupBuilder.exe und dem Ordner "stub",
+                 beides gehoert zusammen, am einfachsten als ZIP. Name hier anpassen. -->
+            <a class="btn-primary" href="https://github.com/hagenhofweg13-hub/sevenshield-landingpage/releases/latest/download/SevenSetupBuilder.zip">Télécharger SevenSetup Builder</a>
+            <a class="hint" href="/fr/#nutzungsbedingungen">Conditions d’utilisation</a>
+          </div>
+
+          <p class="erase-note">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="#8B9198" stroke-width="1.3"/><path d="M8 7v4.2M8 4.8v.1" stroke="#8B9198" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Le Builder nécessite le runtime .NET 8 Desktop sur votre ordinateur, les setups créés n’en ont pas besoin. Au premier démarrage, Windows peut afficher un avertissement de sécurité car les fichiers ne sont pas signés. Démarrez-les via « Informations complémentaires » puis « Exécuter quand même ».</span>
+          </p>
+        </div>
+
+        <div class="erase-side">
+          <div class="erase-spec">
+            <span class="mono-label">Caractéristiques techniques</span>
+            <dl>
+              <dt>Système</dt><dd>Windows 10 / 11, 64 bits</dd>
+              <dt>Prérequis</dt><dd>Builder : runtime .NET 8 Desktop. Setups créés : aucun</dd>
+              <dt>Taille</dt><dd>setup créé : environ 70 Mo de base, plus les fichiers de votre programme</dd>
+              <dt>Prix</dt><dd>14 jours d’essai avec toutes les fonctions, puis 99 € une seule fois pour un ordinateur (en tant que petite entreprise selon le § 19 UStG, sans TVA facturée)</dd>
+            </dl>
+          </div>
+          <div class="erase-spec">
+            <span class="mono-label">Bon à savoir</span>
+            <p>Seul le 64 bits (win-x64) est pris en charge, et le setup a un design sombre. L’icône du fichier de setup dans l’Explorateur est celle de SevenSetup, tandis que « Applications installées » et les raccourcis affichent votre logo.</p>
+          </div>
+          <p class="erase-bridge">Votre programme reste inchangé : rien n’est recompilé, le Builder place simplement vos fichiers dans le setup.</p>
+        </div>
+      </div>
+
+      <div class="erase-guide" id="sevensetup-builder-guide">
+        <h3>Guide rapide SevenSetup</h3>
+        <ol class="erase-steps">
+          <li><strong>Démarrer</strong>Ouvrir SevenSetupBuilder.exe.</li>
+          <li><strong>Choisir le dossier</strong>Choisir le dossier de programme terminé, par exemple le dossier publish, et le programme principal dans la liste.</li>
+          <li><strong>Vérifier les informations</strong>Contrôler le nom, la version et l’éditeur. Au choix, sélectionner un logo, un texte de licence et une couleur d’accentuation.</li>
+          <li><strong>Créer</strong>Définir ce que le setup doit proposer, puis cliquer sur « Créer seulement » ou « Créer et installer ».</li>
+        </ol>
+        <div class="erase-extras">
+          <p><strong>Mises à jour :</strong> L’identifiant interne est formé à partir du nom. Pour une mise à jour, créez le nouveau setup avec le même nom et une version supérieure. Le setup conserve le dossier et le type d’installation, ferme le programme en cours après confirmation et supprime les fichiers de la version précédente qui n’existent plus. Il avertit si une version plus récente est déjà installée.</p>
+          <p><strong>Logo et couleur dans le programme :</strong> Avec l’option « Utiliser le logo aussi pour les raccourcis et le programme », le setup place le logo et l’icône à côté de l’exe. Les raccourcis et l’entrée dans « Applications installées » utilisent cette icône. Votre programme peut en reprendre le logo et la couleur d’accentuation s’il le prend en charge.</p>
+          <p><strong>Ligne de commande :</strong> Setup.exe /silent [/allusers] [/dir=C:\Chemin] [/autostart] [/nodesktop] [/force]. La valeur de retour est 0 en cas de succès.</p>
+          <p><strong>Essai et licence :</strong> 14 jours à partir du premier démarrage avec toutes les fonctions. Ensuite, le démarrage, le chargement et l’enregistrement des informations restent possibles, seul « Créer le setup » est bloqué jusqu’à l’installation d’un fichier de licence (.lic). Les setups déjà créés ne sont pas concernés. « Commander une licence » dans le programme ouvre un e-mail avec l’identifiant de votre ordinateur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Questions fréquentes sur le SevenSetup Builder</h2>
+        <p>Ce que fait le programme, ce qu’il coûte et comment fonctionne la licence.</p>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Qu’est-ce que le SevenSetup Builder ?</summary>
+          <p>Un programme Windows qui transforme un dossier de programme terminé en une seule Setup.exe. Le setup installe pour l’utilisateur connecté ou pour tous, crée des raccourcis, prend en charge les mises à jour et peut être supprimé via « Applications installées ».</p>
+        </details>
+        <details>
+          <summary>Mes clients ont-ils besoin de .NET ?</summary>
+          <p>Non. La Setup.exe créée est autonome et fonctionne sans .NET installé. Le Builder lui-même nécessite le runtime .NET 8 Desktop sur votre ordinateur.</p>
+        </details>
+        <details>
+          <summary>Dois-je écrire des scripts ou recompiler mon programme ?</summary>
+          <p>Non. Vous choisissez votre dossier de programme terminé et remplissez un court formulaire. Votre programme n’est pas modifié, le Builder place simplement vos fichiers dans le setup.</p>
+        </details>
+        <details>
+          <summary>Comment fonctionnent les mises à jour ?</summary>
+          <p>Créez le nouveau setup avec le même nom et une version supérieure. À l’exécution, il détecte l’installation existante, conserve le dossier et le type d’installation, ferme le programme en cours après confirmation et remplace les fichiers. Les fichiers de la version précédente qui n’existent plus sont supprimés.</p>
+        </details>
+        <details>
+          <summary>Combien coûte le SevenSetup Builder et combien de temps puis-je l’essayer ?</summary>
+          <p>Vous pouvez l’essayer 14 jours à partir du premier démarrage avec toutes les fonctions. Ensuite, il coûte 99 € une seule fois (en tant que petite entreprise selon le § 19 UStG, sans TVA facturée) et est valable pour un ordinateur.</p>
+        </details>
+        <details>
+          <summary>Comment obtenir une licence ?</summary>
+          <p>Cliquez sur « Commander une licence » dans le programme ou écrivez à <a href="mailto:support@sevenshield.de?subject=Demande%20de%20licence%20SevenSetup%20Builder">support@sevenshield.de</a> en indiquant l’identifiant de votre ordinateur. Vous recevez la facture et un fichier de licence (.lic) par e-mail et chargez le fichier dans le programme. Une licence SevenShield ou SevenErase ne s’applique pas au Builder.</p>
+        </details>
+        <details>
+          <summary>Que se passe-t-il à la fin de l’essai ?</summary>
+          <p>Le démarrage, le chargement et l’enregistrement des informations restent possibles. Seul « Créer le setup » est bloqué jusqu’à l’installation d’un fichier de licence. Les setups déjà créés ne sont pas concernés.</p>
+        </details>
+        <details>
+          <summary>Puis-je exécuter le setup sans interface ?</summary>
+          <p>Oui, avec <code>Setup.exe /silent</code>. Il existe aussi les options /allusers, /dir=, /autostart, /nodesktop et /force. La valeur de retour est 0 en cas de succès.</p>
+        </details>
+        <details>
+          <summary>Y a-t-il des limites ?</summary>
+          <p>Seul le 64 bits (win-x64) est pris en charge, le setup a un design sombre et la Setup.exe créée n’est pas signée, c’est pourquoi Windows peut afficher un avertissement au premier démarrage.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="shield-cta">
+    <div class="wrap">
+      <div class="status-card">
+        <div class="status-dot" aria-hidden="true"><span></span></div>
+        <div class="status-text">
+          <h3>Transmettre logiciels et licences en toute sécurité</h3>
+          <p>Avec SevenShield, vous chiffrez des dossiers et les envoyez protégés, par exemple des paquets d’installation ou des fichiers de licence à vos clients.</p>
+        </div>
+        <a class="btn-primary" href="/fr/">Découvrir SevenShield</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="footer-copy">© 2026 SevenShield</span>
+    <nav class="footer-links">
+      <a href="mailto:t.drescher@sevenshield.de">Contact</a>
+      <a href="/fr/">SevenShield</a>
+      <a href="/SevenShield_QuickGuide_fr.pdf" download="SevenShield_QuickGuide_fr.pdf" data-force-download>Guide rapide SevenShield</a>
+      <a href="/fr/#impressum">Mentions légales</a>
+      <a href="/fr/#datenschutz">Confidentialité</a>
+      <a href="/fr/#nutzungsbedingungen">Conditions d'utilisation</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
