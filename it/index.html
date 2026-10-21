@@ -636,6 +636,9 @@
     display: block;
   }
 
+  .exchange-tip a { color: var(--accent); }
+  .exchange-tip + .exchange-tip { margin-top: 12px; }
+
   .exchange-tip p {
     font-size: 14.5px;
     color: var(--text-muted);
@@ -1143,6 +1146,10 @@
       <div class="exchange-tip">
         <span class="mono-label">Importante per l'invio</span>
         <p>Comunica la password tramite un canale diverso da quello del file stesso, ad esempio per telefono invece che nella stessa email. Altrimenti la crittografia perde il suo scopo.</p>
+      </div>
+      <div class="exchange-tip">
+        <span class="mono-label">Leggi sul telefono</span>
+        <p>Il destinatario non deve installare nulla. Apri il file nel browser, inserisci la password, fatto: <a href="https://sevenshield.de/oeffnen/?lang=it">sevenshield.de/oeffnen</a>. Tutto avviene sul dispositivo, nulla viene caricato.</p>
       </div>
     </div>
   </section>
