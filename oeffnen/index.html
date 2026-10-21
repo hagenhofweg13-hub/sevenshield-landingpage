@@ -120,6 +120,7 @@
     <div class="card hidden" id="attCard">
       <span class="caption" data-t="attCaption"></span>
       <div id="attList"></div>
+      <p class="note hidden" id="saveHint"></p>
     </div>
     <div class="actions">
       <button type="button" class="btn" id="close" data-t="close"></button>
@@ -407,6 +408,9 @@ var SevenCore = (function () {
       msgCaption: 'Nachricht', attCaption: 'Anhänge', save: 'Speichern', close: 'Schließen und löschen',
       privacy: 'Das Passwort hat Ihnen der Absender getrennt von der E-Mail mitgeteilt.',
       more: 'Mehr zu SevenShield',
+      saved_ios: 'Gespeichert. Am iPhone finden Sie die Datei so: Tippen Sie in der Adressleiste auf den Pfeil und dann auf Downloads, oder öffnen Sie die App Dateien und den Ordner Downloads.',
+      saved_android: 'Gespeichert. Am Android-Handy finden Sie die Datei in der Benachrichtigung oben oder in der App Dateien im Ordner Downloads.',
+      saved_other: 'Gespeichert. Sie finden die Datei im Ordner Downloads.',
       e_password: 'Das Passwort stimmt nicht.',
       e_format: 'Das ist keine SevenShield-Datei.',
       e_damaged: 'Die Datei ist beschädigt oder wurde verändert.',
@@ -424,6 +428,9 @@ var SevenCore = (function () {
       msgCaption: 'Message', attCaption: 'Attachments', save: 'Save', close: 'Close and delete',
       privacy: 'The sender gave you the password separately from the email.',
       more: 'More about SevenShield',
+      saved_ios: 'Saved. On iPhone, tap the arrow in the address bar and then Downloads, or open the Files app and the Downloads folder.',
+      saved_android: 'Saved. On Android, open the notification at the top or the Files app and its Downloads folder.',
+      saved_other: 'Saved. You will find the file in your Downloads folder.',
       e_password: 'The password is not correct.',
       e_format: 'This is not a SevenShield file.',
       e_damaged: 'The file is damaged or has been altered.',
@@ -441,6 +448,9 @@ var SevenCore = (function () {
       msgCaption: 'Message', attCaption: 'Pièces jointes', save: 'Enregistrer', close: 'Fermer et effacer',
       privacy: 'L’expéditeur vous a communiqué le mot de passe séparément de l’e-mail.',
       more: 'En savoir plus sur SevenShield',
+      saved_ios: 'Enregistré. Sur iPhone, touchez la flèche dans la barre d\'adresse puis Téléchargements, ou ouvrez l\'app Fichiers et le dossier Téléchargements.',
+      saved_android: 'Enregistré. Sur Android, ouvrez la notification en haut ou l\'app Fichiers, dossier Téléchargements.',
+      saved_other: 'Enregistré. Le fichier se trouve dans le dossier Téléchargements.',
       e_password: 'Le mot de passe est incorrect.',
       e_format: 'Ce n’est pas un fichier SevenShield.',
       e_damaged: 'Le fichier est endommagé ou a été modifié.',
@@ -458,6 +468,9 @@ var SevenCore = (function () {
       msgCaption: 'Messaggio', attCaption: 'Allegati', save: 'Salva', close: 'Chiudi ed elimina',
       privacy: 'Il mittente ti ha comunicato la password separatamente dall’e-mail.',
       more: 'Scopri di più su SevenShield',
+      saved_ios: 'Salvato. Su iPhone tocchi la freccia nella barra degli indirizzi e poi Download, oppure apra l\'app File e la cartella Download.',
+      saved_android: 'Salvato. Su Android apra la notifica in alto oppure l\'app File, cartella Download.',
+      saved_other: 'Salvato. Trova il file nella cartella Download.',
       e_password: 'La password non è corretta.',
       e_format: 'Questo non è un file SevenShield.',
       e_damaged: 'Il file è danneggiato o è stato modificato.',
@@ -520,6 +533,7 @@ var SevenCore = (function () {
 
   function renderResult() {
     $('msgText').textContent = current.text;
+    $('saveHint').className = 'note hidden';
     var list = $('attList');
     list.textContent = '';
     $('attCard').className = 'card' + (current.attachments.length ? '' : ' hidden');
@@ -542,6 +556,11 @@ var SevenCore = (function () {
     var l = document.createElement('a');
     l.href = url; l.download = a.name; l.style.display = 'none';
     document.body.appendChild(l); l.click(); document.body.removeChild(l);
+    var ua = navigator.userAgent || '';
+    var ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var h = $('saveHint');
+    h.textContent = t(ios ? 'saved_ios' : (/Android/.test(ua) ? 'saved_android' : 'saved_other'));
+    h.className = 'note';
   }
 
   function wipe() {
@@ -550,6 +569,7 @@ var SevenCore = (function () {
     urls.forEach(function (u) { URL.revokeObjectURL(u); });
     urls = [];
     $('msgText').textContent = ''; $('attList').textContent = '';
+    $('saveHint').className = 'note hidden'; $('saveHint').textContent = '';
     if (fileData) fileData.fill(0);
     fileData = null;
     $('pw').value = ''; $('pw').type = 'password'; $('file').value = '';
