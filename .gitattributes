@@ -61,3 +61,6 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+# Offline-Variante: Bytes muessen exakt dem SHA-256 auf der Webseite entsprechen, keine Zeilenenden-Umwandlung
+oeffnen/SevenShield-Oeffnen-Offline.html -text

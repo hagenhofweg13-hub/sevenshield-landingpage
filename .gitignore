@@ -368,6 +368,14 @@ FodyWeavers.xsd
 *.lic
 private.key
 github-recovery-codes*
+*recovery*
+*.pfx
+*.p12
+*.env
+*secret*
+*token*
+*passwor*
+*zugang*
 
 # Hilfsdateien, die nicht auf die Internetseite gehoeren
 deploy.bat

@@ -66,6 +66,13 @@
   .note { color: var(--text-muted); font-size: 14px; margin-top: 22px; }
   .note a { color: var(--accent); }
   .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+/*TRUST-CSS-BEGIN*/
+  .trust { margin-top: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 0 16px; }
+  .trust summary { cursor: pointer; padding: 14px 0; font-weight: 600; }
+  .trust p { color: var(--text-muted); font-size: 14px; margin: 0 0 12px; }
+  .trust code { display: block; overflow-wrap: anywhere; word-break: break-all; font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: 13px; color: var(--text); background: var(--void); border: 1px solid var(--line); border-radius: 6px; padding: 8px; margin: 0 0 12px; user-select: all; }
+  .trust a.btn { display: inline-block; text-decoration: none; }
+/*TRUST-CSS-END*/
 </style>
 </head>
 <body>
@@ -128,6 +135,17 @@
   </section>
 
   <p class="note"><span data-t="privacy"></span> <a href="../" data-t="more"></a></p>
+<!--TRUST-BEGIN-->
+  <details class="trust" id="trust">
+    <summary data-t="trSummary"></summary>
+    <p data-t="trLocal"></p>
+    <p data-t="trCsp"></p>
+    <p><a class="btn btn-small" href="SevenShield-Oeffnen-Offline.html" download data-t="trDownload"></a></p>
+    <p data-t="trHashLabel"></p>
+    <code id="trHash">0b2ce5d7ab14d454815cda22127d9061032dc23754e038e996cea51b2549a26d</code>
+    <p data-t="trVerify"></p>
+  </details>
+<!--TRUST-END-->
 </div>
 </main>
 
@@ -418,6 +436,15 @@ var SevenCore = (function () {
       e_notmessage: 'Diese Datei ist keine Nachricht. Bitte öffnen Sie sie mit SevenShield für Windows.',
       e_nocrypto: 'Dieser Browser unterstützt die Entschlüsselung nicht. Bitte einen aktuellen Browser verwenden.',
       e_other: 'Das Öffnen ist fehlgeschlagen.'
+      /*TRUST-T-BEGIN-de*/
+      ,trSummary: 'Warum Sie dieser Seite vertrauen können',
+        trLocal: 'Diese Seite entschlüsselt nur in Ihrem Browser. Die Datei und das Passwort verlassen Ihr Gerät nicht, es gibt keinen Server, der sie empfängt.',
+        trCsp: 'Das setzt Ihr Browser durch: Die Sicherheitsrichtlinie dieser Seite untersagt ihr jede Verbindung ins Internet. Wer ganz sicher gehen möchte, nutzt die Offline-Variante. Sie läuft ohne Internet und lässt sich über ihre Prüfsumme prüfen.',
+        trDownload: 'Offline-Variante herunterladen',
+        trHashLabel: 'Prüfsumme (SHA-256) der Offline-Variante:',
+        trVerify: 'So prüfen Sie die heruntergeladene Datei. Windows: certutil -hashfile Datei SHA256. Mac: shasum -a 256 Datei. Beide Werte müssen übereinstimmen.',
+        trOfflineNote: 'Sie verwenden die Offline-Variante. Sie braucht keine Internetverbindung. Die Prüfsumme dieser Datei steht auf sevenshield.de/oeffnen. So prüfen Sie sie. Windows: certutil -hashfile Datei SHA256. Mac: shasum -a 256 Datei.'
+      /*TRUST-T-END-de*/
     },
     en: {
       title: 'Open message',
@@ -438,6 +465,15 @@ var SevenCore = (function () {
       e_notmessage: 'This file is not a message. Please open it with SevenShield for Windows.',
       e_nocrypto: 'This browser does not support decryption. Please use a current browser.',
       e_other: 'Opening failed.'
+      /*TRUST-T-BEGIN-en*/
+      ,trSummary: 'Why you can trust this page',
+        trLocal: 'This page decrypts only in your browser. The file and the password never leave your device, and there is no server that receives them.',
+        trCsp: 'Your browser enforces this: the security policy of this page forbids any connection to the internet. If you want to be completely sure, use the offline version. It runs without internet and can be verified with its checksum.',
+        trDownload: 'Download offline version',
+        trHashLabel: 'Checksum (SHA-256) of the offline version:',
+        trVerify: 'To check the downloaded file. Windows: certutil -hashfile file SHA256. Mac: shasum -a 256 file. Both values must match.',
+        trOfflineNote: 'You are using the offline version. It needs no internet connection. The checksum of this file is published at sevenshield.de/oeffnen. To check it. Windows: certutil -hashfile file SHA256. Mac: shasum -a 256 file.'
+      /*TRUST-T-END-en*/
     },
     fr: {
       title: 'Ouvrir un message',
@@ -458,6 +494,15 @@ var SevenCore = (function () {
       e_notmessage: 'Ce fichier n’est pas un message. Ouvrez-le avec SevenShield pour Windows.',
       e_nocrypto: 'Ce navigateur ne prend pas en charge le déchiffrement. Utilisez un navigateur récent.',
       e_other: 'L’ouverture a échoué.'
+      /*TRUST-T-BEGIN-fr*/
+      ,trSummary: 'Pourquoi vous pouvez faire confiance à cette page',
+        trLocal: 'Cette page déchiffre uniquement dans votre navigateur. Le fichier et le mot de passe ne quittent pas votre appareil, aucun serveur ne les reçoit.',
+        trCsp: 'Votre navigateur l’impose : la politique de sécurité de cette page lui interdit toute connexion à Internet. Pour une certitude totale, utilisez la version hors ligne. Elle fonctionne sans Internet et se vérifie grâce à sa somme de contrôle.',
+        trDownload: 'Télécharger la version hors ligne',
+        trHashLabel: 'Somme de contrôle (SHA-256) de la version hors ligne :',
+        trVerify: 'Pour vérifier le fichier téléchargé. Windows : certutil -hashfile fichier SHA256. Mac : shasum -a 256 fichier. Les deux valeurs doivent être identiques.',
+        trOfflineNote: 'Vous utilisez la version hors ligne. Elle ne nécessite aucune connexion Internet. La somme de contrôle de ce fichier est publiée sur sevenshield.de/oeffnen. Pour la vérifier. Windows : certutil -hashfile fichier SHA256. Mac : shasum -a 256 fichier.'
+      /*TRUST-T-END-fr*/
     },
     it: {
       title: 'Apri messaggio',
@@ -478,6 +523,15 @@ var SevenCore = (function () {
       e_notmessage: 'Questo file non è un messaggio. Aprilo con SevenShield per Windows.',
       e_nocrypto: 'Questo browser non supporta la decrittografia. Usa un browser aggiornato.',
       e_other: 'Apertura non riuscita.'
+      /*TRUST-T-BEGIN-it*/
+      ,trSummary: 'Perché puoi fidarti di questa pagina',
+        trLocal: 'Questa pagina decifra solo nel tuo browser. Il file e la password non lasciano il tuo dispositivo e nessun server li riceve.',
+        trCsp: 'Lo impone il browser: la politica di sicurezza di questa pagina le vieta qualsiasi connessione a Internet. Per la massima sicurezza usa la versione offline. Funziona senza Internet e si verifica con il suo checksum.',
+        trDownload: 'Scarica la versione offline',
+        trHashLabel: 'Checksum (SHA-256) della versione offline:',
+        trVerify: 'Per verificare il file scaricato. Windows: certutil -hashfile file SHA256. Mac: shasum -a 256 file. I due valori devono coincidere.',
+        trOfflineNote: 'Stai usando la versione offline. Non richiede una connessione a Internet. Il checksum di questo file è pubblicato su sevenshield.de/oeffnen. Per verificarlo. Windows: certutil -hashfile file SHA256. Mac: shasum -a 256 file.'
+      /*TRUST-T-END-it*/
     }
   };
 
