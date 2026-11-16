@@ -35,7 +35,7 @@
   "operatingSystem": "Windows 10, Windows 11",
   "applicationCategory": "SecurityApplication",
   "applicationSubCategory": "Secure deletion, data destruction",
-  "description": "Windows program for securely and permanently deleting files and folders, free of charge. Folders can be compared for free. The deletion report as a PDF and synchronizing or mirroring folders require a license. Overwrites data before deletion and wipes free disk space. No installation, no data transfer.",
+  "description": "Windows program for securely and permanently deleting files and folders, free of charge. Folders can be compared for free. The deletion report as a PDF, cleaning traces and synchronizing or mirroring folders require a license. Overwrites data before deletion and wipes free disk space. No installation, no data transfer.",
   "url": "https://sevenshield.de/en/sevenerase/",
   "downloadUrl": "https://github.com/hagenhofweg13-hub/sevenshield-landingpage/releases/latest/download/SevenErase.exe",
   "softwareVersion": "1.2.0",
@@ -96,7 +96,15 @@
       "name": "What do metadata in documents and photos reveal?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Office files and PDFs often store details such as the author, company name, editing times or earlier file names without you noticing, and photos also store camera data and sometimes the location. The “Metadaten” tab in SevenErase removes these details before you share a file."
+        "text": "Office files and PDFs often store details such as the author, company name, editing times or earlier file names without you noticing, and photos also store camera data and sometimes the location. The “Metadata” tab in SevenErase removes these details before you share a file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I remove temp files, browser history and other traces from my PC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the “Traces” tab of SevenErase you choose the categories, for example temporary files, recent-file lists, and the cache and history of Edge, Chrome and Firefox. “Analyze” shows beforehand how many files and how much space are affected. When cleaning, the files are overwritten and deleted, optionally followed by a free space wipe so that no remnants stay on the drive. Documents, bookmarks and saved passwords are not touched. Cleaning is a licensed feature, analyzing is free."
       }
     },
     {
@@ -104,12 +112,12 @@
       "name": "Is SevenErase really free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, for deleting files and folders and wiping free disk space: free, with no ads, no sign-up and no installation. Only the deletion report as a PDF (with export for quality management systems) requires a SevenShield or SevenErase license. SevenErase does not transfer any data."
+        "text": "Yes, for deleting files and folders and wiping free disk space: free, with no ads, no sign-up and no installation. A SevenShield or SevenErase license is required only for the deletion report as a PDF (with export for quality management systems), cleaning traces, and synchronizing or mirroring folders. SevenErase does not transfer any data."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I get a licence for the deletion report?",
+      "name": "How do I get a licence?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Send an email to support@sevenshield.de. The SevenErase licence costs €29, one-time (as a small business under § 19 UStG, no VAT is shown). You receive the invoice and a licence file (.lic) by email and load the file in the program. The licence is valid for one computer. The SevenShield licence, which also covers SevenErase, will be available from 18 January 2027. If you later upgrade to SevenShield, we credit the price you paid for the SevenErase licence."
@@ -120,7 +128,7 @@
       "name": "How can I compare and synchronize two folders or USB sticks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Open the “Vergleichen” (compare) tab in SevenErase, choose both folders and click compare. The program shows which files exist on one side only or are newer, by size and modification date, optionally with a content check and a file type filter. Comparing is free. With a license you can bring one folder up to the state of the other (update) or mirror it exactly, for example to keep several USB sticks identical. Before mirroring, SevenErase shows a summary and checks the free disk space."
+        "text": "Open the “Compare” tab in SevenErase, choose both folders and click compare. The program shows which files exist on one side only or are newer, by size and modification date, optionally with a content check and a file type filter. Comparing is free. With a license you can bring one folder up to the state of the other (update) or mirror it exactly, for example to keep several USB sticks identical. Before mirroring, SevenErase shows a summary and checks the free disk space."
       }
     }
   ]
@@ -1229,6 +1237,7 @@
             <li><span><strong>Wipe free disk space</strong>, so previously deleted remnants disappear too</span></li>
             <li><span><strong>No installation</strong>, no sign-up, no data transfer</span></li>
             <li><span><strong>Remove metadata</strong> from photos, Office documents and PDFs before you share them</span></li>
+            <li><span><strong>Clean up traces</strong>: securely delete temp files, recent-file lists, browser cache, history and cookies, with a license</span></li>
             <li><span><strong>Deletion report as PDF</strong> as proof of what was deleted and when, for example for data protection, with a SevenShield or SevenErase license</span></li>
             <li><span><strong>Compare folders</strong> by size and date, free of charge. With a license you can also synchronize or mirror them, for example for USB sticks</span></li>
           </ul>
@@ -1253,8 +1262,8 @@
               <dt>System</dt><dd>Windows 10 / 11, 64-bit</dd>
               <dt>Size</dt><dd>approx. 195 MB, a single .exe</dd>
               <dt>Requirements</dt><dd>none, .NET is included</dd>
-              <dt>Language</dt><dd>German interface</dd>
-              <dt>Price</dt><dd>deleting and folder comparison are free, no ads. Deletion report as well as synchronizing and mirroring with a license</dd>
+              <dt>Language</dt><dd>German, English, French and Italian (follows the Windows language)</dd>
+              <dt>Price</dt><dd>deleting and folder comparison are free, no ads. Deletion report, cleaning traces as well as synchronizing and mirroring with a license</dd>
             </dl>
           </div>
           <div class="erase-spec">
@@ -1270,16 +1279,17 @@
         <ol class="erase-steps">
           <li><strong>Launch</strong>Double-click SevenErase.exe. No installation is needed.</li>
           <li><strong>Select</strong>Drag files or folders into the list, or add them with the buttons on the right.</li>
-          <li><strong>Configure</strong>One pass (“Durchgänge”: 1) is enough for modern drives. Optionally tick “Danach Freiraum wipen” (wipe free space afterwards).</li>
-          <li><strong>Delete</strong>Click “Sicher löschen” (delete securely). Progress is shown in the log at the bottom.</li>
+          <li><strong>Configure</strong>One pass (“Passes”: 1) is enough for modern drives. Optionally tick “Then wipe free space”.</li>
+          <li><strong>Delete</strong>Click “Secure delete”. Progress is shown in the log at the bottom.</li>
         </ol>
         <div class="erase-extras">
-          <p><strong>“Freiraum wipen” tab:</strong> overwrites the free space of a drive, so files that were deleted normally in the past can no longer be recovered either.</p>
-          <p><strong>“Papierkorb leeren + Freiraum wipen”:</strong> empties the recycle bin and wipes free space in one step, for example before passing on a PC.</p>
+          <p><strong>“Wipe free space” tab:</strong> overwrites the free space of a drive, so files that were deleted normally in the past can no longer be recovered either. Optionally SevenErase reads back samples and checks that the data was really overwritten.</p>
+          <p><strong>“Empty Recycle Bin + wipe free space”:</strong> empties the recycle bin and wipes free space in one step, for example before passing on a PC.</p>
           <p><strong>Deletion report (PDF):</strong> after deleting, SevenErase asks whether to save a report. It lists the deleted files and folders, passes, time and result, and carries a checksum. The “Deletion report (PDF)” button saves it later as well. It documents the process but is not a certification.</p>
-          <p><strong>Right-click menu:</strong> the switch at the bottom left adds “Sicher löschen” directly to the File Explorer context menu.</p>
-          <p><strong>“Metadaten” tab (metadata):</strong> removes hidden details such as author, company or editing data from photos, Word, Excel and PowerPoint files and PDFs. “Anzeigen / Bearbeiten” (view / edit) shows a file’s details.</p>
-          <p><strong>“Vergleichen” tab (compare):</strong> compares two folders by size and modification date and shows what exists on one side only or is newer. Optionally with a content check and a file type filter, for example *.pdf. Comparing is free. With a license, “B auf Stand von A” (bring B up to A, and the other way round) aligns a folder: Update copies missing and newer files and deletes nothing, Mirror makes the target identical to the source. Before it starts you get a summary and a check of the free disk space. Intended for USB sticks and data folders, not for system drives or running databases.</p>
+          <p><strong>Right-click menu:</strong> the switch at the bottom left adds “Secure delete” directly to the File Explorer context menu. The same switch also adds an entry to the Recycle Bin on the desktop, “Securely empty Recycle Bin (SevenErase)”: it empties the Recycle Bin and then overwrites the free space.</p>
+          <p><strong>“Metadata” tab:</strong> removes hidden details such as author, company or editing data from photos, Word, Excel and PowerPoint files and PDFs. “View / edit” shows a file’s details.</p>
+          <p><strong>“Traces” tab:</strong> removes what Windows and browsers store about your work: temporary files, recent-file lists, thumbnail cache, crash reports, and the cache, history and cookies of Edge, Chrome and Firefox (not the Firefox history, because it shares a file with the bookmarks). “Analyze” shows beforehand what has accumulated. Files are overwritten before deletion, optionally followed by a free space wipe. Documents, bookmarks and saved passwords are not touched. Analyzing is free, cleaning requires a license.</p>
+          <p><strong>“Compare” tab:</strong> compares two folders by size and modification date and shows what exists on one side only or is newer. Optionally with a content check and a file type filter, for example *.pdf. Comparing is free. With a license, “Bring B up to A” (and “Bring A up to B”) aligns a folder: Update copies missing and newer files and deletes nothing, Mirror makes the target identical to the source. Before it starts you get a summary and a check of the free disk space. Intended for USB sticks and data folders, not for system drives or running databases.</p>
           <p><strong>One window only:</strong> if SevenErase is already open, starting it again (including via right-click) brings the existing window to the front and adds the selected files to its list.</p>
         </div>
       </div>
@@ -1311,19 +1321,23 @@
         </details>
         <details>
           <summary>What do metadata in documents and photos reveal?</summary>
-          <p>Office files and PDFs often store details such as the author, company name, editing times or earlier file names without you noticing, and photos also store camera data and sometimes the location. The “Metadaten” tab in SevenErase removes these details before you share a file.</p>
+          <p>Office files and PDFs often store details such as the author, company name, editing times or earlier file names without you noticing, and photos also store camera data and sometimes the location. The “Metadata” tab in SevenErase removes these details before you share a file.</p>
+        </details>
+        <details>
+          <summary>How do I remove temp files, browser history and other traces from my PC?</summary>
+          <p>In the “Traces” tab of SevenErase you choose the categories, for example temporary files, recent-file lists, and the cache and history of Edge, Chrome and Firefox. “Analyze” shows beforehand how many files and how much space are affected. When cleaning, the files are overwritten and deleted, optionally followed by a free space wipe so that no remnants stay on the drive. Documents, bookmarks and saved passwords are not touched. Cleaning is a licensed feature, analyzing is free.</p>
         </details>
         <details>
           <summary>Is SevenErase really free?</summary>
-          <p>Yes, for deleting files and folders and wiping free disk space: free, with no ads, no sign-up and no installation. Only the deletion report as a PDF (with export for quality management systems) requires a SevenShield or SevenErase license. SevenErase does not transfer any data.</p>
+          <p>Yes, for deleting files and folders and wiping free disk space: free, with no ads, no sign-up and no installation. A SevenShield or SevenErase license is required only for the deletion report as a PDF (with export for quality management systems), cleaning traces, and synchronizing or mirroring folders. SevenErase does not transfer any data.</p>
         </details>
         <details>
-          <summary>How do I get a licence for the deletion report?</summary>
+          <summary>How do I get a licence?</summary>
           <p>Send an email to <a href="mailto:support@sevenshield.de?subject=SevenErase%20licence%20request">support@sevenshield.de</a>. The SevenErase licence costs €29, one-time (as a small business under § 19 UStG, no VAT is shown). You receive the invoice and a licence file (.lic) by email and load the file in the program. The licence is valid for one computer. The SevenShield licence, which also covers SevenErase, will be available from 18 January 2027. If you later upgrade to SevenShield, we credit the price you paid for the SevenErase licence.</p>
         </details>
         <details>
           <summary>How can I compare and synchronize two folders or USB sticks?</summary>
-          <p>Open the “Vergleichen” (compare) tab in SevenErase, choose both folders and click compare. The program shows which files exist on one side only or are newer, by size and modification date, optionally with a content check and a file type filter. Comparing is free. With a license you can bring one folder up to the state of the other (update) or mirror it exactly, for example to keep several USB sticks identical. Before mirroring, SevenErase shows a summary and checks the free disk space.</p>
+          <p>Open the “Compare” tab in SevenErase, choose both folders and click compare. The program shows which files exist on one side only or are newer, by size and modification date, optionally with a content check and a file type filter. Comparing is free. With a license you can bring one folder up to the state of the other (update) or mirror it exactly, for example to keep several USB sticks identical. Before mirroring, SevenErase shows a summary and checks the free disk space.</p>
         </details>
       </div>
     </div>
