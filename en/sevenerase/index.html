@@ -1006,6 +1006,107 @@
   .erase-extras p { margin: 0; }
   .erase-extras strong { color: var(--text); font-weight: 500; }
 
+  .erase-split {
+    margin: 26px 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .erase-split > div {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    background: var(--void);
+  }
+
+  .erase-split h4 {
+    margin: 0 0 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .erase-split ul {
+    margin: 0;
+    padding: 0 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  .erase-split .lic { border-color: rgba(var(--accent-rgb),0.4); }
+
+  .erase-shots {
+    margin: 32px 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .erase-shots figure { margin: 0; }
+
+  .erase-shots img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+
+  .erase-shots figcaption {
+    margin-top: 10px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .erase-shots-note {
+    margin: 14px 0 0;
+    font-size: 12.5px;
+    color: var(--text-faint);
+  }
+
+  .erase-extras details {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    align-self: start;
+  }
+
+  .erase-extras summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .erase-extras summary::-webkit-details-marker { display: none; }
+  .erase-extras summary::after { content: "+"; margin-left: auto; color: var(--accent); font-size: 16px; line-height: 1; }
+  .erase-extras details[open] summary::after { content: "\2212"; }
+  .erase-extras details p { margin: 10px 0 0; }
+
+  .erase-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--text-faint);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  .erase-tag.lic { color: var(--accent); border-color: rgba(var(--accent-rgb),0.4); }
+
   /* ---------- FAQ ---------- */
 
   .faq {
@@ -1165,6 +1266,8 @@
     .erase-card { grid-template-columns: 1fr; gap: 32px; }
     .erase-steps { grid-template-columns: repeat(2, 1fr); }
     .erase-extras { grid-template-columns: 1fr; }
+    .erase-split { grid-template-columns: 1fr; }
+    .erase-shots { grid-template-columns: 1fr; }
     .status-card {
       grid-template-columns: 1fr;
       text-align: left;
@@ -1274,6 +1377,26 @@
         </div>
       </div>
 
+      <div class="erase-shots" role="group" aria-label="SevenErase screenshots">
+          <figure>
+            <img src="/sevenerase/img/sevenerase-loeschen.webp" alt="SevenErase Delete tab: drag files and folders into the list and delete them securely" width="1000" height="1000" loading="lazy">
+            <figcaption><strong>“Delete” tab:</strong> Drag files and folders into the list and delete them securely.</figcaption>
+          </figure>
+          <figure>
+            <img src="/sevenerase/img/sevenerase-freiraum.webp" alt="SevenErase Wipe free space tab with drive list and passes" width="1000" height="1000" loading="lazy">
+            <figcaption><strong>“Wipe free space” tab:</strong> Overwrite the free space of selected drives.</figcaption>
+          </figure>
+          <figure>
+            <img src="/sevenerase/img/sevenerase-spuren.webp" alt="SevenErase Traces tab with categories such as temp files and browser history" width="1000" height="1000" loading="lazy">
+            <figcaption><strong>“Traces” tab:</strong> Clean up temp files, histories and caches selectively.</figcaption>
+          </figure>
+          <figure>
+            <img src="/sevenerase/img/sevenerase-vergleichen.webp" alt="SevenErase Compare tab with two folders and synchronization options" width="1000" height="1000" loading="lazy">
+            <figcaption><strong>“Compare” tab:</strong> Compare two folders and synchronize them if you like.</figcaption>
+          </figure>
+      </div>
+      <p class="erase-shots-note">The screenshots show the German interface. SevenErase is also available in English, French and Italian.</p>
+
       <div class="erase-guide" id="sevenerase-anleitung">
         <h3>SevenErase quick guide</h3>
         <ol class="erase-steps">
@@ -1282,15 +1405,43 @@
           <li><strong>Configure</strong>One pass (“Passes”: 1) is enough for modern drives. Optionally tick “Then wipe free space”.</li>
           <li><strong>Delete</strong>Click “Secure delete”. Progress is shown in the log at the bottom.</li>
         </ol>
+        <div class="erase-split">
+          <div><h4>Free</h4><ul><li>Securely delete files and folders</li><li>Wipe free space</li><li>Empty the Recycle Bin securely, right-click menu</li><li>View metadata</li><li>Analyze traces</li><li>Compare folders</li></ul></div>
+          <div class="lic"><h4>With license</h4><ul><li>Deletion report as PDF with export</li><li>Remove and change metadata</li><li>Clean traces</li><li>Synchronize and mirror folders</li></ul></div>
+        </div>
         <div class="erase-extras">
-          <p><strong>“Wipe free space” tab:</strong> overwrites the free space of a drive, so files that were deleted normally in the past can no longer be recovered either. Optionally SevenErase reads back samples and checks that the data was really overwritten.</p>
-          <p><strong>“Empty Recycle Bin + wipe free space”:</strong> empties the recycle bin and wipes free space in one step, for example before passing on a PC.</p>
-          <p><strong>Deletion report (PDF):</strong> after deleting, SevenErase asks whether to save a report. It lists the deleted files and folders, passes, time and result, and carries a checksum. The “Deletion report (PDF)” button saves it later as well. It documents the process but is not a certification.</p>
-          <p><strong>Right-click menu:</strong> the switch at the bottom left adds “Secure delete” directly to the File Explorer context menu. The same switch also adds an entry to the Recycle Bin on the desktop, “Securely empty Recycle Bin (SevenErase)”: it empties the Recycle Bin and then overwrites the free space.</p>
-          <p><strong>“Metadata” tab:</strong> removes hidden details such as author, company or editing data from photos, videos (MP4, MOV, 3GP), Word, Excel and PowerPoint files and PDFs. For photos and videos it also removes location data (GPS). “View / edit” shows a file’s details. Viewing is free, removing and changing metadata requires a license.</p>
-          <p><strong>“Traces” tab:</strong> removes what Windows and browsers store about your work: temporary files, recent-file lists, thumbnail cache, crash reports, and the cache, history and cookies of Edge, Chrome and Firefox (not the Firefox history, because it shares a file with the bookmarks). “Analyze” shows beforehand what has accumulated. Files are overwritten before deletion, optionally followed by a free space wipe. Documents, bookmarks and saved passwords are not touched. Analyzing is free, cleaning requires a license.</p>
-          <p><strong>“Compare” tab:</strong> compares two folders by size and modification date and shows what exists on one side only or is newer. Optionally with a content check and a file type filter, for example *.pdf. Comparing is free. With a license, “Bring B up to A” (and “Bring A up to B”) aligns a folder: Update copies missing and newer files and deletes nothing, Mirror makes the target identical to the source. Before it starts you get a summary and a check of the free disk space. Intended for USB sticks and data folders, not for system drives or running databases.</p>
-          <p><strong>One window only:</strong> if SevenErase is already open, starting it again (including via right-click) brings the existing window to the front and adds the selected files to its list.</p>
+          <details>
+            <summary>“Wipe free space” tab <span class="erase-tag">Free</span></summary>
+            <p>Overwrites the free space of a drive, so files that were deleted normally in the past can no longer be recovered either. Optionally SevenErase reads back samples and checks that the data was really overwritten.</p>
+          </details>
+          <details>
+            <summary>“Empty Recycle Bin + wipe free space” <span class="erase-tag">Free</span></summary>
+            <p>Empties the recycle bin and wipes free space in one step, for example before passing on a PC.</p>
+          </details>
+          <details>
+            <summary>Deletion report (PDF) <span class="erase-tag lic">License</span></summary>
+            <p>After deleting, SevenErase asks whether to save a report. It lists the deleted files and folders, passes, time and result, and carries a checksum. The “Deletion report (PDF)” button saves it later as well. It documents the process but is not a certification.</p>
+          </details>
+          <details>
+            <summary>Right-click menu <span class="erase-tag">Free</span></summary>
+            <p>The switch at the bottom left adds “Secure delete” directly to the File Explorer context menu. The same switch also adds an entry to the Recycle Bin on the desktop, “Securely empty Recycle Bin (SevenErase)”: it empties the Recycle Bin and then overwrites the free space.</p>
+          </details>
+          <details>
+            <summary>“Metadata” tab <span class="erase-tag lic">License</span></summary>
+            <p>Removes hidden details such as author, company or editing data from photos, videos (MP4, MOV, 3GP), Word, Excel and PowerPoint files and PDFs. For photos and videos it also removes location data (GPS). “View / edit” shows a file’s details. Viewing is free, removing and changing metadata requires a license.</p>
+          </details>
+          <details>
+            <summary>“Traces” tab <span class="erase-tag lic">License</span></summary>
+            <p>Removes what Windows and browsers store about your work: temporary files, recent-file lists, thumbnail cache, crash reports, and the cache, history and cookies of Edge, Chrome and Firefox (not the Firefox history, because it shares a file with the bookmarks). “Analyze” shows beforehand what has accumulated. Files are overwritten before deletion, optionally followed by a free space wipe. Documents, bookmarks and saved passwords are not touched. Analyzing is free, cleaning requires a license.</p>
+          </details>
+          <details>
+            <summary>“Compare” tab <span class="erase-tag lic">Partly license</span></summary>
+            <p>Compares two folders by size and modification date and shows what exists on one side only or is newer. Optionally with a content check and a file type filter, for example *.pdf. Comparing is free. With a license, “Bring B up to A” (and “Bring A up to B”) aligns a folder: Update copies missing and newer files and deletes nothing, Mirror makes the target identical to the source. Before it starts you get a summary and a check of the free disk space. Intended for USB sticks and data folders, not for system drives or running databases.</p>
+          </details>
+          <details>
+            <summary>One window only <span class="erase-tag">Free</span></summary>
+            <p>If SevenErase is already open, starting it again (including via right-click) brings the existing window to the front and adds the selected files to its list.</p>
+          </details>
         </div>
       </div>
     </div>

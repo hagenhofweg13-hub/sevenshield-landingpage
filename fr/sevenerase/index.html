@@ -35,7 +35,7 @@
   "operatingSystem": "Windows 10, Windows 11",
   "applicationCategory": "SecurityApplication",
   "applicationSubCategory": "Suppression sécurisée, destruction de données",
-  "description": "Programme Windows pour supprimer des fichiers et dossiers de façon sûre et définitive, gratuit. Le protocole de suppression en PDF et le nettoyage des traces nécessitent une licence. Écrase les données avant la suppression et nettoie l’espace libre. Sans installation, sans transfert de données.",
+  "description": "Programme Windows pour supprimer des fichiers et dossiers de façon sûre et définitive, gratuit. Le protocole de suppression en PDF, la suppression des métadonnées et le nettoyage des traces nécessitent une licence. Écrase les données avant la suppression et nettoie l’espace libre. Sans installation, sans transfert de données.",
   "url": "https://sevenshield.de/fr/sevenerase/",
   "downloadUrl": "https://github.com/hagenhofweg13-hub/sevenshield-landingpage/releases/latest/download/SevenErase.exe",
   "softwareVersion": "1.2.0",
@@ -112,7 +112,7 @@
       "name": "SevenErase est-il vraiment gratuit ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, pour supprimer des fichiers et dossiers et nettoyer l’espace libre : gratuit, sans publicité, sans inscription et sans installation. Une licence SevenShield ou SevenErase n’est nécessaire que pour le protocole de suppression en PDF (avec export pour les systèmes qualité), le nettoyage des traces et l’alignement ou la synchronisation miroir de dossiers. SevenErase ne transmet aucune donnée."
+        "text": "Oui, pour supprimer des fichiers et dossiers et nettoyer l’espace libre : gratuit, sans publicité, sans inscription et sans installation. Une licence SevenShield ou SevenErase n’est nécessaire que pour le protocole de suppression en PDF (avec export pour les systèmes qualité), la suppression des métadonnées, le nettoyage des traces et l’alignement ou la synchronisation miroir de dossiers. SevenErase ne transmet aucune donnée."
       }
     },
     {
@@ -1006,6 +1006,107 @@
   .erase-extras p { margin: 0; }
   .erase-extras strong { color: var(--text); font-weight: 500; }
 
+  .erase-split {
+    margin: 26px 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .erase-split > div {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    background: var(--void);
+  }
+
+  .erase-split h4 {
+    margin: 0 0 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .erase-split ul {
+    margin: 0;
+    padding: 0 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  .erase-split .lic { border-color: rgba(var(--accent-rgb),0.4); }
+
+  .erase-shots {
+    margin: 32px 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .erase-shots figure { margin: 0; }
+
+  .erase-shots img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+
+  .erase-shots figcaption {
+    margin-top: 10px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .erase-shots-note {
+    margin: 14px 0 0;
+    font-size: 12.5px;
+    color: var(--text-faint);
+  }
+
+  .erase-extras details {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    align-self: start;
+  }
+
+  .erase-extras summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .erase-extras summary::-webkit-details-marker { display: none; }
+  .erase-extras summary::after { content: "+"; margin-left: auto; color: var(--accent); font-size: 16px; line-height: 1; }
+  .erase-extras details[open] summary::after { content: "\2212"; }
+  .erase-extras details p { margin: 10px 0 0; }
+
+  .erase-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--text-faint);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  .erase-tag.lic { color: var(--accent); border-color: rgba(var(--accent-rgb),0.4); }
+
   /* ---------- FAQ ---------- */
 
   .faq {
@@ -1165,6 +1266,8 @@
     .erase-card { grid-template-columns: 1fr; gap: 32px; }
     .erase-steps { grid-template-columns: repeat(2, 1fr); }
     .erase-extras { grid-template-columns: 1fr; }
+    .erase-split { grid-template-columns: 1fr; }
+    .erase-shots { grid-template-columns: 1fr; }
     .status-card {
       grid-template-columns: 1fr;
       text-align: left;
@@ -1236,7 +1339,7 @@
             <li><span><strong>Fichiers et dossiers</strong> écrasés par des données aléatoires avant la suppression</span></li>
             <li><span><strong>Nettoyage de l’espace libre</strong>, pour faire disparaître aussi les restes déjà supprimés</span></li>
             <li><span><strong>Sans installation</strong>, sans inscription, sans transfert de données</span></li>
-            <li><span><strong>Supprimer les métadonnées</strong> des photos, vidéos, documents Office et PDF avant de les partager</span></li>
+            <li><span><strong>Supprimer les métadonnées</strong> des photos, vidéos, documents Office et PDF avant de les partager, avec licence</span></li>
             <li><span><strong>Nettoyer les traces</strong> : fichiers temporaires, listes de fichiers récents, cache, historique et cookies des navigateurs supprimés de façon sûre, avec une licence</span></li>
             <li><span><strong>Protocole de suppression en PDF</strong> comme justificatif de ce qui a été supprimé et quand, par exemple pour la protection des données, avec une licence SevenShield ou SevenErase</span></li>
             <li><span><strong>Comparer des dossiers</strong> selon la taille et la date, gratuitement. Avec une licence, aussi les synchroniser ou les mettre en miroir, par exemple pour des clés USB</span></li>
@@ -1263,7 +1366,7 @@
               <dt>Taille</dt><dd>env. 195 Mo, un seul fichier .exe</dd>
               <dt>Prérequis</dt><dd>aucun, .NET est inclus</dd>
               <dt>Langue</dt><dd>allemand, anglais, français et italien (selon la langue de Windows)</dd>
-              <dt>Prix</dt><dd>suppression et comparaison de dossiers gratuites, sans publicité. Protocole de suppression, nettoyage des traces, synchronisation et miroir avec licence</dd>
+              <dt>Prix</dt><dd>suppression et comparaison de dossiers gratuites, sans publicité. Protocole de suppression, suppression des métadonnées, nettoyage des traces, synchronisation et miroir avec licence</dd>
             </dl>
           </div>
           <div class="erase-spec">
@@ -1274,6 +1377,26 @@
         </div>
       </div>
 
+      <div class="erase-shots" role="group" aria-label="Captures d’écran de SevenErase">
+          <figure>
+            <img src="/sevenerase/img/sevenerase-loeschen.webp" alt="Onglet Löschen de SevenErase : glisser des fichiers et dossiers dans la liste et les supprimer de façon sûre" width="1000" height="1000" loading="lazy">
+            <figcaption><strong>Onglet « Löschen » (supprimer):</strong> Glisser des fichiers et dossiers dans la liste et les supprimer de façon sûre.</figcaption>
+          </figure>
+          <figure>
+            <img src="/sevenerase/img/sevenerase-freiraum.webp" alt="Onglet Freiraum wipen de SevenErase avec la liste des lecteurs et les passes" width="1000" height="1000" loading="lazy">
+            <figcaption><strong>Onglet « Freiraum wipen » (espace libre):</strong> Écraser l’espace libre des lecteurs sélectionnés.</figcaption>
+          </figure>
+          <figure>
+            <img src="/sevenerase/img/sevenerase-spuren.webp" alt="Onglet Spuren de SevenErase avec des catégories comme les fichiers temporaires et l’historique du navigateur" width="1000" height="1000" loading="lazy">
+            <figcaption><strong>Onglet « Spuren » (traces):</strong> Nettoyer de façon ciblée fichiers temporaires, historiques et caches.</figcaption>
+          </figure>
+          <figure>
+            <img src="/sevenerase/img/sevenerase-vergleichen.webp" alt="Onglet Vergleichen de SevenErase avec deux dossiers et les options d’alignement" width="1000" height="1000" loading="lazy">
+            <figcaption><strong>Onglet « Vergleichen » (comparer):</strong> Comparer deux dossiers et les aligner si vous le souhaitez.</figcaption>
+          </figure>
+      </div>
+      <p class="erase-shots-note">Les captures montrent l’interface en allemand. SevenErase existe aussi en anglais, en français et en italien.</p>
+
       <div class="erase-guide" id="sevenerase-anleitung">
         <h3>Guide rapide SevenErase</h3>
         <ol class="erase-steps">
@@ -1282,15 +1405,43 @@
           <li><strong>Régler</strong>Un passage (« Durchgänge » : 1) suffit pour les disques actuels. Si vous le souhaitez, cochez aussi « Danach Freiraum wipen » (nettoyer ensuite l’espace libre).</li>
           <li><strong>Supprimer</strong>Cliquez sur « Sicher löschen » (supprimer en toute sécurité). La progression s’affiche dans le journal en bas.</li>
         </ol>
+        <div class="erase-split">
+          <div><h4>Gratuit</h4><ul><li>Supprimer fichiers et dossiers de façon sûre</li><li>Effacer l’espace libre</li><li>Vider la corbeille en toute sécurité, menu du clic droit</li><li>Afficher les métadonnées</li><li>Analyser les traces</li><li>Comparer des dossiers</li></ul></div>
+          <div class="lic"><h4>Avec licence</h4><ul><li>Protocole de suppression en PDF avec export</li><li>Supprimer et modifier les métadonnées</li><li>Nettoyer les traces</li><li>Aligner et synchroniser des dossiers en miroir</li></ul></div>
+        </div>
         <div class="erase-extras">
-          <p><strong>Onglet « Freiraum wipen » :</strong> écrase l’espace libre d’un lecteur, afin que les fichiers supprimés auparavant de façon normale deviennent eux aussi irrécupérables. En option, SevenErase relit des échantillons et vérifie que les données ont bien été écrasées.</p>
-          <p><strong>« Papierkorb leeren + Freiraum wipen » :</strong> vide la corbeille et nettoie l’espace libre en une seule étape, par exemple avant de céder un PC.</p>
-          <p><strong>Protocole de suppression (PDF) :</strong> après la suppression, SevenErase propose d’enregistrer un protocole. Il énumère les fichiers et dossiers supprimés, les passes, l’heure et le résultat, et porte une somme de contrôle. Le bouton « Protocole de suppression (PDF) » permet aussi de l’enregistrer plus tard. Il documente le déroulement, mais n’est pas une certification.</p>
-          <p><strong>Menu du clic droit :</strong> avec l’interrupteur en bas à gauche, « Sicher löschen » apparaît directement dans le menu contextuel de l’Explorateur de fichiers. Le même interrupteur ajoute aussi une entrée à la corbeille du bureau, « Vider la corbeille de façon sécurisée (SevenErase) » : elle vide la corbeille puis écrase l’espace libre.</p>
-          <p><strong>Onglet « Metadaten » (métadonnées) :</strong> supprime les informations cachées comme l’auteur, l’entreprise ou les données de modification des photos, vidéos (MP4, MOV, 3GP), fichiers Word, Excel, PowerPoint et PDF. Pour les photos et les vidéos, elle supprime aussi les données de localisation (GPS). « Anzeigen / Bearbeiten » (afficher / modifier) montre le détail d’un fichier.</p>
-          <p><strong>Onglet « Traces » :</strong> supprime ce que Windows et les navigateurs enregistrent sur votre travail : fichiers temporaires, listes de fichiers récents, cache des miniatures, rapports d’erreur ainsi que cache, historique et cookies d’Edge, Chrome et Firefox (pas l’historique de Firefox, car il partage un fichier avec les favoris). « Analyser » montre à l’avance ce qui s’est accumulé. Les fichiers sont écrasés avant la suppression, au besoin suivis de l’effacement de l’espace libre. Les documents, favoris et mots de passe enregistrés ne sont pas touchés. L’analyse est gratuite, le nettoyage nécessite une licence.</p>
-          <p><strong>Onglet « Comparer » :</strong> compare deux dossiers selon la taille et la date de modification et montre ce qui n’existe que d’un côté ou qui est plus récent. En option avec contrôle du contenu et filtre par type de fichier, par exemple *.pdf. La comparaison est gratuite. Avec une licence, « Aligner B sur A » (et « Aligner A sur B ») met un dossier à jour : la mise à jour copie ce qui manque et ce qui est plus récent sans rien supprimer, le miroir rend la cible identique à la source. Avant le départ, un récapitulatif et un contrôle de l’espace libre sont proposés. Prévu pour les clés USB et les dossiers de données, pas pour les disques système ni les bases de données en cours d’utilisation.</p>
-          <p><strong>Une seule fenêtre :</strong> si SevenErase est déjà ouvert, un nouveau lancement (y compris par clic droit) ramène la fenêtre existante au premier plan et ajoute les fichiers choisis à sa liste.</p>
+          <details>
+            <summary>Onglet « Freiraum wipen » <span class="erase-tag">Gratuit</span></summary>
+            <p>Écrase l’espace libre d’un lecteur, afin que les fichiers supprimés auparavant de façon normale deviennent eux aussi irrécupérables. En option, SevenErase relit des échantillons et vérifie que les données ont bien été écrasées.</p>
+          </details>
+          <details>
+            <summary>« Papierkorb leeren + Freiraum wipen » <span class="erase-tag">Gratuit</span></summary>
+            <p>Vide la corbeille et nettoie l’espace libre en une seule étape, par exemple avant de céder un PC.</p>
+          </details>
+          <details>
+            <summary>Protocole de suppression (PDF) <span class="erase-tag lic">Licence</span></summary>
+            <p>Après la suppression, SevenErase propose d’enregistrer un protocole. Il énumère les fichiers et dossiers supprimés, les passes, l’heure et le résultat, et porte une somme de contrôle. Le bouton « Protocole de suppression (PDF) » permet aussi de l’enregistrer plus tard. Il documente le déroulement, mais n’est pas une certification.</p>
+          </details>
+          <details>
+            <summary>Menu du clic droit <span class="erase-tag">Gratuit</span></summary>
+            <p>Avec l’interrupteur en bas à gauche, « Sicher löschen » apparaît directement dans le menu contextuel de l’Explorateur de fichiers. Le même interrupteur ajoute aussi une entrée à la corbeille du bureau, « Vider la corbeille de façon sécurisée (SevenErase) » : elle vide la corbeille puis écrase l’espace libre.</p>
+          </details>
+          <details>
+            <summary>Onglet « Metadaten » (métadonnées) <span class="erase-tag lic">Licence</span></summary>
+            <p>Supprime les informations cachées comme l’auteur, l’entreprise ou les données de modification des photos, vidéos (MP4, MOV, 3GP), fichiers Word, Excel, PowerPoint et PDF. Pour les photos et les vidéos, elle supprime aussi les données de localisation (GPS). « Anzeigen / Bearbeiten » (afficher / modifier) montre le détail d’un fichier. L’affichage est gratuit, la suppression et la modification des métadonnées nécessitent une licence.</p>
+          </details>
+          <details>
+            <summary>Onglet « Traces » <span class="erase-tag lic">Licence</span></summary>
+            <p>Supprime ce que Windows et les navigateurs enregistrent sur votre travail : fichiers temporaires, listes de fichiers récents, cache des miniatures, rapports d’erreur ainsi que cache, historique et cookies d’Edge, Chrome et Firefox (pas l’historique de Firefox, car il partage un fichier avec les favoris). « Analyser » montre à l’avance ce qui s’est accumulé. Les fichiers sont écrasés avant la suppression, au besoin suivis de l’effacement de l’espace libre. Les documents, favoris et mots de passe enregistrés ne sont pas touchés. L’analyse est gratuite, le nettoyage nécessite une licence.</p>
+          </details>
+          <details>
+            <summary>Onglet « Comparer » <span class="erase-tag lic">Licence partielle</span></summary>
+            <p>Compare deux dossiers selon la taille et la date de modification et montre ce qui n’existe que d’un côté ou qui est plus récent. En option avec contrôle du contenu et filtre par type de fichier, par exemple *.pdf. La comparaison est gratuite. Avec une licence, « Aligner B sur A » (et « Aligner A sur B ») met un dossier à jour : la mise à jour copie ce qui manque et ce qui est plus récent sans rien supprimer, le miroir rend la cible identique à la source. Avant le départ, un récapitulatif et un contrôle de l’espace libre sont proposés. Prévu pour les clés USB et les dossiers de données, pas pour les disques système ni les bases de données en cours d’utilisation.</p>
+          </details>
+          <details>
+            <summary>Une seule fenêtre <span class="erase-tag">Gratuit</span></summary>
+            <p>Si SevenErase est déjà ouvert, un nouveau lancement (y compris par clic droit) ramène la fenêtre existante au premier plan et ajoute les fichiers choisis à sa liste.</p>
+          </details>
         </div>
       </div>
     </div>
@@ -1329,7 +1480,7 @@
         </details>
         <details>
           <summary>SevenErase est-il vraiment gratuit ?</summary>
-          <p>Oui, pour supprimer des fichiers et dossiers et nettoyer l’espace libre : gratuit, sans publicité, sans inscription et sans installation. Une licence SevenShield ou SevenErase n’est nécessaire que pour le protocole de suppression en PDF (avec export pour les systèmes qualité), le nettoyage des traces et l’alignement ou la synchronisation miroir de dossiers. SevenErase ne transmet aucune donnée.</p>
+          <p>Oui, pour supprimer des fichiers et dossiers et nettoyer l’espace libre : gratuit, sans publicité, sans inscription et sans installation. Une licence SevenShield ou SevenErase n’est nécessaire que pour le protocole de suppression en PDF (avec export pour les systèmes qualité), la suppression des métadonnées, le nettoyage des traces et l’alignement ou la synchronisation miroir de dossiers. SevenErase ne transmet aucune donnée.</p>
         </details>
         <details>
           <summary>Comment obtenir une licence ?</summary>
