@@ -798,6 +798,186 @@
     .cta-long { display: none; }
     .cta-short { display: inline; }
   }
+  /* Produktseite SevenErase */
+  .erase-hero { padding: 72px 0 80px; }
+  .erase-hero .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 56px;
+    align-items: center;
+  }
+  .erase-hero h1 { margin: 14px 0 18px; }
+  .erase-hero .erase-actions { margin-top: 26px; }
+
+  .shot-frame {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: 0 28px 60px rgba(0,0,0,0.45);
+  }
+  .shot-frame::before {
+    content: "";
+    position: absolute;
+    inset: -14% -10% auto auto;
+    width: 70%;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(var(--accent-rgb),0.20), transparent 68%);
+    z-index: -1;
+    pointer-events: none;
+  }
+  .shot-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 86%, transparent);
+    mask-image: linear-gradient(to bottom, #000 86%, transparent);
+  }
+
+  .erase-features { padding: 72px 0 24px; border-top: 1px solid #2E3338; }
+  .erase-features .section-head { margin-bottom: 8px; }
+  .erase-features .shots-note { margin: 10px 0 0; font-size: 12.5px; color: var(--text-faint); }
+
+  .erase-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 64px;
+    align-items: center;
+    padding: 56px 0;
+    border-top: 1px solid var(--line);
+  }
+  .erase-features .section-head + .erase-feature { margin-top: 36px; }
+  .erase-feature.rev .feature-media { order: -1; }
+  .feature-text .mono-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .feature-text h3 {
+    margin: 0 0 14px;
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .feature-text p {
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+  }
+
+  .erase-steps-strip { padding: 56px 0 8px; border-top: 1px solid #2E3338; }
+  .erase-steps-strip h2 { margin: 0 0 6px; font-size: 26px; font-weight: 600; color: var(--text); }
+  .erase-steps-strip .erase-steps { margin-top: 22px; }
+
+  .meta-mock {
+    background: var(--void);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px 8px;
+    box-shadow: 0 28px 60px rgba(0,0,0,0.45);
+    position: relative;
+  }
+  .meta-mock .mm-file {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .meta-mock .mm-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+    color: var(--text);
+  }
+  .meta-mock .mm-row:last-child { border-bottom: 0; }
+  .meta-mock .mm-bar {
+    display: block;
+    height: 6px;
+    width: 120px;
+    margin-top: 8px;
+    border-radius: 3px;
+    background: var(--line);
+  }
+  .meta-mock .mm-chip {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(var(--accent-rgb),0.45);
+    border-radius: 999px;
+    padding: 3px 10px;
+  }
+
+  .erase-more { padding: 64px 0; border-top: 1px solid #2E3338; }
+  .erase-more h2, .erase-lic h2, .erase-tech h2 { margin: 0 0 26px; font-size: 26px; font-weight: 600; color: var(--text); }
+  .more-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .more-card {
+    background: var(--void);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px 24px 22px;
+  }
+  .more-card .mc-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(var(--accent-rgb),0.12);
+    display: grid;
+    place-items: center;
+    margin-bottom: 16px;
+  }
+  .more-card svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .more-card h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; color: var(--text); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .more-card p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--text-muted); }
+
+  .erase-lic { padding: 64px 0; border-top: 1px solid #2E3338; }
+  .erase-lic .erase-split { margin-top: 0; }
+  .erase-tech { padding: 64px 0 88px; border-top: 1px solid #2E3338; }
+  .erase-tech .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: start;
+  }
+  .erase-tech .erase-bridge { margin: 20px 0 0; grid-column: 1 / -1; }
+
+  @media (max-width: 860px) {
+    .erase-hero .hero-grid, .erase-feature, .more-grid, .erase-tech .tech-grid { grid-template-columns: 1fr; gap: 28px; }
+    .erase-feature { padding: 40px 0; }
+    .erase-feature.rev .feature-media { order: 0; }
+    .feature-text h3 { font-size: 23px; }
+  }
+
+  .bm-val { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--text); }
+  .bm-lab { display: block; font-size: 11.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 4px; }
+  .meta-mock .mm-chip.done { background: rgba(var(--accent-rgb),0.14); }
+  .swatches { display: flex; gap: 10px; align-items: center; }
+  .swatches i { display: block; width: 22px; height: 22px; border-radius: 50%; }
+  .mm-logo { width: 28px; height: 28px; border-radius: 7px; background: rgba(var(--accent-rgb),0.18); border: 1px solid rgba(var(--accent-rgb),0.5); }
+  .mm-lines { display: grid; gap: 5px; width: 120px; }
+  .mm-lines i { display: block; height: 5px; border-radius: 3px; background: var(--line); }
+  .erase-tech.details .erase-extras { margin-top: 0; }
+
   .buy { padding: 64px 0 72px; border-top: 1px solid #2E3338; }
   .buy h2 { margin: 0 0 26px; font-size: 26px; font-weight: 600; color: var(--text); }
   .buy-card {
@@ -1279,9 +1459,9 @@
 
 <main id="top" class="erase-page">
 
-  <section class="erase" id="sevensetup-builder">
+  <section class="erase erase-hero" id="sevensetup-builder">
     <div class="wrap">
-      <div class="erase-card">
+      <div class="hero-grid">
         <div>
           <span class="free-badge">14 giorni di prova</span>
           <h1>Trasformare la cartella del programma in una Setup.exe: SevenSetup Builder</h1>
@@ -1291,9 +1471,6 @@
             <li><span><strong>Un’unica Setup.exe</strong> dalla cartella del programma, in pochi passaggi e senza linguaggio di script</span></li>
             <li><span><strong>Dati precompilati:</strong> nome, versione ed editore vengono ripresi dal suo exe e possono essere modificati</span></li>
             <li><span><strong>Aspetto personalizzato:</strong> logo, testo della licenza e colore di accento, così il setup si adatta al programma</span></li>
-            <li><span><strong>Installazione</strong> per l’utente connesso o per tutti gli utenti, a scelta con collegamento sul desktop e avvio automatico</span></li>
-            <li><span><strong>Aggiornamenti e disinstallazione:</strong> lo stesso nome con una versione superiore aggiorna, la disinstallazione avviene tramite “App installate”</span></li>
-            <li><span><strong>Installazione silenziosa</strong> da riga di comando per la distribuzione in azienda</span></li>
           </ul>
 
           <div class="erase-actions">
@@ -1310,39 +1487,56 @@
             <span>Il Builder richiede il runtime .NET 8 Desktop sul suo computer, i setup creati no. Al primo avvio Windows può mostrare un avviso di sicurezza perché i file non sono firmati. Avviarli tramite ‘Ulteriori informazioni’ e poi ‘Esegui comunque’.</span>
           </p>
         </div>
-
-        <div class="erase-side">
-          <div class="erase-spec">
-            <span class="mono-label">Dati tecnici</span>
-            <dl>
-              <dt>Sistema</dt><dd>Windows 10 / 11, 64 bit</dd>
-              <dt>Requisito</dt><dd>Builder: runtime .NET 8 Desktop. Setup creati: nessuno</dd>
-              <dt>Dimensione</dt><dd>setup creato: circa 70 MB di base più i file del programma</dd>
-              <dt>Prezzo</dt><dd>14 giorni di prova con tutte le funzioni, poi 99 € una tantum per un computer (come piccola impresa ai sensi del § 19 UStG, senza IVA esposta)</dd>
-            </dl>
-          </div>
-          <div class="erase-spec">
-            <span class="mono-label">Da sapere</span>
-            <p>È supportato solo il 64 bit (win-x64) e il setup ha un design scuro. L’icona del file di setup in Esplora risorse è quella di SevenSetup, mentre “App installate” e i collegamenti mostrano il suo logo.</p>
-          </div>
-          <p class="erase-bridge">Il suo programma resta invariato: non si ricompila nulla, il Builder inserisce semplicemente i file nel setup.</p>
-        </div>
+        <div class="hero-media"><div class="meta-mock" aria-hidden="true"><div class="mm-file">SevenSetup Builder</div><div class="mm-row"><div><span class="bm-lab">Nome</span><span class="bm-val">MiaApp</span></div><span class="mm-chip">dall’exe</span></div><div class="mm-row"><div><span class="bm-lab">Versione</span><span class="bm-val">2.4.1</span></div><span class="mm-chip">dall’exe</span></div><div class="mm-row"><div><span class="bm-lab">Editore</span><span class="bm-val">Esempio Srl</span></div><span class="mm-chip">dall’exe</span></div><div class="mm-row"><div><span class="bm-val">MiaApp_Setup.exe</span></div><span class="mm-chip done">creato</span></div></div></div>
       </div>
+    </div>
+  </section>
 
-      <div class="erase-guide" id="sevensetup-builder-guide">
-        <h3>Guida rapida SevenSetup</h3>
-        <ol class="erase-steps">
+  <section class="erase erase-steps-strip" id="sevensetup-builder-guide">
+    <div class="wrap">
+      <h2>Come funziona in quattro passaggi</h2>
+      <ol class="erase-steps">
           <li><strong>Avviare</strong>Aprire SevenSetupBuilder.exe.</li>
           <li><strong>Scegliere la cartella</strong>Scegliere la cartella del programma già pronta, ad esempio la cartella publish, e il programma principale dall’elenco.</li>
           <li><strong>Controllare i dati</strong>Controllare nome, versione ed editore. A scelta, selezionare logo, testo della licenza e colore di accento.</li>
           <li><strong>Creare</strong>Stabilire che cosa deve offrire il setup e fare clic su “Solo crea” o “Crea e installa”.</li>
         </ol>
-        <div class="erase-extras">
-          <p><strong>Aggiornamenti:</strong> L’identificativo interno si ricava dal nome. Per un aggiornamento si crea il nuovo setup con lo stesso nome e una versione superiore. Il setup mantiene cartella e tipo di installazione, chiude il programma in esecuzione dopo conferma e rimuove i file della versione precedente che non esistono più. Avvisa se è già installata una versione più recente.</p>
-          <p><strong>Logo e colore nel programma:</strong> Con l’opzione “Usa il logo anche per i collegamenti e il programma” il setup colloca logo e icona accanto all’exe. I collegamenti e la voce in “App installate” usano questa icona. Il suo programma può riprenderne logo e colore di accento, se lo supporta.</p>
-          <p><strong>Riga di comando:</strong> Setup.exe /silent [/allusers] [/dir=C:\Percorso] [/autostart] [/nodesktop] [/force]. Il valore restituito è 0 in caso di successo.</p>
-          <p><strong>Prova e licenza:</strong> 14 giorni dal primo avvio con tutte le funzioni. Poi avvio, caricamento e salvataggio dei dati restano possibili, solo “Crea setup” è bloccato finché non è installato un file di licenza (.lic). I setup già creati non sono interessati. “Ordina licenza” nel programma apre un’e-mail con l’ID del suo computer.</p>
+    </div>
+  </section>
+
+  <section class="erase erase-features" id="funktionen">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Cosa sa fare il builder</h2>
+        <p>Dalla cartella del programma a un Setup.exe pronto, senza script e senza ricompilare.</p>
+      </div>
+      <div class="erase-feature">
+        <div class="feature-text">
+          <span class="mono-label">Aspetto</span>
+          <h3>Un setup che si adatta al vostro programma</h3>
+          <p>Logo, testo della licenza e colore di accento li scegliete voi. Se volete, il setup usa il logo anche per i collegamenti e per la voce in «App installate».</p>
         </div>
+        <div class="feature-media"><div class="meta-mock" aria-hidden="true"><div class="mm-file">Setup</div><div class="mm-row"><div><span class="bm-val">Logo</span></div><span class="mm-logo"></span></div><div class="mm-row"><div><span class="bm-val">Testo della licenza</span></div><span class="mm-lines"><i></i><i></i><i style="width:70%"></i></span></div><div class="mm-row"><div><span class="bm-val">Colore di accento</span></div><span class="swatches"><i style="background:#9B7BFF"></i><i style="background:#2ECC71"></i><i style="background:#E67E22"></i></span></div></div></div>
+      </div>
+      <div class="erase-feature rev">
+        <div class="feature-text">
+          <span class="mono-label">Aggiornamenti</span>
+          <h3>Aggiornare e rimuovere in modo pulito</h3>
+          <p>Stesso nome, versione superiore: il setup mantiene cartella e tipo di installazione, chiude il programma in esecuzione dopo conferma e rimuove i file della versione precedente. La disinstallazione avviene da «App installate».</p>
+        </div>
+        <div class="feature-media"><div class="meta-mock" aria-hidden="true"><div class="mm-file">Setup.exe</div><div class="mm-row"><div><span class="bm-val">MiaApp 1.0.0</span></div><span class="mm-chip">installato</span></div><div class="mm-row"><div><span class="bm-val">MiaApp 1.1.0</span></div><span class="mm-chip">aggiornamento</span></div><div class="mm-row"><div><span class="bm-val">File vecchi</span></div><span class="mm-chip">rimossi</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="erase erase-more">
+    <div class="wrap">
+      <h2>Altri strumenti</h2>
+      <div class="more-grid">
+        <div class="more-card"><div class="mc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div><h3>Installazione</h3><p>Per l’utente connesso o per tutti gli utenti, se volete con collegamento sul desktop e avvio automatico.</p></div>
+        <div class="more-card"><div class="mc-icon"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg></div><h3>Dati precompilati</h3><p>Nome, versione ed editore vengono letti dall’exe e si possono modificare.</p></div>
+        <div class="more-card"><div class="mc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10l3 2.5L7 15M12 15h5"/></svg></div><h3>Installazione silenziosa</h3><p>Da riga di comando per la distribuzione in azienda. Il valore restituito è 0 in caso di successo.</p></div>
+        <div class="more-card"><div class="mc-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg></div><h3>Senza .NET dal destinatario</h3><p>Il setup creato funziona anche su computer senza .NET installato. Il programma non viene ricompilato.</p></div>
       </div>
     </div>
   </section>
@@ -1364,6 +1558,40 @@
       </div>
     </div>
   </section>
+
+  <section class="erase erase-tech details">
+    <div class="wrap">
+      <h2>Aggiornamenti, riga di comando e licenza</h2>
+      <div class="erase-extras">
+          <p><strong>Aggiornamenti:</strong> L’identificativo interno si ricava dal nome. Per un aggiornamento si crea il nuovo setup con lo stesso nome e una versione superiore. Il setup mantiene cartella e tipo di installazione, chiude il programma in esecuzione dopo conferma e rimuove i file della versione precedente che non esistono più. Avvisa se è già installata una versione più recente.</p>
+          <p><strong>Logo e colore nel programma:</strong> Con l’opzione “Usa il logo anche per i collegamenti e il programma” il setup colloca logo e icona accanto all’exe. I collegamenti e la voce in “App installate” usano questa icona. Il suo programma può riprenderne logo e colore di accento, se lo supporta.</p>
+          <p><strong>Riga di comando:</strong> Setup.exe /silent [/allusers] [/dir=C:\Percorso] [/autostart] [/nodesktop] [/force]. Il valore restituito è 0 in caso di successo.</p>
+          <p><strong>Prova e licenza:</strong> 14 giorni dal primo avvio con tutte le funzioni. Poi avvio, caricamento e salvataggio dei dati restano possibili, solo “Crea setup” è bloccato finché non è installato un file di licenza (.lic). I setup già creati non sono interessati. “Ordina licenza” nel programma apre un’e-mail con l’ID del suo computer.</p>
+        </div>
+    </div>
+  </section>
+
+  <section class="erase erase-tech">
+    <div class="wrap">
+      <h2>Dettagli tecnici e limiti</h2>
+      <div class="tech-grid"><div class="erase-spec">
+            <span class="mono-label">Dati tecnici</span>
+            <dl>
+              <dt>Sistema</dt><dd>Windows 10 / 11, 64 bit</dd>
+              <dt>Requisito</dt><dd>Builder: runtime .NET 8 Desktop. Setup creati: nessuno</dd>
+              <dt>Dimensione</dt><dd>setup creato: circa 70 MB di base più i file del programma</dd>
+              <dt>Prezzo</dt><dd>14 giorni di prova con tutte le funzioni, poi 99 € una tantum per un computer (come piccola impresa ai sensi del § 19 UStG, senza IVA esposta)</dd>
+            </dl>
+          </div>
+          <div class="erase-spec">
+            <span class="mono-label">Da sapere</span>
+            <p>È supportato solo il 64 bit (win-x64) e il setup ha un design scuro. L’icona del file di setup in Esplora risorse è quella di SevenSetup, mentre “App installate” e i collegamenti mostrano il suo logo.</p>
+          </div>
+          <p class="erase-bridge">Il suo programma resta invariato: non si ricompila nulla, il Builder inserisce semplicemente i file nel setup.</p>
+      </div>
+    </div>
+  </section>
+
 
 <section class="faq" id="faq">
     <div class="wrap">

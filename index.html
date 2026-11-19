@@ -312,6 +312,31 @@
     .product-tabs a { padding: 6px 12px; }
   }
 
+  .buy { padding: 64px 0 72px; border-top: 1px solid #2E3338; }
+  .buy h2 { margin: 0 0 26px; font-size: 26px; font-weight: 600; color: var(--text); }
+  .buy-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 40px;
+    align-items: center;
+    background: var(--void);
+    border: 1px solid rgba(46,204,113,0.4);
+    border-radius: 14px;
+    padding: 36px 40px;
+  }
+  .buy-price { font-size: 52px; line-height: 1; font-weight: 600; color: var(--text); letter-spacing: -0.02em; }
+  .buy-price small { display: block; margin-top: 10px; font-size: 14px; font-weight: 400; letter-spacing: 0; color: var(--text-muted); line-height: 1.5; }
+  .buy-price .buy-lead { margin: 0 0 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); font-weight: 400; }
+  .buy-list { margin: 0 0 24px; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .buy-list li { position: relative; padding-left: 22px; font-size: 15px; line-height: 1.55; color: var(--text-muted); }
+  .buy-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .buy-list strong { color: var(--text); font-weight: 500; }
+  .buy-tax { margin: 14px 0 0; font-size: 12.5px; color: var(--text-faint); }
+  @media (max-width: 860px) {
+    .buy-card { grid-template-columns: 1fr; gap: 24px; padding: 28px 24px; }
+    .buy-price { font-size: 44px; }
+  }
+
   .erase-teaser .teaser-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -1334,6 +1359,24 @@
           <p>In wenigen Schritten erklärt: Ordner sperren, entsperren und den Wiederherstellungsschlüssel sicher aufbewahren.</p>
         </div>
         <a class="btn-primary" href="/SevenShield_Kurzanleitung.pdf" download="SevenShield_Kurzanleitung.pdf" data-force-download>Kurzanleitung (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="buy" id="kaufen">
+    <div class="wrap">
+      <h2>SevenShield kaufen</h2>
+      <div class="buy-card">
+        <div class="buy-price"><p class="buy-lead">SevenShield-Lizenz</p>59 €<small>einmalig, für einen Rechner. Verkaufsstart am 18. Januar 2027</small></div>
+        <div>
+          <ul class="buy-list">
+          <li><strong>Ordner verschlüsseln</strong> und verschlüsselte Nachrichten (.7sv) verschicken. Entschlüsseln können Empfänger kostenlos</li>
+          <li><strong>Rechnung und Lizenzdatei (.lic)</strong> per E-Mail nach dem Kauf</li>
+          <li><strong>7 Tage Geld-zurück-Garantie</strong> ab Kaufdatum</li>
+          </ul>
+          <a class="btn-primary" href="mailto:support@sevenshield.de?subject=SevenShield%20vormerken&amp;body=Guten%20Tag%2C%0A%0Abitte%20informieren%20Sie%20mich%2C%20sobald%20SevenShield%20erh%C3%A4ltlich%20ist.%0A%0AName%20/%20Firma%3A%0A">Per E-Mail vormerken</a>
+          <p class="buy-tax">Als Kleinunternehmer nach § 19 UStG ohne Ausweis von Umsatzsteuer.</p>
+        </div>
       </div>
     </div>
   </section>
