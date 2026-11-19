@@ -75,7 +75,7 @@
   "applicationCategory": "SecurityApplication",
   "applicationSubCategory": "Sicheres Löschen, Datenvernichtung",
   "description": "Windows-Programm zum sicheren und unwiederherstellbaren Löschen von Dateien und Ordnern, kostenlos. Das Löschprotokoll als PDF gibt es mit Lizenz. Überschreibt Daten vor dem Löschen und bereinigt freien Speicherplatz. Ohne Installation, ohne Datenübertragung.",
-  "url": "https://sevenshield.de/#sevenerase",
+  "url": "https://sevenshield.de/sevenerase/",
   "downloadUrl": "https://github.com/hagenhofweg13-hub/sevenshield-landingpage/releases/latest/download/SevenErase.exe",
   "softwareVersion": "1.2.0",
   "fileSize": "195MB",
@@ -313,6 +313,73 @@
   .cta-short { display: none; }
 
   /* Hinweis auf das kostenlose SevenErase in der Kopfzeile */
+  .product-tabs { display: flex; gap: 4px; margin-right: 6px; }
+  .product-tabs a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 6px 13px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    transition: color .15s ease;
+  }
+  .product-tabs a:hover { color: var(--text); }
+  .product-tabs a.active { color: var(--text); background: #21252A; border-color: #2E3338; }
+  .product-tabs a.shield-tab.active { color: #2ECC71; border-color: rgba(46,204,113,0.45); }
+  .product-tabs a.erase-tab.active { color: #E67E22; border-color: rgba(230,126,34,0.45); }
+  @media (max-width: 640px) { .product-tabs { display: none; } }
+
+  .erase-teaser .teaser-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: center;
+  }
+  .erase-teaser h2 { margin: 14px 0 16px; }
+  .erase-teaser .erase-actions { margin-top: 26px; }
+  .erase-teaser .shot-frame { display: block; text-decoration: none; }
+  .shot-frame {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: 0 28px 60px rgba(0,0,0,0.45);
+  }
+  .shot-frame::before {
+    content: "";
+    position: absolute;
+    inset: -14% -10% auto auto;
+    width: 70%;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(var(--accent-rgb, 46,204,113),0.20), transparent 68%);
+    z-index: -1;
+    pointer-events: none;
+  }
+  .shot-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 86%, transparent);
+    mask-image: linear-gradient(to bottom, #000 86%, transparent);
+  }
+  .xrow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: 56px;
+    align-items: center;
+  }
+  .xrow .exchange-tip:last-child { margin-bottom: 0; }
+  .exchange .xrow { margin-bottom: 36px; }
+  #nachricht .xrow .section-head { margin-bottom: 0; }
+  @media (max-width: 860px) {
+    .xrow { grid-template-columns: 1fr; gap: 28px; }
+    .erase-teaser .teaser-grid { grid-template-columns: 1fr; gap: 28px; }
+  }
+
   .topbar-free {
     display: inline-flex;
     align-items: center;
@@ -1088,7 +1155,7 @@
       </span>
     </a>
     <div class="topbar-right">
-      <a class="topbar-free" href="#sevenerase">SevenErase <span>kostenlos</span></a>
+      <nav class="product-tabs" aria-label="Produkte"><a class="shield-tab active" href="/" aria-current="page">SevenShield</a><a class="erase-tab" href="/sevenerase/">SevenErase</a></nav>
       <nav class="lang-switch" aria-label="Sprache wechseln">
       <span class="active">DE</span>
       <span class="divider">/</span>
@@ -1166,17 +1233,10 @@
     </div>
   </section>
 
-  <section class="shield-shot-sec">
-    <div class="wrap">
-      <figure class="shield-shot">
-          <img src="/sevenerase/img/shield-main.webp" alt="SevenShield Hauptfenster mit Dateiliste und Passwortfeldern" width="1000" height="1032" loading="lazy">
-          <figcaption>Das Hauptfenster von SevenShield: Ordner hinzufügen, Passwort vergeben, sperren.</figcaption>
-        </figure>
-    </div>
-  </section>
-
   <section class="exchange">
     <div class="wrap">
+      <div class="xrow">
+        <div class="xtext">
       <div class="section-head">
         <h2>Verschlüsselt verschicken statt nur ablegen</h2>
         <p>Ein gesperrter Ordner lässt sich ganz normal per E-Mail, USB-Stick oder Cloud-Speicher weitergeben. Der Empfänger braucht nur SevenShield und das richtige Passwort, um ihn zu öffnen. So schützt SevenShield sensible Unterlagen auch auf dem Übertragungsweg, nicht nur auf der Festplatte.</p>
@@ -1189,19 +1249,21 @@
         <span class="mono-label">Auf dem Handy lesen</span>
         <p>Der Empfänger braucht keine Installation. Die Datei im Browser öffnen, Passwort eingeben, fertig: <a href="https://sevenshield.de/oeffnen/?lang=de">sevenshield.de/oeffnen</a>. Alles läuft auf dem Gerät, nichts wird hochgeladen. Auf Wunsch gibt es die Seite auch als Offline-Datei mit Prüfsumme.</p>
       </div>
+        </div>
+        <div class="shot-frame"><img src="/sevenerase/img/shield-main.webp" alt="SevenShield Hauptfenster mit Dateiliste und Passwortfeldern" width="1000" height="1043" loading="lazy"></div>
+      </div>
     </div>
   </section>
 
   <section class="exchange" id="nachricht">
     <div class="wrap">
+      <div class="xrow">
       <div class="section-head">
         <h2>E-Mail-Texte und Anhänge verschlüsseln</h2>
         <p>Vertrauliches gehört nicht in den E-Mail-Text. Mit SevenShield schreiben Sie die Nachricht in einem eigenen Fenster, hängen bei Bedarf Dateien an und verschicken beides als eine verschlüsselte Datei. Der Empfänger öffnet sie kostenlos.</p>
       </div>
-      <figure class="shield-shot">
-          <img src="/sevenerase/img/shield-message.webp" alt="SevenShield, Fenster „Nachricht verschlüsseln“ mit Textfeld und Anhängen" width="1000" height="1040" loading="lazy">
-          <figcaption>Das Fenster „Nachricht verschlüsseln“: Text schreiben, Anhänge hinzufügen, weiter.</figcaption>
-        </figure>
+        <div class="shot-frame"><img src="/sevenerase/img/shield-message.webp" alt="SevenShield, Fenster „Nachricht verschlüsseln“ mit Textfeld und Anhängen" width="1000" height="1040" loading="lazy"></div>
+      </div>
       <div class="audience-grid">
         <div class="audience-cell">
           <span class="mono-num">01</span>
@@ -1282,13 +1344,13 @@
     </div>
   </section>
 
-  <section class="erase" id="sevenerase">
+  <section class="erase erase-teaser" id="sevenerase">
     <div class="wrap">
-      <div class="erase-card">
+      <div class="teaser-grid">
         <div>
           <span class="free-badge">Kostenlos</span>
           <h2>SevenErase: Dateien sicher und endgültig löschen</h2>
-          <p class="erase-lede">Wer im Papierkorb löscht, löscht nur den Verweis. Die Daten bleiben auf der Festplatte und lassen sich mit frei verfügbaren Werkzeugen wiederherstellen. SevenErase überschreibt Dateien, Ordner und freien Speicherplatz, bevor sie entfernt werden. So sind gelöschte Daten unwiederherstellbar, etwa vor dem Verkauf oder der Weitergabe eines PCs.</p>
+          <p class="erase-lede">Löscht Dateien, Ordner und freien Speicherplatz so, dass nichts wiederherstellbar bleibt. Dazu Metadaten, Spuren und Ordnervergleich in einem Programm.</p>
 
           <ul class="erase-list">
             <li><span><strong>Dateien und Ordner</strong> vor dem Löschen mit Zufallsdaten überschreiben</span></li>
@@ -1297,40 +1359,11 @@
           </ul>
 
           <div class="erase-actions">
-            <!-- Die .exe (~190 MB) NICHT ins Pages-Repository legen: GitHub
-                 lehnt Dateien über 100 MB beim Push ab. Stattdessen als
-                 Asset an ein GitHub Release haengen. "latest/download"
-                 zeigt automatisch immer auf die neueste Version. -->
-            <a class="btn-primary" href="https://github.com/hagenhofweg13-hub/sevenshield-landingpage/releases/latest/download/SevenErase.exe">SevenErase herunterladen</a>
-            <a class="hint" href="#nutzungsbedingungen-sevenerase">Nutzungsbedingungen</a>
+            <a class="btn-primary" href="/sevenerase/">Mehr zu SevenErase</a>
+            <a class="hint" href="https://github.com/hagenhofweg13-hub/sevenshield-landingpage/releases/latest/download/SevenErase.exe">SevenErase herunterladen</a>
           </div>
-
-          <!-- Hinweis zur SmartScreen-Warnung. Nach dem Signieren mit dem
-               Code-Signing-Zertifikat kann dieser Block entfallen oder
-               angepasst werden. -->
-          <p class="erase-note">
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="#8B9198" stroke-width="1.3"/><path d="M8 7v4.2M8 4.8v.1" stroke="#8B9198" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span>Beim ersten Start kann Windows einen Sicherheitshinweis anzeigen, weil SevenErase noch neu ist. Über ‚Weitere Informationen‘ und dann ‚Trotzdem ausführen‘ starten.</span>
-          </p>
         </div>
-
-        <div class="erase-side">
-          <div class="erase-spec">
-            <span class="mono-label">Technische Daten</span>
-            <dl>
-              <dt>System</dt><dd>Windows 10 / 11, 64 Bit</dd>
-              <dt>Größe</dt><dd>ca. 195 MB, eine einzelne .exe</dd>
-              <dt>Voraussetzung</dt><dd>keine, .NET ist enthalten</dd>
-              <dt>Sprachen</dt><dd>Deutsch, Englisch, Französisch, Italienisch</dd>
-              <dt>Preis</dt><dd>Löschen kostenlos, ohne Werbung. Löschprotokoll mit Lizenz</dd>
-            </dl>
-          </div>
-          <div class="erase-spec">
-            <span class="mono-label">Hinweis zu SSDs</span>
-            <p>Bei SSDs und USB-Sticks verteilt der Speicher-Controller Schreibvorgänge selbst. Einzelne Altkopien können deshalb technisch nicht in jedem Fall erreicht werden. Für vollständige Sicherheit sensible Daten von Anfang an verschlüsselt ablegen.</p>
-          </div>
-          <p class="erase-bridge">Genau dafür gibt es <a href="#top">SevenShield</a>: Was nie im Klartext gespeichert wurde, muss später auch nicht gründlich gelöscht werden.</p>
-        </div>
+        <a class="shot-frame" href="/sevenerase/" tabindex="-1" aria-hidden="true"><img src="/sevenerase/img/sevenerase-loeschen.webp" alt="SevenErase: Reiter Löschen mit Dateiliste" width="1000" height="701" loading="lazy"></a>
       </div>
     </div>
   </section>
@@ -1367,7 +1400,7 @@
     <span class="footer-copy">© 2026 SevenShield</span>
     <nav class="footer-links">
       <a href="mailto:t.drescher@sevenshield.de">Kontakt</a>
-      <a href="#sevenerase">SevenErase</a>
+      <a href="/sevenerase/">SevenErase</a>
       <a href="/sevensetup-builder/">SevenSetup Builder</a>
       <a href="/SevenShield_Kurzanleitung.pdf" download="SevenShield_Kurzanleitung.pdf" data-force-download>Kurzanleitung</a>
       <a href="#impressum">Impressum</a>

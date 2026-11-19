@@ -1038,6 +1038,194 @@
     line-height: 1.65;
   }
 
+  /* Produktseite SevenErase */
+  .erase-hero { padding: 72px 0 80px; }
+  .erase-hero .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 56px;
+    align-items: center;
+  }
+  .erase-hero h1 { margin: 14px 0 18px; }
+  .erase-hero .erase-actions { margin-top: 26px; }
+
+  .shot-frame {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: 0 28px 60px rgba(0,0,0,0.45);
+  }
+  .shot-frame::before {
+    content: "";
+    position: absolute;
+    inset: -14% -10% auto auto;
+    width: 70%;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(var(--accent-rgb),0.20), transparent 68%);
+    z-index: -1;
+    pointer-events: none;
+  }
+  .shot-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 86%, transparent);
+    mask-image: linear-gradient(to bottom, #000 86%, transparent);
+  }
+
+  .erase-features { padding: 72px 0 24px; border-top: 1px solid #2E3338; }
+  .erase-features .section-head { margin-bottom: 8px; }
+  .erase-features .shots-note { margin: 10px 0 0; font-size: 12.5px; color: var(--text-faint); }
+
+  .erase-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 64px;
+    align-items: center;
+    padding: 56px 0;
+    border-top: 1px solid var(--line);
+  }
+  .erase-features .section-head + .erase-feature { margin-top: 36px; }
+  .erase-feature.rev .feature-media { order: -1; }
+  .feature-text .mono-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .feature-text h3 {
+    margin: 0 0 14px;
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .feature-text p {
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+  }
+
+  .erase-steps-strip { padding: 56px 0 8px; border-top: 1px solid #2E3338; }
+  .erase-steps-strip h2 { margin: 0 0 6px; font-size: 26px; font-weight: 600; color: var(--text); }
+  .erase-steps-strip .erase-steps { margin-top: 22px; }
+
+  .meta-mock {
+    background: var(--void);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px 8px;
+    box-shadow: 0 28px 60px rgba(0,0,0,0.45);
+    position: relative;
+  }
+  .meta-mock .mm-file {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .meta-mock .mm-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+    color: var(--text);
+  }
+  .meta-mock .mm-row:last-child { border-bottom: 0; }
+  .meta-mock .mm-bar {
+    display: block;
+    height: 6px;
+    width: 120px;
+    margin-top: 8px;
+    border-radius: 3px;
+    background: var(--line);
+  }
+  .meta-mock .mm-chip {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(var(--accent-rgb),0.45);
+    border-radius: 999px;
+    padding: 3px 10px;
+  }
+
+  .erase-more { padding: 64px 0; border-top: 1px solid #2E3338; }
+  .erase-more h2, .erase-lic h2, .erase-tech h2 { margin: 0 0 26px; font-size: 26px; font-weight: 600; color: var(--text); }
+  .more-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .more-card {
+    background: var(--void);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px 24px 22px;
+  }
+  .more-card .mc-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(var(--accent-rgb),0.12);
+    display: grid;
+    place-items: center;
+    margin-bottom: 16px;
+  }
+  .more-card svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .more-card h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; color: var(--text); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .more-card p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--text-muted); }
+
+  .erase-lic { padding: 64px 0; border-top: 1px solid #2E3338; }
+  .erase-lic .erase-split { margin-top: 0; }
+  .erase-tech { padding: 64px 0 88px; border-top: 1px solid #2E3338; }
+  .erase-tech .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: start;
+  }
+  .erase-tech .erase-bridge { margin: 20px 0 0; grid-column: 1 / -1; }
+
+  @media (max-width: 860px) {
+    .erase-hero .hero-grid, .erase-feature, .more-grid, .erase-tech .tech-grid { grid-template-columns: 1fr; gap: 28px; }
+    .erase-feature { padding: 40px 0; }
+    .erase-feature.rev .feature-media { order: 0; }
+    .feature-text h3 { font-size: 23px; }
+  }
+
+  .product-tabs { display: flex; gap: 4px; margin-right: 6px; }
+  .product-tabs a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 6px 13px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    transition: color .15s ease;
+  }
+  .product-tabs a:hover { color: var(--text); }
+  .product-tabs a.active { color: var(--text); background: #21252A; border-color: #2E3338; }
+  .product-tabs a.shield-tab.active { color: #2ECC71; border-color: rgba(46,204,113,0.45); }
+  .product-tabs a.erase-tab.active { color: #E67E22; border-color: rgba(230,126,34,0.45); }
+  @media (max-width: 640px) { .product-tabs { display: none; } }
+
   .erase-split .lic { border-color: rgba(var(--accent-rgb),0.4); }
 
   .erase-shots {
@@ -1311,6 +1499,7 @@
       </span>
     </a>
     <div class="topbar-right">
+      <nav class="product-tabs" aria-label="Produkte"><a class="shield-tab" href="/">SevenShield</a><a class="erase-tab active" href="/sevenerase/" aria-current="page">SevenErase</a></nav>
       <nav class="lang-switch" aria-label="Sprache wechseln">
       <span class="active">DE</span>
       <span class="divider">/</span>
@@ -1327,9 +1516,9 @@
 
 <main id="top" class="erase-page">
 
-  <section class="erase" id="sevenerase">
+    <section class="erase erase-hero" id="sevenerase">
     <div class="wrap">
-      <div class="erase-card">
+      <div class="hero-grid">
         <div>
           <span class="free-badge">Kostenlos</span>
           <h1>Dateien sicher und endgültig löschen: SevenErase</h1>
@@ -1339,10 +1528,6 @@
             <li><span><strong>Dateien und Ordner</strong> vor dem Löschen mit Zufallsdaten überschreiben</span></li>
             <li><span><strong>Freien Speicherplatz bereinigen</strong>, damit auch früher gelöschte Reste verschwinden</span></li>
             <li><span><strong>Keine Installation</strong>, keine Anmeldung, keine Datenübertragung</span></li>
-            <li><span><strong>Metadaten entfernen</strong> aus Fotos, Videos, Office-Dokumenten und PDFs, bevor Sie sie weitergeben, mit Lizenz</span></li>
-            <li><span><strong>Spuren bereinigen</strong>: Temp-Dateien, Zuletzt-verwendet-Listen, Browser-Cache, -Verlauf und -Cookies sicher löschen, mit Lizenz</span></li>
-            <li><span><strong>Löschprotokoll als PDF</strong> als Nachweis, was wann gelöscht wurde, zum Beispiel für den Datenschutz, mit SevenShield- oder SevenErase-Lizenz</span></li>
-            <li><span><strong>Ordner vergleichen</strong> nach Größe und Datum, kostenlos. Mit Lizenz auch angleichen oder spiegeln, zum Beispiel für USB-Sticks</span></li>
           </ul>
 
           <div class="erase-actions">
@@ -1354,16 +1539,95 @@
             <a class="hint" href="/#nutzungsbedingungen-sevenerase">Nutzungsbedingungen</a>
           </div>
 
-          <!-- Hinweis zur SmartScreen-Warnung. Nach dem Signieren mit dem
-               Code-Signing-Zertifikat kann dieser Block entfallen oder
-               angepasst werden. -->
           <p class="erase-note">
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="#8B9198" stroke-width="1.3"/><path d="M8 7v4.2M8 4.8v.1" stroke="#8B9198" stroke-width="1.5" stroke-linecap="round"/></svg>
             <span>Beim ersten Start kann Windows einen Sicherheitshinweis anzeigen, weil SevenErase noch neu ist. Über ‚Weitere Informationen‘ und dann ‚Trotzdem ausführen‘ starten.</span>
           </p>
         </div>
+        <div class="hero-media"><div class="shot-frame"><img src="/sevenerase/img/sevenerase-loeschen.webp" alt="Reiter Löschen in SevenErase: Dateien und Ordner in die Liste ziehen und sicher löschen" width="1000" height="701" loading="lazy"></div></div>
+      </div>
+    </div>
+  </section>
 
-        <div class="erase-side">
+  <section class="erase erase-steps-strip" id="sevenerase-anleitung">
+    <div class="wrap">
+      <h2>So geht es in vier Schritten</h2>
+      <ol class="erase-steps">
+          <li><strong>Starten</strong>SevenErase.exe per Doppelklick öffnen. Eine Installation ist nicht nötig.</li>
+          <li><strong>Auswählen</strong>Dateien oder Ordner in die Liste ziehen oder über die Schaltflächen rechts daneben hinzufügen.</li>
+          <li><strong>Einstellen</strong>Ein Durchgang reicht bei heutigen Festplatten. Optional „Danach Freiraum wipen“ anhaken.</li>
+          <li><strong>Löschen</strong>Auf „Sicher löschen“ klicken. Der Fortschritt erscheint im Protokoll unten.</li>
+        </ol>
+    </div>
+  </section>
+
+  <section class="erase erase-features" id="funktionen">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Was SevenErase kann</h2>
+        <p>Jeder Reiter im Programm löst eine Aufgabe. Kostenlos ist, was Sie täglich brauchen, mit Lizenz kommt der Nachweis dazu.</p>
+      </div>
+      <div class="erase-feature">
+        <div class="feature-text">
+          <span class="mono-label">Reiter „Freiraum wipen“ <span class="erase-tag">Frei</span></span>
+          <h3>Auch Altlasten verschwinden</h3>
+          <p>Überschreibt den freien Speicherplatz eines Laufwerks, damit auch früher normal gelöschte Dateien nicht mehr wiederherstellbar sind.</p>
+        </div>
+        <div class="feature-media"><div class="shot-frame"><img src="/sevenerase/img/sevenerase-freiraum.webp" alt="Reiter Freiraum wipen in SevenErase mit Laufwerksliste und Durchgängen" width="1000" height="642" loading="lazy"></div></div>
+      </div>
+      <div class="erase-feature rev">
+        <div class="feature-text">
+          <span class="mono-label">Reiter „Metadaten“ <span class="erase-tag lic">Lizenz</span></span>
+          <h3>Unsichtbare Angaben entfernen</h3>
+          <p>Entfernt versteckte Angaben wie Autor, Firma oder Bearbeitungsdaten aus Fotos, Videos (MP4, MOV, 3GP), Word-, Excel- und PowerPoint-Dateien und PDFs. Bei Fotos und Videos entfernt es auch Standortdaten (GPS). „Anzeigen / Bearbeiten“ zeigt die Angaben einer Datei im Detail. Das Anzeigen ist kostenlos, das Entfernen und Ändern gibt es mit Lizenz.</p>
+        </div>
+        <div class="feature-media"><div class="meta-mock" aria-hidden="true"><div class="mm-file">IMG_2041.jpg</div><div class="mm-row"><div>GPS-Standort<span class="mm-bar"></span></div><span class="mm-chip">entfernt</span></div><div class="mm-row"><div>Gerät und Hersteller<span class="mm-bar"></span></div><span class="mm-chip">entfernt</span></div><div class="mm-row"><div>Autor und Firma<span class="mm-bar"></span></div><span class="mm-chip">entfernt</span></div><div class="mm-row"><div>Aufnahmezeit<span class="mm-bar"></span></div><span class="mm-chip">entfernt</span></div><div class="mm-row"><div>Bearbeitungsverlauf<span class="mm-bar"></span></div><span class="mm-chip">entfernt</span></div></div></div>
+      </div>
+      <div class="erase-feature">
+        <div class="feature-text">
+          <span class="mono-label">Reiter „Spuren“ <span class="erase-tag lic">Lizenz</span></span>
+          <h3>Spuren von Windows und Browsern</h3>
+          <p>Entfernt, was Windows und Browser über Ihre Arbeit speichern: temporäre Dateien, Listen zuletzt verwendeter Dateien, Miniaturansicht-Cache, Absturzberichte sowie Cache, Verlauf und Cookies von Edge, Chrome und Firefox (nicht den Firefox-Verlauf, er liegt in einer Datei mit den Lesezeichen). „Analysieren“ zeigt vorab, was sich angesammelt hat. Die Dateien werden vor dem Löschen überschrieben, auf Wunsch folgt das Freiraum-Wipen. Dokumente, Lesezeichen und gespeicherte Passwörter bleiben unberührt. Das Analysieren ist kostenlos, das Bereinigen braucht eine Lizenz.</p>
+        </div>
+        <div class="feature-media"><div class="shot-frame"><img src="/sevenerase/img/sevenerase-spuren.webp" alt="Reiter Spuren in SevenErase mit Kategorien wie temporäre Dateien und Browserverlauf" width="1000" height="679" loading="lazy"></div></div>
+      </div>
+      <div class="erase-feature rev">
+        <div class="feature-text">
+          <span class="mono-label">Reiter „Vergleichen“ <span class="erase-tag lic">Teils Lizenz</span></span>
+          <h3>Ordner abgleichen</h3>
+          <p>Vergleicht zwei Ordner nach Größe und Änderungsdatum und zeigt, was nur auf einer Seite liegt oder neuer ist. Optional mit Inhaltsprüfung und Filter für Dateitypen, zum Beispiel *.pdf. Das Vergleichen ist kostenlos. Mit Lizenz gleicht „B auf Stand von A“ (und umgekehrt) einen Ordner an: Aktualisieren kopiert Fehlendes und Neueres und löscht nichts, Spiegeln macht das Ziel identisch zur Quelle. Vor dem Start gibt es eine Zusammenfassung und eine Prüfung des freien Speicherplatzes. Gedacht für USB-Sticks und Datenordner, nicht für Systemlaufwerke oder laufende Datenbanken.</p>
+        </div>
+        <div class="feature-media"><div class="shot-frame"><img src="/sevenerase/img/sevenerase-vergleichen.webp" alt="Reiter Vergleichen in SevenErase mit zwei Ordnern und Abgleich-Optionen" width="1000" height="741" loading="lazy"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="erase erase-more">
+    <div class="wrap">
+      <h2>Weitere Helfer</h2>
+      <div class="more-grid">
+        <div class="more-card"><div class="mc-icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg></div><h3>Papierkorb leeren + Freiraum wipen <span class="erase-tag">Frei</span></h3><p>Erledigt beides in einem Schritt, zum Beispiel vor der Weitergabe eines PCs.</p></div>
+        <div class="more-card"><div class="mc-icon"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg></div><h3>Löschprotokoll (PDF) <span class="erase-tag lic">Lizenz</span></h3><p>Nach dem Löschen fragt SevenErase, ob ein Protokoll gespeichert werden soll. Es listet gelöschte Dateien und Ordner, Durchgänge, Uhrzeit und Ergebnis auf und trägt eine Prüfsumme. Über die Schaltfläche „Löschprotokoll (PDF)“ lässt es sich auch später speichern. Es dokumentiert den Ablauf, ist aber keine Zertifizierung.</p></div>
+        <div class="more-card"><div class="mc-icon"><svg viewBox="0 0 24 24"><path d="M5 4l5 15 2.5-6L19 10.5z"/><path d="M13 14l5 5"/></svg></div><h3>Explorer-Rechtsklick <span class="erase-tag">Frei</span></h3><p>Mit dem Schalter unten links erscheint „Sicher löschen“ direkt im Kontextmenü des Windows-Explorers. Mit demselben Schalter bekommt auch der Papierkorb auf dem Desktop einen Eintrag „Papierkorb sicher leeren (SevenErase)“: Er leert den Papierkorb und überschreibt danach den freien Speicherplatz.</p></div>
+        <div class="more-card"><div class="mc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div><h3>Nur ein Fenster <span class="erase-tag">Frei</span></h3><p>Ist SevenErase schon geöffnet, holt ein weiterer Start (auch per Rechtsklick) das vorhandene Fenster nach vorn und übernimmt die gewählten Dateien in die Liste.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="erase erase-lic" id="lizenz">
+    <div class="wrap">
+      <h2>Kostenlos und mit Lizenz</h2>
+      <div class="erase-split">
+          <div><h4>Kostenlos</h4><ul><li>Dateien und Ordner sicher löschen</li><li>Freiraum wipen</li><li>Papierkorb sicher leeren, Explorer-Rechtsklick</li><li>Metadaten anzeigen</li><li>Spuren analysieren</li><li>Ordner vergleichen</li></ul></div>
+          <div class="lic"><h4>Mit Lizenz</h4><ul><li>Löschprotokoll als PDF mit Export</li><li>Metadaten entfernen und ändern</li><li>Spuren bereinigen</li><li>Ordner angleichen und spiegeln</li></ul></div>
+        </div>
+    </div>
+  </section>
+
+  <section class="erase erase-tech">
+    <div class="wrap">
+      <h2>Technik und Grenzen</h2>
+      <div class="tech-grid">
           <div class="erase-spec">
             <span class="mono-label">Technische Daten</span>
             <dl>
@@ -1378,74 +1642,6 @@
             <p>Bei SSDs und USB-Sticks verteilt der Speicher-Controller Schreibvorgänge selbst. Einzelne Altkopien können deshalb technisch nicht in jedem Fall erreicht werden. Für vollständige Sicherheit sensible Daten von Anfang an verschlüsselt ablegen.</p>
           </div>
           <p class="erase-bridge">Genau dafür gibt es <a href="/">SevenShield</a>: Was nie im Klartext gespeichert wurde, muss später auch nicht gründlich gelöscht werden.</p>
-        </div>
-      </div>
-
-      <div class="erase-shots" role="group" aria-label="Screenshots von SevenErase">
-          <figure>
-            <img src="/sevenerase/img/sevenerase-loeschen.webp" alt="Reiter Löschen in SevenErase: Dateien und Ordner in die Liste ziehen und sicher löschen" width="1000" height="1000" loading="lazy">
-            <figcaption><strong>Reiter „Löschen“:</strong> Dateien und Ordner in die Liste ziehen und sicher löschen.</figcaption>
-          </figure>
-          <figure>
-            <img src="/sevenerase/img/sevenerase-freiraum.webp" alt="Reiter Freiraum wipen in SevenErase mit Laufwerksliste und Durchgängen" width="1000" height="1000" loading="lazy">
-            <figcaption><strong>Reiter „Freiraum wipen“:</strong> Freien Speicherplatz ausgewählter Laufwerke überschreiben.</figcaption>
-          </figure>
-          <figure>
-            <img src="/sevenerase/img/sevenerase-spuren.webp" alt="Reiter Spuren in SevenErase mit Kategorien wie temporäre Dateien und Browserverlauf" width="1000" height="1000" loading="lazy">
-            <figcaption><strong>Reiter „Spuren“:</strong> Temp-Dateien, Verläufe und Caches gezielt bereinigen.</figcaption>
-          </figure>
-          <figure>
-            <img src="/sevenerase/img/sevenerase-vergleichen.webp" alt="Reiter Vergleichen in SevenErase mit zwei Ordnern und Abgleich-Optionen" width="1000" height="1000" loading="lazy">
-            <figcaption><strong>Reiter „Vergleichen“:</strong> Zwei Ordner vergleichen und auf Wunsch angleichen.</figcaption>
-          </figure>
-      </div>
-
-      <div class="erase-guide" id="sevenerase-anleitung">
-        <h3>SevenErase-Kurzanleitung</h3>
-        <ol class="erase-steps">
-          <li><strong>Starten</strong>SevenErase.exe per Doppelklick öffnen. Eine Installation ist nicht nötig.</li>
-          <li><strong>Auswählen</strong>Dateien oder Ordner in die Liste ziehen oder über die Schaltflächen rechts daneben hinzufügen.</li>
-          <li><strong>Einstellen</strong>Ein Durchgang reicht bei heutigen Festplatten. Optional „Danach Freiraum wipen“ anhaken.</li>
-          <li><strong>Löschen</strong>Auf „Sicher löschen“ klicken. Der Fortschritt erscheint im Protokoll unten.</li>
-        </ol>
-        <div class="erase-split">
-          <div><h4>Kostenlos</h4><ul><li>Dateien und Ordner sicher löschen</li><li>Freiraum wipen</li><li>Papierkorb sicher leeren, Explorer-Rechtsklick</li><li>Metadaten anzeigen</li><li>Spuren analysieren</li><li>Ordner vergleichen</li></ul></div>
-          <div class="lic"><h4>Mit Lizenz</h4><ul><li>Löschprotokoll als PDF mit Export</li><li>Metadaten entfernen und ändern</li><li>Spuren bereinigen</li><li>Ordner angleichen und spiegeln</li></ul></div>
-        </div>
-        <div class="erase-extras">
-          <details>
-            <summary>Reiter „Freiraum wipen“ <span class="erase-tag">Frei</span></summary>
-            <p>Überschreibt den freien Speicherplatz eines Laufwerks, damit auch früher normal gelöschte Dateien nicht mehr wiederherstellbar sind.</p>
-          </details>
-          <details>
-            <summary>Papierkorb leeren + Freiraum wipen <span class="erase-tag">Frei</span></summary>
-            <p>Erledigt beides in einem Schritt, zum Beispiel vor der Weitergabe eines PCs.</p>
-          </details>
-          <details>
-            <summary>Löschprotokoll (PDF) <span class="erase-tag lic">Lizenz</span></summary>
-            <p>Nach dem Löschen fragt SevenErase, ob ein Protokoll gespeichert werden soll. Es listet gelöschte Dateien und Ordner, Durchgänge, Uhrzeit und Ergebnis auf und trägt eine Prüfsumme. Über die Schaltfläche „Löschprotokoll (PDF)“ lässt es sich auch später speichern. Es dokumentiert den Ablauf, ist aber keine Zertifizierung.</p>
-          </details>
-          <details>
-            <summary>Explorer-Rechtsklick <span class="erase-tag">Frei</span></summary>
-            <p>Mit dem Schalter unten links erscheint „Sicher löschen“ direkt im Kontextmenü des Windows-Explorers. Mit demselben Schalter bekommt auch der Papierkorb auf dem Desktop einen Eintrag „Papierkorb sicher leeren (SevenErase)“: Er leert den Papierkorb und überschreibt danach den freien Speicherplatz.</p>
-          </details>
-          <details>
-            <summary>Reiter „Metadaten“ <span class="erase-tag lic">Lizenz</span></summary>
-            <p>Entfernt versteckte Angaben wie Autor, Firma oder Bearbeitungsdaten aus Fotos, Videos (MP4, MOV, 3GP), Word-, Excel- und PowerPoint-Dateien und PDFs. Bei Fotos und Videos entfernt es auch Standortdaten (GPS). „Anzeigen / Bearbeiten“ zeigt die Angaben einer Datei im Detail. Das Anzeigen ist kostenlos, das Entfernen und Ändern gibt es mit Lizenz.</p>
-          </details>
-          <details>
-            <summary>Reiter „Spuren“ <span class="erase-tag lic">Lizenz</span></summary>
-            <p>Entfernt, was Windows und Browser über Ihre Arbeit speichern: temporäre Dateien, Listen zuletzt verwendeter Dateien, Miniaturansicht-Cache, Absturzberichte sowie Cache, Verlauf und Cookies von Edge, Chrome und Firefox (nicht den Firefox-Verlauf, er liegt in einer Datei mit den Lesezeichen). „Analysieren“ zeigt vorab, was sich angesammelt hat. Die Dateien werden vor dem Löschen überschrieben, auf Wunsch folgt das Freiraum-Wipen. Dokumente, Lesezeichen und gespeicherte Passwörter bleiben unberührt. Das Analysieren ist kostenlos, das Bereinigen braucht eine Lizenz.</p>
-          </details>
-          <details>
-            <summary>Reiter „Vergleichen“ <span class="erase-tag lic">Teils Lizenz</span></summary>
-            <p>Vergleicht zwei Ordner nach Größe und Änderungsdatum und zeigt, was nur auf einer Seite liegt oder neuer ist. Optional mit Inhaltsprüfung und Filter für Dateitypen, zum Beispiel *.pdf. Das Vergleichen ist kostenlos. Mit Lizenz gleicht „B auf Stand von A“ (und umgekehrt) einen Ordner an: Aktualisieren kopiert Fehlendes und Neueres und löscht nichts, Spiegeln macht das Ziel identisch zur Quelle. Vor dem Start gibt es eine Zusammenfassung und eine Prüfung des freien Speicherplatzes. Gedacht für USB-Sticks und Datenordner, nicht für Systemlaufwerke oder laufende Datenbanken.</p>
-          </details>
-          <details>
-            <summary>Nur ein Fenster <span class="erase-tag">Frei</span></summary>
-            <p>Ist SevenErase schon geöffnet, holt ein weiterer Start (auch per Rechtsklick) das vorhandene Fenster nach vorn und übernimmt die gewählten Dateien in die Liste.</p>
-          </details>
-        </div>
       </div>
     </div>
   </section>
