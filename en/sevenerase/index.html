@@ -1190,6 +1190,31 @@
   .more-card h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; color: var(--text); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
   .more-card p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--text-muted); }
 
+  .buy { padding: 64px 0 72px; border-top: 1px solid #2E3338; }
+  .buy h2 { margin: 0 0 26px; font-size: 26px; font-weight: 600; color: var(--text); }
+  .buy-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 40px;
+    align-items: center;
+    background: var(--void);
+    border: 1px solid rgba(var(--accent-rgb),0.4);
+    border-radius: 14px;
+    padding: 36px 40px;
+  }
+  .buy-price { font-size: 52px; line-height: 1; font-weight: 600; color: var(--text); letter-spacing: -0.02em; }
+  .buy-price small { display: block; margin-top: 10px; font-size: 14px; font-weight: 400; letter-spacing: 0; color: var(--text-muted); line-height: 1.5; }
+  .buy-price .buy-lead { margin: 0 0 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); font-weight: 400; }
+  .buy-list { margin: 0 0 24px; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .buy-list li { position: relative; padding-left: 22px; font-size: 15px; line-height: 1.55; color: var(--text-muted); }
+  .buy-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .buy-list strong { color: var(--text); font-weight: 500; }
+  .buy-tax { margin: 14px 0 0; font-size: 12.5px; color: var(--text-faint); }
+  @media (max-width: 860px) {
+    .buy-card { grid-template-columns: 1fr; gap: 24px; padding: 28px 24px; }
+    .buy-price { font-size: 44px; }
+  }
+
   .erase-lic { padding: 64px 0; border-top: 1px solid #2E3338; }
   .erase-lic .erase-split { margin-top: 0; }
   .erase-tech { padding: 64px 0 88px; border-top: 1px solid #2E3338; }
@@ -1223,8 +1248,15 @@
   .product-tabs a:hover { color: var(--text); }
   .product-tabs a.active { color: var(--text); background: #21252A; border-color: #2E3338; }
   .product-tabs a.shield-tab.active { color: #2ECC71; border-color: rgba(46,204,113,0.45); }
+  .product-tabs a.builder-tab.active { color: #9B7BFF; border-color: rgba(155,123,255,0.45); }
   .product-tabs a.erase-tab.active { color: #E67E22; border-color: rgba(230,126,34,0.45); }
-  @media (max-width: 640px) {
+  @media (max-width: 1060px) {
+    .product-tabs a { font-size: 11.5px; padding: 5px 9px; }
+    .brand-tagline { display: none; }
+    .cta-long { display: none; }
+    .cta-short { display: inline; }
+  }
+  @media (max-width: 900px) {
     .topbar .wrap { flex-wrap: wrap; row-gap: 10px; }
     .topbar-right { width: 100%; flex-wrap: wrap; justify-content: space-between; row-gap: 10px; }
     .product-tabs { order: -1; width: 100%; margin: 0; }
@@ -1504,7 +1536,7 @@
       </span>
     </a>
     <div class="topbar-right">
-      <nav class="product-tabs" aria-label="Produkte"><a class="shield-tab" href="/en/">SevenShield</a><a class="erase-tab active" href="/en/sevenerase/" aria-current="page">SevenErase</a></nav>
+      <nav class="product-tabs" aria-label="Produkte"><a class="shield-tab" href="/en/">SevenShield</a><a class="erase-tab active" aria-current="page" href="/en/sevenerase/">SevenErase</a><a class="builder-tab" href="/en/sevensetup-builder/">SevenSetup Builder</a></nav>
       <nav class="lang-switch" aria-label="Sprache wechseln">
       <a href="https://sevenshield.de/sevenerase/">DE</a>
       <span class="divider">/</span>
@@ -1623,6 +1655,24 @@
           <div><h4>Free</h4><ul><li>Securely delete files and folders</li><li>Wipe free space</li><li>Empty the Recycle Bin securely, right-click menu</li><li>View metadata</li><li>Analyze traces</li><li>Compare folders</li></ul></div>
           <div class="lic"><h4>With license</h4><ul><li>Deletion report as PDF with export</li><li>Remove and change metadata</li><li>Clean traces</li><li>Synchronize and mirror folders</li></ul></div>
         </div>
+    </div>
+  </section>
+
+  <section class="erase buy" id="lizenz-kaufen">
+    <div class="wrap">
+      <h2>Get a license</h2>
+      <div class="buy-card">
+        <div class="buy-price"><p class="buy-lead">SevenErase license</p>€29<small>one-time, for one computer</small></div>
+        <div>
+          <ul class="buy-list">
+          <li><strong>Unlocks</strong> the deletion report, removing metadata, cleaning traces, and synchronizing and mirroring folders</li>
+          <li><strong>Invoice and license file (.lic)</strong> by email, you load the file in the program</li>
+          <li><strong>Credit</strong>: if you later upgrade to SevenShield (from 18 January 2027), the price you paid is credited</li>
+          </ul>
+          <a class="btn-primary" href="mailto:support@sevenshield.de?subject=SevenErase%20license&amp;body=Hello%2C%0A%0AI%20would%20like%20to%20purchase%20a%20SevenErase%20license%20%28EUR%2029%29.%0A%0AName%20/%20company%3A%0AInvoice%20address%3A%0A">Request a license by email</a>
+          <p class="buy-tax">As a small business under § 19 UStG, no VAT is shown.</p>
+        </div>
+      </div>
     </div>
   </section>
 

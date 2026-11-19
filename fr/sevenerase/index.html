@@ -1190,6 +1190,31 @@
   .more-card h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; color: var(--text); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
   .more-card p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--text-muted); }
 
+  .buy { padding: 64px 0 72px; border-top: 1px solid #2E3338; }
+  .buy h2 { margin: 0 0 26px; font-size: 26px; font-weight: 600; color: var(--text); }
+  .buy-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 40px;
+    align-items: center;
+    background: var(--void);
+    border: 1px solid rgba(var(--accent-rgb),0.4);
+    border-radius: 14px;
+    padding: 36px 40px;
+  }
+  .buy-price { font-size: 52px; line-height: 1; font-weight: 600; color: var(--text); letter-spacing: -0.02em; }
+  .buy-price small { display: block; margin-top: 10px; font-size: 14px; font-weight: 400; letter-spacing: 0; color: var(--text-muted); line-height: 1.5; }
+  .buy-price .buy-lead { margin: 0 0 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); font-weight: 400; }
+  .buy-list { margin: 0 0 24px; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .buy-list li { position: relative; padding-left: 22px; font-size: 15px; line-height: 1.55; color: var(--text-muted); }
+  .buy-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .buy-list strong { color: var(--text); font-weight: 500; }
+  .buy-tax { margin: 14px 0 0; font-size: 12.5px; color: var(--text-faint); }
+  @media (max-width: 860px) {
+    .buy-card { grid-template-columns: 1fr; gap: 24px; padding: 28px 24px; }
+    .buy-price { font-size: 44px; }
+  }
+
   .erase-lic { padding: 64px 0; border-top: 1px solid #2E3338; }
   .erase-lic .erase-split { margin-top: 0; }
   .erase-tech { padding: 64px 0 88px; border-top: 1px solid #2E3338; }
@@ -1223,8 +1248,15 @@
   .product-tabs a:hover { color: var(--text); }
   .product-tabs a.active { color: var(--text); background: #21252A; border-color: #2E3338; }
   .product-tabs a.shield-tab.active { color: #2ECC71; border-color: rgba(46,204,113,0.45); }
+  .product-tabs a.builder-tab.active { color: #9B7BFF; border-color: rgba(155,123,255,0.45); }
   .product-tabs a.erase-tab.active { color: #E67E22; border-color: rgba(230,126,34,0.45); }
-  @media (max-width: 640px) {
+  @media (max-width: 1060px) {
+    .product-tabs a { font-size: 11.5px; padding: 5px 9px; }
+    .brand-tagline { display: none; }
+    .cta-long { display: none; }
+    .cta-short { display: inline; }
+  }
+  @media (max-width: 900px) {
     .topbar .wrap { flex-wrap: wrap; row-gap: 10px; }
     .topbar-right { width: 100%; flex-wrap: wrap; justify-content: space-between; row-gap: 10px; }
     .product-tabs { order: -1; width: 100%; margin: 0; }
@@ -1504,7 +1536,7 @@
       </span>
     </a>
     <div class="topbar-right">
-      <nav class="product-tabs" aria-label="Produkte"><a class="shield-tab" href="/fr/">SevenShield</a><a class="erase-tab active" href="/fr/sevenerase/" aria-current="page">SevenErase</a></nav>
+      <nav class="product-tabs" aria-label="Produkte"><a class="shield-tab" href="/fr/">SevenShield</a><a class="erase-tab active" aria-current="page" href="/fr/sevenerase/">SevenErase</a><a class="builder-tab" href="/fr/sevensetup-builder/">SevenSetup Builder</a></nav>
       <nav class="lang-switch" aria-label="Sprache wechseln">
       <a href="https://sevenshield.de/sevenerase/">DE</a>
       <span class="divider">/</span>
@@ -1623,6 +1655,24 @@
           <div><h4>Gratuit</h4><ul><li>Supprimer fichiers et dossiers de façon sûre</li><li>Effacer l’espace libre</li><li>Vider la corbeille en toute sécurité, menu du clic droit</li><li>Afficher les métadonnées</li><li>Analyser les traces</li><li>Comparer des dossiers</li></ul></div>
           <div class="lic"><h4>Avec licence</h4><ul><li>Protocole de suppression en PDF avec export</li><li>Supprimer et modifier les métadonnées</li><li>Nettoyer les traces</li><li>Aligner et synchroniser des dossiers en miroir</li></ul></div>
         </div>
+    </div>
+  </section>
+
+  <section class="erase buy" id="lizenz-kaufen">
+    <div class="wrap">
+      <h2>Obtenir une licence</h2>
+      <div class="buy-card">
+        <div class="buy-price"><p class="buy-lead">Licence SevenErase</p>29 €<small>paiement unique, pour un ordinateur</small></div>
+        <div>
+          <ul class="buy-list">
+          <li><strong>Débloque</strong> le protocole de suppression, la suppression des métadonnées, le nettoyage des traces ainsi que l’alignement et la synchronisation miroir de dossiers</li>
+          <li><strong>Facture et fichier de licence (.lic)</strong> par e-mail, vous chargez le fichier dans le programme</li>
+          <li><strong>Déduction</strong> : si vous passez plus tard à SevenShield (à partir du 18 janvier 2027), le prix payé est déduit</li>
+          </ul>
+          <a class="btn-primary" href="mailto:support@sevenshield.de?subject=Licence%20SevenErase&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20acheter%20une%20licence%20SevenErase%20%2829%20EUR%29.%0A%0ANom%20/%20soci%C3%A9t%C3%A9%20%3A%0AAdresse%20de%20facturation%20%3A%0A">Demander une licence par e-mail</a>
+          <p class="buy-tax">En tant que petite entreprise selon le § 19 UStG, sans TVA facturée.</p>
+        </div>
+      </div>
     </div>
   </section>
 
