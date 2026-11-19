@@ -38,7 +38,7 @@
   "description": "Windows program for securely and permanently deleting files and folders, free of charge. Folders can be compared for free. The deletion report as a PDF, removing metadata, cleaning traces and synchronizing or mirroring folders require a license. Overwrites data before deletion and wipes free disk space. No installation, no data transfer.",
   "url": "https://sevenshield.de/en/sevenerase/",
   "downloadUrl": "https://github.com/hagenhofweg13-hub/sevenshield-landingpage/releases/latest/download/SevenErase.exe",
-  "softwareVersion": "1.2.0",
+  "softwareVersion": "1.2.2",
   "fileSize": "195MB",
   "isAccessibleForFree": true,
   "inLanguage": "en",
@@ -1060,7 +1060,7 @@
   .shot-frame::before {
     content: "";
     position: absolute;
-    inset: -14% -10% auto auto;
+    inset: -14% 0 auto auto;
     width: 70%;
     aspect-ratio: 1;
     background: radial-gradient(circle, rgba(var(--accent-rgb),0.20), transparent 68%);
@@ -1224,7 +1224,12 @@
   .product-tabs a.active { color: var(--text); background: #21252A; border-color: #2E3338; }
   .product-tabs a.shield-tab.active { color: #2ECC71; border-color: rgba(46,204,113,0.45); }
   .product-tabs a.erase-tab.active { color: #E67E22; border-color: rgba(230,126,34,0.45); }
-  @media (max-width: 640px) { .product-tabs { display: none; } }
+  @media (max-width: 640px) {
+    .topbar .wrap { flex-wrap: wrap; row-gap: 10px; }
+    .topbar-right { width: 100%; flex-wrap: wrap; justify-content: space-between; row-gap: 10px; }
+    .product-tabs { order: -1; width: 100%; margin: 0; }
+    .product-tabs a { padding: 6px 12px; }
+  }
 
   .erase-split .lic { border-color: rgba(var(--accent-rgb),0.4); }
 

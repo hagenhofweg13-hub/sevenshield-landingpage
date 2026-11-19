@@ -62,34 +62,6 @@
 }
 </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "SevenErase",
-  "alternateName": "SevenErase: eliminare file in modo sicuro",
-  "operatingSystem": "Windows 10, Windows 11",
-  "applicationCategory": "SecurityApplication",
-  "applicationSubCategory": "Eliminazione sicura, distruzione dei dati",
-  "description": "Programma Windows per eliminare file e cartelle in modo sicuro e definitivo, gratuito. Il verbale di eliminazione in PDF richiede una licenza. Sovrascrive i dati prima dell’eliminazione e pulisce lo spazio libero. Senza installazione, senza trasferimento di dati.",
-  "url": "https://sevenshield.de/it/sevenerase/",
-  "downloadUrl": "https://github.com/hagenhofweg13-hub/sevenshield-landingpage/releases/latest/download/SevenErase.exe",
-  "softwareVersion": "1.2.0",
-  "fileSize": "195MB",
-  "isAccessibleForFree": true,
-  "inLanguage": "it",
-  "author": {
-    "@type": "Person",
-    "name": "Dr. Thomas Drescher"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "EUR"
-  }
-}
-</script>
-
 <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
 <link rel="icon" type="image/png" sizes="16x16" href="/icon_16.png?v=2">
 <link rel="icon" type="image/png" sizes="32x32" href="/icon_32.png?v=2">
@@ -326,7 +298,12 @@
   .product-tabs a.active { color: var(--text); background: #21252A; border-color: #2E3338; }
   .product-tabs a.shield-tab.active { color: #2ECC71; border-color: rgba(46,204,113,0.45); }
   .product-tabs a.erase-tab.active { color: #E67E22; border-color: rgba(230,126,34,0.45); }
-  @media (max-width: 640px) { .product-tabs { display: none; } }
+  @media (max-width: 640px) {
+    .topbar .wrap { flex-wrap: wrap; row-gap: 10px; }
+    .topbar-right { width: 100%; flex-wrap: wrap; justify-content: space-between; row-gap: 10px; }
+    .product-tabs { order: -1; width: 100%; margin: 0; }
+    .product-tabs a { padding: 6px 12px; }
+  }
 
   .erase-teaser .teaser-grid {
     display: grid;
@@ -348,7 +325,7 @@
   .shot-frame::before {
     content: "";
     position: absolute;
-    inset: -14% -10% auto auto;
+    inset: -14% 0 auto auto;
     width: 70%;
     aspect-ratio: 1;
     background: radial-gradient(circle, rgba(var(--accent-rgb, 46,204,113),0.20), transparent 68%);
@@ -1336,30 +1313,6 @@
           <h4>Laboratori</h4>
           <p>Archivia risultati di analisi e serie di misurazioni in modo crittografato, senza sistemi separati.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="erase erase-teaser" id="sevenerase">
-    <div class="wrap">
-      <div class="teaser-grid">
-        <div>
-          <span class="free-badge">Gratis</span>
-          <h2>SevenErase: eliminare file in modo sicuro e definitivo</h2>
-          <p class="erase-lede">Elimina file, cartelle e spazio libero senza possibilità di recupero. In più metadati, tracce e confronto di cartelle in un unico programma.</p>
-
-          <ul class="erase-list">
-            <li><span><strong>File e cartelle</strong> sovrascritti con dati casuali prima dell’eliminazione</span></li>
-            <li><span><strong>Pulizia dello spazio libero</strong>, per far sparire anche i residui già eliminati</span></li>
-            <li><span><strong>Nessuna installazione</strong>, nessuna registrazione, nessun trasferimento di dati</span></li>
-          </ul>
-
-          <div class="erase-actions">
-            <a class="btn-primary" href="/it/sevenerase/">Scopri di più su SevenErase</a>
-            <a class="hint" href="https://github.com/hagenhofweg13-hub/sevenshield-landingpage/releases/latest/download/SevenErase.exe">Scarica SevenErase</a>
-          </div>
-        </div>
-        <a class="shot-frame" href="/it/sevenerase/" tabindex="-1" aria-hidden="true"><img src="/sevenerase/img/sevenerase-loeschen.webp" alt="SevenErase: scheda Löschen con elenco dei file" width="1000" height="701" loading="lazy"></a>
       </div>
     </div>
   </section>
