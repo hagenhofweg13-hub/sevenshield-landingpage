@@ -1023,12 +1023,12 @@
 
   /* ---------- Impressum placeholder ---------- */
 
-  #impressum, #datenschutz, #nutzungsbedingungen, #nutzungsbedingungen-sevenerase {
+  #impressum, #datenschutz, #nutzungsbedingungen {
     display: none;
     padding: 60px 0 96px;
   }
 
-  #impressum:target, #datenschutz:target, #nutzungsbedingungen:target, #nutzungsbedingungen-sevenerase:target { display: block; }
+  #impressum:target, #datenschutz:target, #nutzungsbedingungen:target:target { display: block; }
 
   .legal-placeholder {
     background: var(--surface);
@@ -1442,31 +1442,6 @@
   </div>
 </section>
 
-<section id="nutzungsbedingungen-sevenerase" class="wrap">
-  <div class="legal-placeholder">
-    <h2>Nutzungsbedingungen</h2>
-    <p>für die kostenlose Software „SevenErase"</p>
-
-    <p><strong>1. Zweck</strong></p>
-    <p>SevenErase überschreibt Dateien, Ordner und freien Speicherplatz auf dem Computer des Nutzers, um gelöschte Daten gegen Wiederherstellung zu schützen. Die Software arbeitet ausschließlich lokal und überträgt keine Daten an den Anbieter oder an Dritte.</p>
-
-    <p><strong>2. Unentgeltliche Überlassung</strong></p>
-    <p>SevenErase wird unentgeltlich zur Verfügung gestellt. Es besteht kein Anspruch auf Weiterentwicklung, Support oder Verfügbarkeit des Downloads.</p>
-
-    <p><strong>3. Endgültige Löschung</strong></p>
-    <p>Mit SevenErase gelöschte Daten sind bestimmungsgemäß nicht wiederherstellbar, auch nicht durch den Anbieter. Der Nutzer ist allein dafür verantwortlich, vor dem Löschen die richtige Auswahl zu treffen und benötigte Daten zu sichern. Der Nutzer darf nur Daten löschen, über die er verfügungsberechtigt ist; gesetzliche Aufbewahrungspflichten sind vom Nutzer selbst zu beachten.</p>
-
-    <p><strong>4. Technische Grenzen</strong></p>
-    <p>Bei SSDs, USB-Sticks, Speicherkarten und Systemen mit Schattenkopien, Backups oder Cloud-Synchronisation kann nicht garantiert werden, dass sämtliche Kopien einer Datei erreicht werden. SevenErase ersetzt keine zertifizierte Datenträgervernichtung.</p>
-
-    <p><strong>5. Haftung</strong></p>
-    <p>Der Anbieter haftet, da die Software unentgeltlich überlassen wird, nur für Vorsatz und grobe Fahrlässigkeit sowie bei arglistig verschwiegenen Mängeln. Die Haftung bei Verletzung von Leben, Körper oder Gesundheit bleibt unberührt.</p>
-
-    <p><strong>6. Schlussbestimmungen</strong></p>
-    <p>Sollte eine Bestimmung dieser Nutzungsbedingungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Es gilt deutsches Recht.</p>
-  </div>
-</section>
-
 <script>
   // Countdown zum Verkaufsstart in ganzen Tagen. Gerechnet wird bis
   // Mitternacht deutscher Zeit, damit der Wechsel nicht von der Zeitzone
@@ -1566,5 +1541,8 @@
   })();
 </script>
 
+<script>
+if (location.hash === '#nutzungsbedingungen-sevenerase') { location.replace('/sevenerase/#nutzungsbedingungen-sevenerase'); }
+</script>
 </body>
 </html>
