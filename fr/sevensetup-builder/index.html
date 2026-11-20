@@ -128,7 +128,7 @@
       "name": "Y a-t-il des limites ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Seul le 64 bits (win-x64) est pris en charge, le setup a un design sombre et la Setup.exe créée n’est pas signée, c’est pourquoi Windows peut afficher un avertissement au premier démarrage."
+        "text": "Seul le 64 bits (win-x64) est pris en charge, le setup a un design sombre et le Builder lui-même est signé numériquement. La Setup.exe créée n’est signée que si vous la signez avec votre propre certificat, sinon Windows peut afficher un avertissement au premier démarrage."
       }
     }
   ]
@@ -1484,7 +1484,7 @@
 
           <p class="erase-note">
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="#8B9198" stroke-width="1.3"/><path d="M8 7v4.2M8 4.8v.1" stroke="#8B9198" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span>Le Builder nécessite le runtime .NET 8 Desktop sur votre ordinateur, les setups créés n’en ont pas besoin. Au premier démarrage, Windows peut afficher un avertissement de sécurité car les fichiers ne sont pas signés. Démarrez-les via « Informations complémentaires » puis « Exécuter quand même ».</span>
+            <span>Le Builder nécessite le runtime .NET 8 Desktop sur votre ordinateur, les setups créés n’en ont pas besoin. Le Builder est signé numériquement. Les setups créés affichent un avertissement de sécurité au premier démarrage tant que vous ne les signez pas avec votre propre certificat. Démarrez-les via « Informations complémentaires » puis « Exécuter quand même ».</span>
           </p>
         </div>
         <div class="hero-media"><div class="meta-mock" aria-hidden="true"><div class="mm-file">SevenSetup Builder</div><div class="mm-row"><div><span class="bm-lab">Nom</span><span class="bm-val">MonApp</span></div><span class="mm-chip">depuis l’exe</span></div><div class="mm-row"><div><span class="bm-lab">Version</span><span class="bm-val">2.4.1</span></div><span class="mm-chip">depuis l’exe</span></div><div class="mm-row"><div><span class="bm-lab">Éditeur</span><span class="bm-val">Exemple SARL</span></div><span class="mm-chip">depuis l’exe</span></div><div class="mm-row"><div><span class="bm-val">MonApp_Setup.exe</span></div><span class="mm-chip done">créé</span></div></div></div>
@@ -1634,7 +1634,7 @@
         </details>
         <details>
           <summary>Y a-t-il des limites ?</summary>
-          <p>Seul le 64 bits (win-x64) est pris en charge, le setup a un design sombre et la Setup.exe créée n’est pas signée, c’est pourquoi Windows peut afficher un avertissement au premier démarrage.</p>
+          <p>Seul le 64 bits (win-x64) est pris en charge, le setup a un design sombre et le Builder lui-même est signé numériquement. La Setup.exe créée n’est signée que si vous la signez avec votre propre certificat, sinon Windows peut afficher un avertissement au premier démarrage.</p>
         </details>
       </div>
     </div>

@@ -128,7 +128,7 @@
       "name": "Ci sono limitazioni?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "È supportato solo il 64 bit (win-x64), il setup ha un design scuro e la Setup.exe creata non è firmata, quindi Windows può mostrare un avviso al primo avvio."
+        "text": "È supportato solo il 64 bit (win-x64), il setup ha un design scuro e il Builder stesso è firmato digitalmente. La Setup.exe creata è firmata solo se la firma con il suo certificato, altrimenti Windows può mostrare un avviso al primo avvio."
       }
     }
   ]
@@ -1484,7 +1484,7 @@
 
           <p class="erase-note">
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="#8B9198" stroke-width="1.3"/><path d="M8 7v4.2M8 4.8v.1" stroke="#8B9198" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span>Il Builder richiede il runtime .NET 8 Desktop sul suo computer, i setup creati no. Al primo avvio Windows può mostrare un avviso di sicurezza perché i file non sono firmati. Avviarli tramite ‘Ulteriori informazioni’ e poi ‘Esegui comunque’.</span>
+            <span>Il Builder richiede il runtime .NET 8 Desktop sul suo computer, i setup creati no. Il Builder è firmato digitalmente. I setup creati mostrano un avviso di sicurezza al primo avvio finché non li firma con il suo certificato. Avviarli tramite ‘Ulteriori informazioni’ e poi ‘Esegui comunque’.</span>
           </p>
         </div>
         <div class="hero-media"><div class="meta-mock" aria-hidden="true"><div class="mm-file">SevenSetup Builder</div><div class="mm-row"><div><span class="bm-lab">Nome</span><span class="bm-val">MiaApp</span></div><span class="mm-chip">dall’exe</span></div><div class="mm-row"><div><span class="bm-lab">Versione</span><span class="bm-val">2.4.1</span></div><span class="mm-chip">dall’exe</span></div><div class="mm-row"><div><span class="bm-lab">Editore</span><span class="bm-val">Esempio Srl</span></div><span class="mm-chip">dall’exe</span></div><div class="mm-row"><div><span class="bm-val">MiaApp_Setup.exe</span></div><span class="mm-chip done">creato</span></div></div></div>
@@ -1634,7 +1634,7 @@
         </details>
         <details>
           <summary>Ci sono limitazioni?</summary>
-          <p>È supportato solo il 64 bit (win-x64), il setup ha un design scuro e la Setup.exe creata non è firmata, quindi Windows può mostrare un avviso al primo avvio.</p>
+          <p>È supportato solo il 64 bit (win-x64), il setup ha un design scuro e il Builder stesso è firmato digitalmente. La Setup.exe creata è firmata solo se la firma con il suo certificato, altrimenti Windows può mostrare un avviso al primo avvio.</p>
         </details>
       </div>
     </div>
